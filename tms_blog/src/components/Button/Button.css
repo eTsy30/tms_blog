@@ -1,0 +1,85 @@
+.App {
+  background: #11ccda;
+}
+.ourButtonStyle {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px 32px;
+  border: none;
+  margin: 10px;
+}
+.primary:hover {
+  background: #5360cd;
+  border-radius: 2px;
+}
+.primary {
+  background: #2231aa;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.secondary:hover {
+  background: #dadada;
+  border-radius: 2px;
+}
+.secondary {
+  background: #e8e8e8;
+  border-radius: 2px;
+  color: #313037;
+}
+.secondary2:hover {
+  border: 1px solid #dadada;
+  box-sizing: border-box;
+}
+
+.secondary2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #fd3419;
+}
+.ButtonWithIcon:hover {
+  background: #5360cd;
+  border-radius: 2px;
+  color: #ffffff;
+}
+
+.ButtonWithIcon {
+  background: #e8e8e8;
+  border-radius: 2px;
+  color: #313037;
+  width: 241px;
+  height: 56px;
+  align-items: center;
+}
+.like:hover {
+  background: #fd3419;
+  border-radius: 2px;
+}
+.buttonImg {
+  width: 16;
+  height: 20;
+}
+.like {
+  background: #e8e8e8;
+  border-radius: 2px;
+}
+.dislike:hover {
+  background: #5360cd;
+  border-radius: 2px;
+}
+.dislike {
+  background: #e8e8e8;
+  border-radius: 2px;
+}
+.buttonDisable {
+  background: #e8e8e8;
+  border-radius: 2px;
+  color: blueviolet;
+}
