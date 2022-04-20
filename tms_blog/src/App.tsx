@@ -3,11 +3,9 @@ import './App.css';
 
 import{Button} from './components/Button/Button'
 
-import bBwi from './components/image/BookmarkButtonControlBlack.png'
-import gBwi from './components/image/gBwi.png'
-import wBwi from './components/image/bwiW.png'
-import dis from './components/image/dislike.png'
-import like from './components/image/wlike.png'
+import bBwi from './components/image/11.png'
+import dis from './components/image/33.png'
+import like from './components/image/22.png'
 function logg():void{
   return console.log('123',new Date());
   
