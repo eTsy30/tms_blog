@@ -8,7 +8,7 @@ type Bprops ={
     className:string,
     disabled?: boolean,
     icon?: string | undefined,
-}//{onClick, text, disabled,className,icon}:ButtonProps
+}
  export const Button = (props:Bprops)=>{
     
      return(
@@ -23,9 +23,4 @@ type Bprops ={
          {props.text}
     </button>)
  }
- //2. Добавить в кнопку в качестве пропсов свойства: 
-// text - текст в кнопке
-// onClick - функция, которая будет срабатывать при нажатии на кнопку
-// disabled - свойство устанавливает атрибут тэга button в состояние disabled
-// className - аналоги class в html, позволяет передать класс для стилизации кнопки
-// icon - иконка, которая будет помещаться в кнопку, если такое свойство было передано
+ 
