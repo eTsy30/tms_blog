@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import clsx from 'clsx'
 import './Input.css'
-import { log } from "console";
+
 type InpPropr={
     className:string,
     disabled?:boolean,

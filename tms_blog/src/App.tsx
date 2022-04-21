@@ -1,27 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-<<<<<<< Updated upstream
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-=======
+import './App.css';
 import{Button} from './components/Button/Button'
 import {Input} from './components/Inputs/Input'
 import {NameForm} from './components/Inputs/Input'
@@ -41,14 +20,14 @@ function App() {
     <Button text=' Button with icon' className='ButtonWithIcon' onClick={logg} icon={bBwi}/>
     <Button  disabled className='like' onClick={logg}  icon={dis}/>
     <Button  disabled className='dislike' onClick={logg}  icon={like}/>
-    {/* <Input text='Title' value='Placeholder' className='defaultImp'/> 
-    <Input text='Title'   className='defaultImp'/>  */}
+    <Input text='Title' value='Placeholder' className='defaultImp'/> 
+    <Input text='Title'   className='defaultImp'/> 
     <NameForm  placeholder='some1' className='defaultImp'/>
     <NameForm  placeholder='some2' className='defaultImp' disabled/>
   </div>
   
 
->>>>>>> Stashed changes
+
   );
 }
 
