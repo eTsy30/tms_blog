@@ -9,7 +9,7 @@ import { ReactComponent as Dislike } from '../image/like.svg'
 
 type Bprops ={
     text?: string,
-    onClick: ()=>void,
+    onClick: ()=>void| Console,
     className:string,
     disabled?: boolean,
     icon?: string | undefined,
@@ -29,7 +29,7 @@ type Bprops ={
             )}
         onClick={props.onClick}>
       {props.icon  &&  chooseID[props.icon] }
-         {props.text}
+        <span>{props.text}</span>
     </button>)
  }
  

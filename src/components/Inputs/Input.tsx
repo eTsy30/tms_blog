@@ -6,8 +6,9 @@ import { log } from "console";
     type NameFormProps={
     handleSubmit? :()=>void,
         placeholder:string,
-        className :string
+        className? :string
         disabled?: boolean
+        label :string
         type:'text'| 'email'|'password'
     }
    export const InputForm = (props:NameFormProps) => {
@@ -35,10 +36,6 @@ import { log } from "console";
           }
         }
         }
-        
-         
-        
-      
         const handleSubmit = (event:any) => {
           alert('Отправленное имя: ' + inputValue);
           event.preventDefault();
@@ -46,7 +43,7 @@ import { log } from "console";
         return (
           <div  className={`wraperInput ${props.className}`} onSubmit={handleSubmit}>
             <label  className="pInput">
-              Имя:
+              {props.label}
               <input type={props.type} disabled={props.disabled} className={`${eror && 'errorInput'} ${ props.className}`} placeholder={props.placeholder} value={inputValue} onChange={handleChange} />
               {eror && <label className="eror">{eror}</label>}
             </label>

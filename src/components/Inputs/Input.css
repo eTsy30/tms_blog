@@ -1,7 +1,11 @@
 .wraperInput {
   display: flex;
   justify-content: start;
-  margin: 50px;
+  width: 544px;
+  height: 56px;
+  margin: 40px;
+
+  border-radius: 2px;
 }
 
 .pInput {

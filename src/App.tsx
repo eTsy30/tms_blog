@@ -8,6 +8,7 @@ import {MiniCard} from './components/MiniCard/MiniCard'
 import{PromoCard} from './components/PromoCard/PromoCard'
 import{TextAreaForm} from './components/TextArea/TextArea'
 import {Header} from './components/Header/Header'
+import {SingIn} from './components/Pages/SingIn/SingIn'
 function logg():void{
   return console.log('123',new Date());
   
@@ -15,6 +16,7 @@ function logg():void{
 
 function App() {
   return ( <div className='App'>
+    <SingIn/>
     <Header/>
     <Button  text='Primary' className='primary' onClick={logg} />
     <Button  text='Secondary' className='secondary'onClick={logg} />
@@ -23,8 +25,8 @@ function App() {
     <Button  className='like' onClick={logg}  icon='Like'/>
     <Button   className='dislike'  onClick={logg}  icon='Dislike'/>
     <br />
-    <InputForm  placeholder='Placeholder' type='password' className='defaultImp'/>
-    <InputForm  placeholder='Placeholder'  type='email' className='defaultImp' />
+    <InputForm label='qqwe' placeholder='Placeholder' type='password' className='defaultImp'/>
+    <InputForm  label='qqwe' placeholder='Placeholder'  type='email' className='defaultImp' />
     <br />
     <br />
     <br />
@@ -37,6 +39,7 @@ function App() {
     <DicktopBlokElement className='wrapper'/>
     <br /><br /><br />
     <PromoCard className='PromoWrapper'/>
+    
   </div>
   
 
