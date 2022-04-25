@@ -1,67 +1,54 @@
 import React, { useState } from "react";
-import clsx from 'clsx'
+import validator from 'validator/index'
 import './Input.css'
+import { log } from "console";
 
-type InpPropr={
-    className:string,
-    disabled?:boolean,
-    text:string
-    value?: string
-}
-
-export const Input =(props:InpPropr)=>{
-    const [count, setValue] = useState('')
-    console.log(setValue);
-    
-    return(
-<div className="wraperInput">
-    <p className="pInput">{props.text}</p>
-    <input type='text'  
-           onChange={evetn=>{
-               //как убрать значение props.value из input
-               setValue(evetn.target.value)}} 
-           disabled={props.disabled} value={props.value} 
-           className={clsx(props.className,{inputDisable:props.disabled})}>
-    </input>
-</div>
-    )}
-    //========================================
     type NameFormProps={
-        handleSubmit? :()=>void,
+    handleSubmit? :()=>void,
         placeholder:string,
         className :string
         disabled?: boolean
+        type:'text'| 'email'|'password'
     }
-   export const NameForm = (props:NameFormProps) => {
+   export const InputForm = (props:NameFormProps) => {
         const [inputValue, setInputValue] = useState('')
-       
-        
         const [eror, setEror] = useState('')
         
         const handleChange = (event:any) => {
           setInputValue(event.target.value)
-          if(event.target.value.length<10){
-            
-            setInputValue(event.target.value)
-            setEror('Eror')
-          }else{
-            setEror('')
+        console.log(props.type);
+        if(props.type==='email'){ 
+          if(!validator.isEmail(event.target.value)){
+          setEror('Eror')
+        }else{
+          setEror('')
+        } }
+
+        if(props.type==='password'){
+          if (validator.isStrongPassword(event.target.value, {
+            minLength: 8, minLowercase: 1,
+            minUppercase: 1, minNumbers: 1, minSymbols: 1
+          })) {
+            setEror('Is Strong Password')
+          } else {
+            setEror('Is Not Strong Password')
           }
-          
-          
         }
+        }
+        
+         
+        
       
         const handleSubmit = (event:any) => {
           alert('Отправленное имя: ' + inputValue);
           event.preventDefault();
         }
-    
         return (
           <div  className={`wraperInput ${props.className}`} onSubmit={handleSubmit}>
             <label  className="pInput">
               Имя:
-              <input type="text" disabled={props.disabled} className="defaultImp" placeholder={props.placeholder} value={inputValue} onChange={handleChange} />
-              {eror && <label className="eror">ошибка </label>}
+              <input type={props.type} disabled={props.disabled} className={`${eror && 'errorInput'} ${ props.className}`} placeholder={props.placeholder} value={inputValue} onChange={handleChange} />
+              {eror && <label className="eror">{eror}</label>}
             </label>
            
           </div>

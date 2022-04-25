@@ -5,10 +5,8 @@
 }
 
 .pInput {
-  margin: 0;
-  padding: 0;
   text-align: start;
-  width: 35px;
+
   height: 20px;
   left: 1px;
   top: 0px;
@@ -42,7 +40,15 @@
   border-radius: 2px;
   color: #8d8e97;
 }
-.eror {
+
+.errorInput {
+  border: 2px solid #fd3419;
+}
+.error {
+  width: 30px;
+  color: #fd3419;
+  font-style: normal;
+  font-weight: 400;
   font-size: 16px;
-  color: red;
+  line-height: 20px;
 }

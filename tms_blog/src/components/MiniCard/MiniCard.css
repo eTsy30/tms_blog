@@ -1,0 +1,33 @@
+.MiniCardMainWrapper {
+  width: 352px;
+  height: 452px;
+  border-bottom: 1px solid #dadada;
+}
+.MiniCardimgspace {
+  width: 352px;
+  height: 246px;
+}
+.MiniCardpDate {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+}
+.MiniCardmainTitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: start;
+}
+.MiniCardwraperLibeBar {
+  display: flex;
+  align-items: center;
+  height: 94px;
+}
+.MiniCardMainWrapper:hover .MiniCardmainTitle {
+  color: #2231aa;
+}

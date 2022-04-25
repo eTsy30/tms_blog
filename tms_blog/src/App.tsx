@@ -2,11 +2,12 @@ import React from 'react';
 
 import './App.css';
 import{Button} from './components/Button/Button'
-import {Input} from './components/Inputs/Input'
-import {NameForm} from './components/Inputs/Input'
-import bBwi from './components/image/11.png'
-import dis from './components/image/33.png'
-import like from './components/image/22.png'
+import {InputForm} from './components/Inputs/Input'
+import{DicktopBlokElement} from './components/DicktopBlokElement/DicktopBlokElement'
+import {MiniCard} from './components/MiniCard/MiniCard'
+import{PromoCard} from './components/PromoCard/PromoCard'
+import{TextAreaForm} from './components/TextArea/TextArea'
+import {Header} from './components/Header/Header'
 function logg():void{
   return console.log('123',new Date());
   
@@ -14,16 +15,28 @@ function logg():void{
 
 function App() {
   return ( <div className='App'>
-    <Button disabled text='Primary' className='primary' onClick={logg} />
-    <Button text='Secondary' className='secondary'onClick={logg} />
-    <Button  text='Secondary 2' className='secondary2' onClick={logg} />
-    <Button text=' Button with icon' className='ButtonWithIcon' onClick={logg} icon={bBwi}/>
-    <Button  disabled className='like' onClick={logg}  icon={dis}/>
-    <Button  disabled className='dislike' onClick={logg}  icon={like}/>
-    <Input text='Title' value='Placeholder' className='defaultImp'/> 
-    <Input text='Title'   className='defaultImp'/> 
-    <NameForm  placeholder='some1' className='defaultImp'/>
-    <NameForm  placeholder='some2' className='defaultImp' disabled/>
+    <Header/>
+    <Button  text='Primary' className='primary' onClick={logg} />
+    <Button  text='Secondary' className='secondary'onClick={logg} />
+    <Button   text='Secondary 2' className='secondary2' onClick={logg} />
+    <Button   text='Button with icon' className='ButtonWithIcon' onClick={logg} icon='SvgBwi'/>
+    <Button  className='like' onClick={logg}  icon='Like'/>
+    <Button   className='dislike'  onClick={logg}  icon='Dislike'/>
+    <br />
+    <InputForm  placeholder='Placeholder' type='password' className='defaultImp'/>
+    <InputForm  placeholder='Placeholder'  type='email' className='defaultImp' />
+    <br />
+    <br />
+    <br />
+
+   <TextAreaForm className='qqq'/>
+   <br /><br /><br />
+    <MiniCard/>
+    <br /><br /><br />
+
+    <DicktopBlokElement className='wrapper'/>
+    <br /><br /><br />
+    <PromoCard className='PromoWrapper'/>
   </div>
   
 

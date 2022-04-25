@@ -6,6 +6,8 @@
   border: none;
   margin: 10px;
 }
+
+/*=======================================*/
 .primary:hover {
   background: #5360cd;
   border-radius: 2px;
@@ -19,15 +21,32 @@
   line-height: 24px;
   color: #ffffff;
 }
+.primary:disabled {
+  background: #e8e8e8;
+  border-radius: 2px;
+  color: #8d8e97;
+}
+/*=======================================*/
 .secondary:hover {
   background: #dadada;
   border-radius: 2px;
 }
 .secondary {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
   background: #e8e8e8;
   border-radius: 2px;
   color: #313037;
 }
+.secondary:disabled {
+  background: #e8e8e8;
+  border-radius: 2px;
+  color: #8d8e97;
+}
+/*=======================================*/
 .secondary2:hover {
   border: 1px solid #dadada;
   box-sizing: border-box;
@@ -41,13 +60,26 @@
   line-height: 24px;
   color: #fd3419;
 }
+.secondary2:disabled {
+  background: #e8e8e8;
+  border: none;
+  color: #8d8e97;
+}
+/*=======================================*/
+.ButtonWithIcon:hover > .buttonImg path {
+  fill: #ffffff;
+}
 .ButtonWithIcon:hover {
   background: #5360cd;
   border-radius: 2px;
   color: #ffffff;
 }
-
 .ButtonWithIcon {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
   background: #e8e8e8;
   border-radius: 2px;
   color: #313037;
@@ -55,28 +87,65 @@
   height: 56px;
   align-items: center;
 }
+.ButtonWithIcon:disabled {
+  background: #e8e8e8;
+  border-radius: 2px;
+  color: #8d8e97;
+}
+.ButtonWithIcon:disabled > .buttonImg path {
+  fill: #8d8e97;
+}
+/*=======================================*/
+.like:hover > .buttonImg path {
+  fill: #ffffff;
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
 .like:hover {
   background: #fd3419;
   border-radius: 2px;
 }
-.buttonImg {
-  width: 16;
-  height: 20;
-}
+
 .like {
   background: #e8e8e8;
   border-radius: 2px;
 }
+.like > .buttonImg path {
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+
+.like:disabled > .buttonImg path {
+  fill: #8d8e97;
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+.like:disabled {
+  background: #e8e8e8;
+  border-radius: 2px;
+  color: #8d8e97;
+}
+
+/*=======================================*/
+.dislike:hover > .buttonImg path {
+  fill: #ffffff;
+}
 .dislike:hover {
   background: #5360cd;
   border-radius: 2px;
+  color: #ffffff;
 }
 .dislike {
   background: #e8e8e8;
   border-radius: 2px;
+  color: #313037;
+  align-items: center;
 }
-.buttonDisable {
+.dislike:disabled {
   background: #e8e8e8;
   border-radius: 2px;
-  color: blueviolet;
+  color: #8d8e97;
+}
+.dislike:disabled > .buttonImg path {
+  fill: #8d8e97;
 }
