@@ -1,0 +1,76 @@
+.wrapper {
+  display: flex;
+  width: 736px;
+
+  left: 0px;
+  top: 240px;
+}
+
+.pDate {
+  display: flex;
+  justify-content: start;
+  margin-left: 10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8e97;
+
+  order: 0;
+  flex-grow: 0;
+  margin: 8px 0px;
+}
+h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: #313037;
+  margin: 8px 0px;
+}
+
+.pText {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #8d8e97;
+  text-align: start;
+}
+.textspase {
+  width: 50%;
+}
+.imgspace {
+  width: 50%;
+  height: 244px;
+  width: 256px;
+  left: 480px;
+  top: 0px;
+  border-radius: 0px;
+}
+.footercpase {
+  display: flex;
+  justify-content: space-between;
+}
+.imgWrapper {
+  display: flex;
+  width: 50%;
+  justify-content: end;
+}
+.BigDicktopBlokElement {
+  width: 736px;
+  height: 452px;
+  left: 0px;
+  top: 240px;
+  border-bottom: 1px solid #dadada;
+}
+.BigDicktopBlokElement:hover .mainTitle {
+  color: #2231aa;
+}
+.heightLike {
+  display: flex;
+  align-items: center;
+}
