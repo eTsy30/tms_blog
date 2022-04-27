@@ -2,7 +2,7 @@ import { log } from 'console'
 import React from 'react'
 import'./Button.css'
 import clsx from 'clsx'
-type Bprops ={
+type ButtonProps ={
     text?: string,
     onClick: ()=>void,
     className:string,
