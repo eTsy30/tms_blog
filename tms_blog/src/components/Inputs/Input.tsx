@@ -10,7 +10,7 @@ type InpPropr={
 }
 
 export const Input =(props:InpPropr)=>{
-    const [coutn, setValue] = useState('55')
+    const [count, setValue] = useState('')
     console.log(setValue);
     
     return(
