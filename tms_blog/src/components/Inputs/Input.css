@@ -1,0 +1,48 @@
+.wraperInput {
+  display: flex;
+  justify-content: start;
+  margin: 50px;
+}
+
+.pInput {
+  margin: 0;
+  padding: 0;
+  text-align: start;
+  width: 35px;
+  height: 20px;
+  left: 1px;
+  top: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #313037;
+}
+.defaultImp {
+  height: 56px;
+  width: 544px;
+  left: 0px;
+  top: 28px;
+  border-radius: 2px;
+  text-align: start;
+  color: #8d8e97;
+  border: none;
+}
+.defaultImp:focus {
+  background: #ffffff;
+  border: 2px solid #dadada;
+  border-radius: 2px;
+}
+.defaultImp:active {
+  color: #313037;
+}
+.defaultImp:disabled {
+  background: #e8e8e8;
+  border-radius: 2px;
+  color: #8d8e97;
+}
+.eror {
+  font-size: 16px;
+  color: red;
+}
