@@ -9,7 +9,7 @@ type ButtonProps ={
     disabled?: boolean,
     icon?: string | undefined,
 }
- export const Button = (props:Bprops)=>{
+ export const Button = ({ disabled, className, …}:Bprops)=>{
     
      return(
      <button type='button' 
