@@ -9,15 +9,17 @@ import{PromoCard} from './components/PromoCard/PromoCard'
 import{TextAreaForm} from './components/TextArea/TextArea'
 import {Header} from './components/Header/Header'
 import {SingIn} from './components/Pages/SingIn/SingIn'
-function logg():void{
-  return console.log('123',new Date());
-  
-}
+import {SingUp} from './components/Pages/SingUp/SiugUp'
+
 
 function App() {
+  function logg():void{
+    return console.log('123',new Date()); 
+  }
   return ( <div className='App'>
-    <SingIn/>
-    <Header/>
+    <SingIn label='Sing In' className='InputHeightIn'/>
+    <SingUp/>
+     <Header/>
     <Button  text='Primary' className='primary' onClick={logg} />
     <Button  text='Secondary' className='secondary'onClick={logg} />
     <Button   text='Secondary 2' className='secondary2' onClick={logg} />
@@ -25,8 +27,9 @@ function App() {
     <Button  className='like' onClick={logg}  icon='Like'/>
     <Button   className='dislike'  onClick={logg}  icon='Dislike'/>
     <br />
-    <InputForm label='qqwe' placeholder='Placeholder' type='password' className='defaultImp'/>
-    <InputForm  label='qqwe' placeholder='Placeholder'  type='email' className='defaultImp' />
+    <InputForm label='pas' placeholder='Placeholder' type='password' className=''/>
+    <InputForm  label='email' placeholder='Placeholder'  type='email' className='defaultImp' />
+    <InputForm  label='email' placeholder='Placeholder'  type='text' className='defaultImp' />
     <br />
     <br />
     <br />

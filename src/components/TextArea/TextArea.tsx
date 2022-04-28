@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import './TextArea.css'
 
     type NameFormProps={
-    // handleSubmit? :()=>void,
         placeholder?:string,
         className ?:string
         disabled?: boolean

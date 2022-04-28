@@ -7,9 +7,9 @@ type BlElement={
     label?:string,
     text?:string,
     pictyre?:string}
-export const DicktopBlokElement =(props:BlElement) =>{
+export const DicktopBlokElement =({className,label,text,pictyre}:BlElement) =>{
     return(<div className="BigDicktopBlokElement">
-        <div className={props.className}>
+        <div className={className}>
 <div className="textspase"> 
    <p className="pDate">Date</p> 
    <h2 className="mainTitle">Astronauts prep for new solar arrays on nearly seven-hour spacewalk ...</h2>

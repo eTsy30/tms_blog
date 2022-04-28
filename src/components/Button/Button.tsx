@@ -2,34 +2,34 @@
 import React from 'react'
 import'./Button.css'
 import clsx from 'clsx'
-import { ReactComponent as SvgBwi } from '../image/buttonWithIcon.svg'
-import { ReactComponent as Like } from '../image/like.svg'
-import { ReactComponent as Dislike } from '../image/like.svg'
-//  import {SvgReader} from '../SvgReader/SvgReader'
+import { ReactComponent as SvgBwiIcon } from '../image/buttonWithIcon.svg'
+import { ReactComponent as LikeIcon } from '../image/like.svg'
+import { ReactComponent as DislikeIcon } from '../image/like.svg'
 
-type Bprops ={
+
+type Buttonprops ={
     text?: string,
-    onClick: ()=>void| Console,
+    onClick?: ()=>void,
     className:string,
     disabled?: boolean,
     icon?: string | undefined,
 }
- export const Button = (props:Bprops)=>{
+ export const Button = ({text,onClick,className,disabled,icon}:Buttonprops)=>{
     const chooseID: {[index: string]:any}={
-        SvgBwi :<SvgBwi className='buttonImg'/> ,
-        Like : <Like className='buttonImg'/> ,
-        Dislike:<Dislike className='buttonImg'/>,
+        SvgBwi :<SvgBwiIcon className='buttonImg'/> ,
+        Like : <LikeIcon className='buttonImg'/> ,
+        Dislike:<DislikeIcon className='buttonImg'/>,
  
     } 
      return(
      <button type='button' 
      
-        disabled={props.disabled} 
-        className={clsx(props.className,'ourButtonStyle'
+        disabled={disabled} 
+        className={clsx(className,'ourButtonStyle'
             )}
-        onClick={props.onClick}>
-      {props.icon  &&  chooseID[props.icon] }
-        <span>{props.text}</span>
+        onClick={onClick}>
+      {icon  &&  chooseID[icon] }
+        <span>{text}</span>
     </button>)
  }
  

@@ -1,19 +1,11 @@
 .wraperInput {
-  display: flex;
-  justify-content: start;
-  width: 544px;
-  height: 56px;
-  margin: 40px;
-
-  border-radius: 2px;
+  display: inline-block;
 }
 
 .pInput {
+  display: grid;
+  justify-content: start;
   text-align: start;
-
-  height: 20px;
-  left: 1px;
-  top: 0px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
@@ -24,8 +16,6 @@
 .defaultImp {
   height: 56px;
   width: 544px;
-  left: 0px;
-  top: 28px;
   border-radius: 2px;
   text-align: start;
   color: #8d8e97;
