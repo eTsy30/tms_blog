@@ -9,18 +9,18 @@ type ButtonProps ={
     disabled?: boolean,
     icon?: string | undefined,
 }
- export const Button = ({ disabled, className, …}:Bprops)=>{
+ export const Button = ({ disabled, className,text,onClick,icon}:ButtonProps)=>{
     
      return(
      <button type='button' 
       
-        disabled={props.disabled} 
-        className={clsx(props.className,'ourButtonStyle',{
-            'buttonDisable':props.disabled}
+        disabled={disabled} 
+        className={clsx(className,'ourButtonStyle',{
+            'buttonDisable':disabled}
             )}
-        onClick={props.onClick}>
-      {props.icon  && <img  className='buttonImg' src={props.icon} />}
-         {props.text}
+        onClick={onClick}>
+      {icon  && <img  className='buttonImg' src={icon} />}
+         {text}
     </button>)
  }
  
