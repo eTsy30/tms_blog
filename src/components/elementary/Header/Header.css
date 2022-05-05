@@ -7,9 +7,6 @@
   grid-template-columns: 84px 1fr 84px 230px;
   grid-template-rows: 1fr;
 }
-/* div {
-  border: 1px solid #000;
-} */
 
 .Header-Left-Menu {
   grid-area: 1 / 1 / 2 / 2;

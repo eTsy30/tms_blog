@@ -1,0 +1,39 @@
+/**** Colors *****/
+/**** Fonts *****/
+/**** Indents *****/
+.Tabs__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #dadada;
+  height: 56px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  margin-bottom: 64px;
+}
+
+.Tab__block--link {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #313037;
+  text-decoration: none;
+  width: 100px;
+  margin-right: 120px;
+  height: 34px;
+  text-align: center;
+}
+
+.Tab__block--link:focus {
+  border-bottom: 1px solid #313037;
+}
+
+.Tab__block--link:disabled {
+  color: #8d8e97;
+}
+/*# sourceMappingURL=Tabs.css.map */

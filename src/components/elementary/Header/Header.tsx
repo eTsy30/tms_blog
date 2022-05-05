@@ -1,7 +1,7 @@
 import React from "react";
 import './Header.css'
-import { ReactComponent as MenuBurger } from "../image/MenuBurger.svg";
-import { ReactComponent as SearchButton } from "../image/SearchButton.svg";
+import { ReactComponent as MenuBurger } from "../../image/MenuBurger.svg";
+import { ReactComponent as SearchButton } from "../../image/SearchButton.svg";
 
 export const Header=()=>{
     return(

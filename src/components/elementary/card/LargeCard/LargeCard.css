@@ -1,0 +1,60 @@
+.general_text {
+  font-family: "Inter";
+  font-style: normal;
+  margin: 0px;
+}
+
+.LargeCard_wrapper_In {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+.LargeCard_mainTitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: #313037;
+  margin: 8px 0px;
+}
+.LargeCard_left {
+  width: 65%;
+  display: grid;
+  gap: 5px;
+}
+.LargeCard_right {
+  width: 35%;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+.LargeCard_wrapper {
+  display: grid;
+  border-bottom: 1px solid #dadada;
+}
+.LargeCard_date {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8e97;
+  text-align: start;
+}
+.LargeCard_label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #313037;
+  text-align: start;
+}
+.LargeCard_logo {
+  width: 90%;
+  justify-content: end;
+}
+
+.heightLike {
+  color: #000;
+  align-self: end;
+}
