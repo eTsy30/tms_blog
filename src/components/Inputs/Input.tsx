@@ -4,6 +4,7 @@ import './Input.css'
 
 
     type InputProps={
+      handleSubmit? :()=>void,
         placeholder:string,
         className? :string
         disabled?: boolean
@@ -34,12 +35,15 @@ import './Input.css'
           }
         }
         }
-        
+        const handleSubmit = (event:any) => {
+          alert('Отправленное имя: ' + inputValue);
+          event.preventDefault();
+        }
         return (
-          <div  className='input' >
+          <div  className='input'  onSubmit={handleSubmit}>
               <label  className="input--label">  
               <span >{title}</span>
-              <input type={type} disabled={disabled} className={`input--default ${eror && 'errorInput'} ${className}`} placeholder={placeholder} value={inputValue}  />
+              <input type={type} disabled={disabled} className={`input--default ${eror && 'errorInput'} ${className}`} placeholder={placeholder} value={inputValue} onChange={handleChange} />
               {eror && <span className="error">{eror}</span>}
              </label> 
            
