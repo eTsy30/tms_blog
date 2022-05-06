@@ -1,0 +1,52 @@
+/**** Colors *****/
+/**** Fonts *****/
+/**** Indents *****/
+.input {
+  font-family: InterSemiBold, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  height: 102px;
+  color: #313037;
+}
+
+.input--label {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  text-align: start;
+}
+
+.input--default {
+  height: 56px;
+  width: 544px;
+  border-radius: 2px;
+  color: #8d8e97;
+  border: none;
+}
+
+.input--default:focus {
+  background: #ffffff;
+  border: 2px solid #dadada;
+}
+
+.input--default:active {
+  color: #313037;
+}
+
+.input--default:disabled {
+  background: #e8e8e8;
+  border-radius: 2px;
+  color: #8d8e97;
+}
+
+.errorInput {
+  border: 2px solid #fd3419;
+}
+
+.error {
+  color: #fd3419;
+}
+/*# sourceMappingURL=Input.css.map */

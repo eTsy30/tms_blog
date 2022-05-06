@@ -1,0 +1,7 @@
+.wraperTextArea {
+  display: flex;
+  justify-content: start;
+  width: 150px;
+  height: auto;
+  margin: 50px;
+}
