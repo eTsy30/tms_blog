@@ -40,7 +40,7 @@ import './Input.css'
               <label  className="input--label">  
               <span >{title}</span>
               <input type={type} disabled={disabled} className={`input--default ${eror && 'errorInput'} ${className}`} placeholder={placeholder} value={inputValue}  />
-              {eror && <label className="error">{eror}</label>}
+              {eror && <span className="error">{eror}</span>}
              </label> 
            
           </div>
