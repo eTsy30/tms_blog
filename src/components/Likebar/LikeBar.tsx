@@ -9,7 +9,7 @@ export const LikeBar = () => {
   const [likeActiv, setLikeActiv] = useState(false);
   const [disLikeActiv, setDisLikeActiv] = useState(false);
 
-  const likeF = () => {
+  const addToFavorite = () => {
     if (likeActiv) {
       setLikeActiv(false);
       setLike(like - 1);
@@ -23,7 +23,7 @@ export const LikeBar = () => {
       }
     }
   };
-  const dislikeF = () => {
+  const removeFromFavorite = () => {
     if (disLikeActiv) {
       setDisLikeActiv(false);
       setDisLike(disLike - 1);
@@ -42,13 +42,13 @@ export const LikeBar = () => {
     <div className="likeBar">
       <div className="likeBar--div--left">
         <Like
-          onClick={likeF}
+          onClick={addToFavorite}
           className={`likeBar-Like ${likeActiv && "LikeBar_color"}`}
         />
         <span className="likeBar-count">{like}</span>
         <Like
           className={`${disLikeActiv && "DisLikeBar_color"}`}
-          onClick={dislikeF}
+          onClick={removeFromFavorite}
         />
         <span className="likeBar-count">{disLike}</span>
       </div>
