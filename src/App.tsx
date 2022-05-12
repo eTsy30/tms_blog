@@ -7,10 +7,10 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <Link to='/posts'>Post1</Link>
-        <Link to='/posts/1'>Post1</Link>
-        <Link to='/posts/add'>Post1</Link>
-        <Link to='/search'>Post1</Link>
+        <Link to='/posts'>Posts</Link>
+        <Link to='/posts/1'>Post 1</Link>
+        <Link to='/posts/add'>Add</Link>
+        <Link to='/search'>Search</Link>
       </nav>
     </div>
   );

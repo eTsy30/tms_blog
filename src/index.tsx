@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AddPost } from './routes/AddPost/AddPost';
+import { Posts } from './routes/Posts/Posts';
+import { Post } from './routes/Post/Post';
+import { Search } from './routes/Search/Search';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,7 +16,21 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
+    <Routes>
+      <Route path='/' element={<App/>}></Route>
+      <Route path='/posts' element={<Posts/>}></Route>
+      <Route path='/posts/add' element={<AddPost/>}></Route>
+      <Route path='/posts/:id' element={<Post/>}></Route>
+      <Route path='/search' element={<Search/>}></Route>
+      <Route path='*' element={
+        <main style={{padding:'1rem'}}>
+      <p> 404 Not Found</p>
+        </main>
+        
+      }
+      />
+    </Routes>
+   
     </BrowserRouter>
   </React.StrictMode>
 );
