@@ -1,6 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
+import {Input} from './components/Inputs'
+import { TextArea } from './components/TextArea';
+function App() {
+  return (
+    <div className="App">
+      <Input title='Title'  placeholder='placeholder' type='email'></Input>
+      <Input  disabled title='Title'  placeholder='placeholder' type='email'></Input>
+      <Input  title='Title' placeholder='placeholder' type='text'></Input>
+      <TextArea></TextArea>
+=======
 import {Button} from './components/Button'
 function App() {
   return (
@@ -17,6 +28,7 @@ function App() {
      <Button className='like'   icon='Like'></Button>
      <Button className='dislike' disabled  icon='Dislike'></Button>
      <Button className='dislike'   icon='Dislike'></Button>
+>>>>>>> main
     </div>
   );
 }
