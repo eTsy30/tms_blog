@@ -1,0 +1,151 @@
+/**** Colors *****/
+/**** Fonts *****/
+/**** Indents *****/
+.large--Card {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 736px;
+  height: 452;
+  padding-bottom: 15px;
+}
+
+.Card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid #dadada;
+}
+
+.large--Content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.large--Img {
+  width: 35%;
+  height: 60%;
+  margin: 0 0 142px 32px;
+}
+
+.time {
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8e97;
+}
+
+.large--Name {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: #313037;
+  margin-bottom: 24px;
+  text-align: left;
+  margin-top: 8px;
+  font-style: normal;
+}
+
+.large--Name:hover {
+  cursor: pointer;
+  color: #2231aa;
+}
+
+.large--Text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: #8d8e97;
+  text-align: left;
+  height: 168px;
+}
+
+.medium--Card {
+  width: 352px;
+  padding-bottom: 0px;
+}
+
+.medium--Content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin-bottom: 0px;
+}
+
+.medium--Img {
+  width: 100%;
+  height: 58%;
+  margin-bottom: 24px;
+}
+
+.medium--Name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #313037;
+  margin: 0;
+  margin-bottom: 24px;
+  text-align: left;
+  margin-top: 8px;
+}
+
+.medium--Name:hover {
+  cursor: pointer;
+  color: #2231aa;
+}
+
+.small--Card {
+  width: 352px;
+  padding-bottom: 15px;
+}
+
+.small--Content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.small--Img {
+  width: 27%;
+  height: 85%;
+  margin: 0 0 21px 34px;
+}
+
+.small--Name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #313037;
+  text-align: left;
+}
+
+.small--Name:hover {
+  cursor: pointer;
+  color: #2231aa;
+}
+/*# sourceMappingURL=Card.css.map */
