@@ -1,0 +1,51 @@
+.likeBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  cursor: pointer;
+  padding-bottom: 15px;
+}
+
+.likeBar--div--left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 50%;
+}
+
+.likeBar--div--right {
+  margin-right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  width: 50%;
+}
+
+.likeBar-Like {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.LikeBar_color path {
+  fill: crimson;
+}
+
+.DisLikeBar_color path {
+  fill: #0400ff;
+}
+
+.likeBar-count {
+  margin: 0px 10px;
+}
+/*# sourceMappingURL=LikeBar.css.map */

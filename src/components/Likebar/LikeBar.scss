@@ -1,0 +1,33 @@
+.likeBar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  cursor: pointer;
+  padding-bottom: 15px;
+}
+
+.likeBar--div--left {
+  display: flex;
+  align-items: flex-start;
+  width: 50%;
+}
+.likeBar--div--right {
+  margin-right: 5px;
+  display: flex;
+  justify-content: end;
+  width: 50%;
+}
+.likeBar-Like {
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+.LikeBar_color path {
+  fill: crimson;
+}
+.DisLikeBar_color path {
+  fill: rgb(4, 0, 255);
+}
+
+.likeBar-count {
+  margin: 0px 10px;
+}

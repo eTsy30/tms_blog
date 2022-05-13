@@ -10,6 +10,7 @@ function App() {
       {/* <Header></Header>
       <Footer></Footer> */}
       <GeneralPage></GeneralPage>
+
     </div>
   );
 }
