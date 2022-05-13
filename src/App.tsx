@@ -1,13 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-import { LikeBar } from './components/Likebar/LikeBar';
-
+import {Header} from './components/Header'
+import {Footer} from './components/Footer'
+import { GeneralPage } from './components/GeneralPage/GeneralPage';
 function App() {
   return (
     <div className="App">
-    <LikeBar></LikeBar>
+      {/* <Header></Header>
+      <Footer></Footer> */}
+      <GeneralPage></GeneralPage>
 
     </div>
   );
