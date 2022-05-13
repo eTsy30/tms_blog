@@ -1,0 +1,1 @@
+import { LikeBar } from './LikeBar'

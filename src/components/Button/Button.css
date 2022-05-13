@@ -1,0 +1,146 @@
+/**** Colors *****/
+/**** Fonts *****/
+/**** Indents *****/
+.button {
+  font-family: InterSemiBold, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 2px;
+  background: #2231aa;
+  color: #ffffff;
+  border: 1px solid transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buttonImg {
+  margin-right: 14px;
+}
+
+.primary:hover {
+  background: #5360cd;
+}
+
+.primary:disabled {
+  background: #e8e8e8;
+  color: #8d8e97;
+}
+
+.secondary:hover {
+  background: #dadada;
+}
+
+.secondary {
+  background: #e8e8e8;
+  color: #313037;
+}
+
+.secondary:disabled {
+  color: #8d8e97;
+}
+
+.secondary2:hover {
+  border: 1px solid #dadada;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.secondary2 {
+  color: #fd3419;
+  background: none;
+  border: none;
+}
+
+.secondary2:disabled {
+  background: none;
+  border: none;
+  color: #8d8e97;
+}
+
+.buttonWithIcon:hover > .buttonImg path {
+  fill: #ffffff;
+}
+
+.buttonWithIcon:hover {
+  background: #5360cd;
+  color: #ffffff;
+}
+
+.buttonWithIcon {
+  color: #313037;
+  background: #e8e8e8;
+}
+
+.buttonWithIcon:disabled {
+  background: #e8e8e8;
+  color: #8d8e97;
+}
+
+.buttonWithIcon:disabled > .buttonImg path {
+  fill: #8d8e97;
+}
+
+.like:hover > .buttonImg path {
+  fill: #ffffff;
+}
+
+.like:hover {
+  background: #5360cd;
+  color: #ffffff;
+}
+
+.like {
+  background: #e8e8e8;
+}
+
+.like > .buttonImg path {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.like:disabled > .buttonImg path {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  fill: #8d8e97;
+}
+
+.like:disabled {
+  background: #e8e8e8;
+  color: #8d8e97;
+}
+
+.dislike:hover > .buttonImg path {
+  fill: #ffffff;
+}
+
+.dislike:hover {
+  background: #fd3419;
+}
+
+.dislike {
+  background: #e8e8e8;
+  color: #313037;
+}
+
+.dislike:disabled {
+  background: #e8e8e8;
+  color: #8d8e97;
+}
+
+.dislike:disabled > .buttonImg path {
+  fill: #8d8e97;
+}
+/*# sourceMappingURL=Button.css.map */

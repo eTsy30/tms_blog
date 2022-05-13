@@ -1,0 +1,51 @@
+/**** Colors *****/
+/**** Fonts *****/
+/**** Indents *****/
+.textArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  width: 500px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.textArea--label {
+  font-family: InterSemiBold, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #313037;
+}
+
+.textArea--textArea {
+  min-width: 200px;
+  min-height: 100px;
+  font-family: InterSemiBold, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  height: 102px;
+  color: #313037;
+}
+
+.textArea--textArea:focus {
+  background: #ffffff;
+  border: 2px solid #dadada;
+}
+
+.textArea--textArea:active {
+  color: #313037;
+}
+
+.itextArea--textArea:disabled {
+  background: #e8e8e8;
+  border-radius: 2px;
+  color: #8d8e97;
+}
+/*# sourceMappingURL=TextArea.css.map */
