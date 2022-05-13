@@ -1,0 +1,178 @@
+/**** Colors *****/
+/**** Fonts *****/
+/**** Indents *****/
+.menuBurger {
+  position: fixed;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  top: 84px;
+}
+
+.menuBurger.active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.menuBurger--blur {
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+
+.menuBurger--content {
+  width: 236px;
+  height: 92vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menuBurger--header {
+  text-align: center;
+  width: 236px;
+  border: 1px solid #000;
+  height: 83px;
+}
+
+.menuBurger--User {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #2231aa;
+  border-top: 1px solid #5360cd;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 83px;
+  color: white;
+}
+
+.menuBurger--NameUser {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.menuBurger--Logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #5360cd;
+  width: 48px;
+  height: 48px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 20px;
+  border-radius: 2px;
+}
+
+.menuBurger--Logo--Text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 34px;
+  color: #ffffff;
+}
+
+.menuBurger--textStyle {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-decoration: none;
+  color: #313037;
+}
+
+.menuBurger--textStyle:hover {
+  color: #2231aa;
+}
+
+.menuBurger--buttom-theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.menuBurger--footer {
+  position: absolute;
+  bottom: 0;
+}
+
+.menuBurger--image {
+  width: 118px;
+  height: 80px;
+  border: none;
+  background: #ffffff;
+}
+
+.menuBurger--image--Moon:disabled > .buttonImg path {
+  fill: #8d8e97;
+}
+
+.menuBurger--image--Sun:disabled > .buttonImg path {
+  fill: #8d8e97;
+}
+
+.menuBurger--image:disabled {
+  background: #ffffff;
+}
+
+.button-Login {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  width: 236px;
+  height: 83px;
+  background: #e8e8e8;
+  border: none;
+}
+
+li {
+  width: 236px;
+  border-bottom: 1px solid #e8e8e8;
+  height: 83px;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+ul {
+  width: 236px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+/*# sourceMappingURL=MenuBurger.css.map */
