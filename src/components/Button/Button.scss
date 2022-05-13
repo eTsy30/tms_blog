@@ -1,0 +1,120 @@
+@import "../../style/variables";
+
+.button {
+  font-family: InterSemiBold, sans-serif;
+  font-size: $font-size-headline-3-desktop;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 2px;
+  background: $color-primary;
+  color: $color-white;
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonImg {
+  margin-right: 14px;
+}
+
+.primary:hover {
+  background: $color-primary2;
+}
+
+.primary:disabled {
+  background: $color-light;
+  color: $color-contextual-error;
+}
+// /*=======================================*/
+.secondary:hover {
+  background: $color-background-primary2;
+}
+.secondary {
+  background: $color-light;
+  color: $color-secondary;
+}
+.secondary:disabled {
+  color: $color-contextual-error;
+}
+// /*=======================================*/
+.secondary2:hover {
+  border: 1px solid $color-background-primary2;
+  box-sizing: border-box;
+}
+
+.secondary2 {
+  color: #fd3419;
+  background: none;
+  border: none;
+}
+.secondary2:disabled {
+  background: none;
+  border: none;
+  color: $color-contextual-error;
+}
+// /*=======================================*/
+.buttonWithIcon:hover > .buttonImg path {
+  fill: #ffffff;
+}
+.buttonWithIcon:hover {
+  background: $color-primary2;
+  color: $color-white;
+}
+.buttonWithIcon {
+  color: $color-secondary;
+  background: $color-light;
+}
+.buttonWithIcon:disabled {
+  background: $color-light;
+  color: $color-contextual-error;
+}
+.buttonWithIcon:disabled > .buttonImg path {
+  fill: $color-contextual-error;
+}
+// /*=======================================*/
+.like:hover > .buttonImg path {
+  fill: $color-white;
+}
+.like:hover {
+  background: $color-primary2;
+  color: $color-white;
+}
+
+.like {
+  background: $color-light;
+}
+.like > .buttonImg path {
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+
+.like:disabled > .buttonImg path {
+  transform: rotate(180deg);
+  transform-origin: center center;
+  fill: $color-contextual-error;
+}
+.like:disabled {
+  background: $color-light;
+  color: $color-contextual-error;
+}
+
+// /*=======================================*/
+.dislike:hover > .buttonImg path {
+  fill: $color-white;
+}
+.dislike:hover {
+  background: #fd3419;
+}
+.dislike {
+  background: $color-light;
+  color: $color-secondary;
+}
+.dislike:disabled {
+  background: $color-light;
+
+  color: $color-background-primary;
+}
+.dislike:disabled > .buttonImg path {
+  fill: $color-background-primary;
+}
