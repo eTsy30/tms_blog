@@ -1,7 +1,7 @@
 import React from "react";
 import "./MenuBurger.css";
 import { Button } from "../../Button";
-
+import { Link } from "react-router-dom";
 type MenuBurgerProps = {
   items: any;
   active: any;
@@ -28,9 +28,9 @@ export const MenuBurger = ({
           <ul>
             {items.map((items: any) => (
               <li>
-                <a className="menuBurger--textStyle" href={items.href}>
+                <Link className="menuBurger--textStyle" to={items.href}>
                   {items.value}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -47,7 +47,9 @@ export const MenuBurger = ({
               />
             </div>
             <div className="menuBurger--button-Login">
-              <Button className="button-Login" text="Log Out" />
+              <Link to="/singin">
+                <Button className="button-Login" text="Sing In" />
+              </Link>
             </div>
           </div>
         </div>

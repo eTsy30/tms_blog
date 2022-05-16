@@ -1,0 +1,126 @@
+.Global-Wraper-SingIn {
+  min-height: 1080px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.SingIn-Wrapper {
+  display: grid;
+  grid-template-columns: 400px 1fr 400px;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.SingIn-left {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.SingIn-centre {
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+
+  grid-area: 1 / 2 / 2 / 3;
+}
+.SingIn-right {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.SingUp-MainBlok {
+  height: 684px;
+}
+.SingIn-link-Back {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  margin-top: 72px;
+  color: #313037;
+}
+.SingIn-Main-Label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 80px;
+  display: flex;
+  margin-top: 32px;
+  align-items: center;
+  color: #313037;
+}
+.SingIn-Input-Wrapper {
+  display: grid;
+  justify-content: center;
+  align-content: space-evenly;
+  width: 624px;
+  margin: 0 auto;
+  border: 1px solid #dadada;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.InputHeightIn {
+  height: 472px;
+}
+
+.SingIn-Button-SingIn {
+  margin: 0 auto;
+  width: 544px;
+  height: 56px;
+  left: 0px;
+  top: 0px;
+  background: #2231aa;
+  border-radius: 2px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.SingIn-Input-link_fogot {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #313037;
+  display: flex;
+  margin: 15px 0px;
+}
+.SingIn-Down-Span {
+  margin: 10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8d8e97;
+  order: 1;
+  flex-grow: 0;
+  margin: 24px 0px;
+}
+.SingIn-Footer-Wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-shrink: 0;
+  margin: 33px;
+}
+.SingIn-Footer-Left {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8e97;
+}
+.SingIn-Footer-right {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8e97;
+}
