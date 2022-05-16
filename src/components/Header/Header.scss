@@ -1,0 +1,92 @@
+@import "../../style/variables";
+.header {
+  height: 84px;
+  width: 100%;
+  background: $color-primary;
+  display: grid;
+  grid-template-columns: 84px 1fr 84px 230px;
+  grid-template-rows: 1fr;
+  &-Left-Menu {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid $color-primary2;
+    cursor: pointer;
+  }
+  &-Search {
+    grid-area: 1 / 2 / 2 / 3;
+    border-right: 1px solid $color-primary2;
+  }
+  &-Button-Search {
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid $color-primary2;
+    cursor: pointer;
+  }
+  &-User {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    grid-area: 1 / 4 / 2 / 5;
+  }
+  &-Logo {
+    display: flex;
+    background: #5360cd;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    border-radius: 2px;
+  }
+  &-Search--input {
+    padding: 0px 32px;
+    width: 100%;
+    height: 100%;
+    background: #5360cd;
+    font-family: Inter;
+    font-size: $font-size-subline-1;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $color-white;
+    border: none;
+  }
+}
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+
+  height: 16px;
+  width: 16px;
+  background: url("../image/Icon-Cancel1.svg");
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  /* Will place small red box on the right of input (positioning carries over) */
+}
+
+.textStyle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: $font-size-subline-1;
+  line-height: 34px;
+  color: $color-white;
+}
+
+.header--button--berger {
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}

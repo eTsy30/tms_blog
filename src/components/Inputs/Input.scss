@@ -1,0 +1,40 @@
+@import "../../style/variables";
+.input {
+  font-family: InterSemiBold, sans-serif;
+  font-size: $font-size-subline-1;
+  font-weight: 600;
+  line-height: 20px;
+  height: 102px;
+  color: $color-secondary;
+}
+
+.input--label {
+  display: grid;
+  justify-content: start;
+  text-align: start;
+}
+.input--default {
+  height: 56px;
+  width: 544px;
+  border-radius: 2px;
+  color: $color-background-primary;
+  border: none;
+}
+.input--default:focus {
+  background: $color-white;
+  border: 2px solid $color-background-primary2;
+}
+.input--default:active {
+  color: $color-secondary;
+}
+.input--default:disabled {
+  background: $color-light;
+  border-radius: 2px;
+  color: $color-contextual-error;
+}
+.errorInput {
+  border: 2px solid #fd3419;
+}
+.error {
+  color: #fd3419;
+}

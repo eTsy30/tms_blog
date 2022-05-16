@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-shrink: 0;
+  margin: 33px;
+}
+.footer_text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8e97;
+}

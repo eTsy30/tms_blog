@@ -1,0 +1,126 @@
+@import "../../../style/variables";
+.menuBurger {
+  position: fixed;
+  transform: translateX(-100%);
+  transition: 0.5s;
+  top: 84px;
+  &.active {
+    transform: translateX(0%);
+  }
+  &--blur {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+  }
+  &--content {
+    width: 236px;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &--header {
+    text-align: center;
+    width: 236px;
+    border: 1px solid #000;
+    height: 83px;
+  }
+  &--User {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: $color-primary;
+    border-top: 1px solid #5360cd;
+    align-items: center;
+    height: 83px;
+    color: white;
+  }
+  &--NameUser {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  &--Logo {
+    display: flex;
+    background: #5360cd;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    border-radius: 2px;
+  }
+  &--Logo--Text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: $font-size-subline-1;
+    line-height: 34px;
+    color: $color-white;
+  }
+  &--textStyle {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+    text-decoration: none;
+    color: #313037;
+  }
+  &--textStyle:hover {
+    color: $color-primary;
+  }
+
+  &--buttom-theme {
+    display: flex;
+    width: 100%;
+  }
+  &--footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
+.menuBurger--image {
+  width: 118px;
+  height: 80px;
+  border: none;
+  background: $color-white;
+}
+.menuBurger--image--Moon:disabled > .buttonImg path {
+  fill: $color-background-primary;
+}
+.menuBurger--image--Sun:disabled > .buttonImg path {
+  fill: $color-background-primary;
+}
+.menuBurger--image:disabled {
+  background: $color-white;
+}
+.button-Login {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  width: 236px;
+  height: 83px;
+  background: #e8e8e8;
+  border: none;
+}
+li {
+  width: 236px;
+  border-bottom: 1px solid #e8e8e8;
+  height: 83px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul {
+  width: 236px;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
