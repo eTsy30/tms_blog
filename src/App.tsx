@@ -4,6 +4,7 @@ import "./App.css";
 import { Tabs } from "./components/Tabs";
 import { useState } from "react";
 import { setTheme } from "./components/redux/theme";
+import { useAppDispatch, useAppSelector } from "./components/redux/hooks";
 
 const items = [
   { title: "All", content: "All content" },
@@ -11,11 +12,18 @@ const items = [
   { title: "Popular", content: " Popular content" },
 ];
 function App() {
-  const [theme, setTheme] = useState("dark");
+  // const [theme, setTheme] = useState("dark");
+  // const toggleTheme = () => {
+  //   const newTheme = theme === "dark" ? "light" : "dark";
+  //   setTheme(newTheme);
+  // first variant
+  const theme = useAppSelector((state) => state.theme.value);
+  const dispatch = useAppDispatch();
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
+    dispatch(setTheme(newTheme));
   };
+
   return (
     <div className={`App theme--${theme}`}>
       <Tabs items={items} onClick={toggleTheme} />
