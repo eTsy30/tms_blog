@@ -1,11 +1,13 @@
 @import "../../style/_variables.scss";
 .Tabs__wrapper {
   display: flex;
-  border-bottom: 1px solid #dadada;
+  border: 1px solid #dadada;
   height: 56px;
   justify-content: start;
   align-items: end;
   margin-bottom: 64px;
+
+  background: green;
 }
 
 .Tab__block {
@@ -22,6 +24,8 @@
   border: none;
   background: none;
   cursor: pointer;
+  border: 1px solid #000;
+  background: red;
 }
 .Tab__block:hover {
   color: $color-primary;
@@ -32,4 +36,5 @@
 
 .Tab__block__active {
   border-bottom: 1px solid #313037;
+  background: yellow;
 }

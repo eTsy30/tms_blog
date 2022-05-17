@@ -4,17 +4,26 @@ import React, { useState } from "react";
 import "./Tabs.css";
 import { TabContent } from "./TabContent/TabContent";
 
+import { useDispatch, useSelector } from "react-redux";
+
 export const Tabs = ({ items }: any) => {
   const [active, setActive] = useState(0);
-  const openTab = (e: any) => setActive(+e.target.dataset.index);
+  // const openTab = (e: any) => setActive(+e.target.dataset.index);
+  const dispatch = useDispatch();
+  const countItems = useSelector((store: any) => store.countItems);
+  console.log(countItems);
 
+  const openTab = (e: any) => {
+    dispatch({ type: "item", payload: +e.target.dataset.index });
+    console.log(+e.target.dataset.index);
+  };
   return (
     <div>
       <div className="Tabs__wrapper">
         {items.map((el: any, index: number) => (
           <button
             className={`Tab__block  ${
-              index === active ? "Tab__block__active" : ""
+              index === countItems ? "Tab__block__active" : ""
             } `}
             onClick={openTab}
             data-index={index}
@@ -24,7 +33,9 @@ export const Tabs = ({ items }: any) => {
         ))}
       </div>
 
-      {items[Number(active)] && <TabContent {...items[Number(active)]} />}
+      {items[Number(countItems)] && (
+        <TabContent {...items[Number(countItems)]} />
+      )}
     </div>
   );
 };
