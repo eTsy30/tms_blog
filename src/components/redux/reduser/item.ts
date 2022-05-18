@@ -1,7 +1,9 @@
+import { items } from './../actions/action';
+
 const defaultState = {
     countItems: 0
 }
-// const { type, payload } = action()
+
 export const reduser = (state = defaultState, action: any) => {//3
     switch (action.type) {
         case 'item':

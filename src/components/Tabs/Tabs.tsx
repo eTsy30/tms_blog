@@ -7,16 +7,13 @@ import { TabContent } from "./TabContent/TabContent";
 import { useDispatch, useSelector } from "react-redux";
 
 export const Tabs = ({ items }: any) => {
-  const [active, setActive] = useState(0);
-  // const openTab = (e: any) => setActive(+e.target.dataset.index);
   const dispatch = useDispatch();
   const countItems = useSelector((store: any) => store.countItems);
-  console.log(countItems);
 
   const openTab = (e: any) => {
     dispatch({ type: "item", payload: +e.target.dataset.index });
-    console.log(+e.target.dataset.index);
   };
+
   return (
     <div>
       <div className="Tabs__wrapper">
