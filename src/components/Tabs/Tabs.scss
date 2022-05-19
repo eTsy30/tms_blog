@@ -1,0 +1,35 @@
+@import "../../style/_variables.scss";
+.Tabs__wrapper {
+  display: flex;
+  border-bottom: 1px solid #dadada;
+  height: 56px;
+  justify-content: start;
+  align-items: end;
+  margin-bottom: 64px;
+}
+
+.Tab__block {
+  font-family: $font-family-headline;
+  font-size: $font-size-subline-1;
+  font-weight: 600;
+  line-height: $font-size-headline-2-mobile;
+  color: $color-secondary;
+  text-decoration: none;
+  min-width: 100px;
+  margin-right: 120px;
+  height: 34px;
+  text-align: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.Tab__block:hover {
+  color: $color-primary;
+}
+.Tab__block:disabled {
+  color: $color-background-primary;
+}
+
+.Tab__block__active {
+  border-bottom: 1px solid #313037;
+}
