@@ -26,7 +26,9 @@ export const Card = ({
           <h1 className={`${type}--Name`}>{title}</h1>
           {type === "large" && <p className={`${type}--Text`}>{content}</p>}
         </div>
-        <img src={image} alt="no" className={`${type}--Img`} />
+        <div className="Card--wrapper--image">
+          <img src={image} alt="no" className={`${type}--Img`} />
+        </div>
       </div>
       <LikeBar />
     </div>
