@@ -1,8 +1,9 @@
 .footer {
   display: flex;
   justify-content: space-around;
-  flex-shrink: 0;
-  margin: 33px;
+  border-top: 1px solid #dadada;
+  margin-top: 150px;
+  margin-bottom: 15px;
 }
 .footer_text {
   font-family: "Inter";

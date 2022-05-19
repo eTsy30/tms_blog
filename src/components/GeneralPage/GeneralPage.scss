@@ -1,5 +1,12 @@
 .generalPage-centre {
-  min-height: 80vh;
+  height: 90%;
   width: 60%;
-  margin: 0px auto;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.generalPage {
+  height: 100vh;
+  background: #e5e5e5;
 }

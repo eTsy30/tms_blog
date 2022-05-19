@@ -4,9 +4,9 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  margin: 33px;
+  border-top: 1px solid #dadada;
+  margin-top: 150px;
+  margin-bottom: 15px;
 }
 
 .footer_text {
