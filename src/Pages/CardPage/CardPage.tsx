@@ -4,7 +4,7 @@ import { Card } from "../../components/Cards";
 
 import "./CardPage.css";
 
-import { log } from "console";
+import { Tabs } from "../../components/Tabs";
 interface ICard {
   id: number;
   label: string;
@@ -12,7 +12,11 @@ interface ICard {
   image: string;
   date: string;
 }
-
+const items = [
+  { title: "All", content: "All content" },
+  { title: "My favorites", content: " My favorites content" },
+  { title: "Popular", content: " Popular content" },
+];
 export const CardPage = (props: any) => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -23,10 +27,9 @@ export const CardPage = (props: any) => {
 
   return (
     <GeneralPage label="Blog">
-      {" "}
+      <p className="Blog-Main-Label">Blog</p>
       <div>
-        TABS
-        {/* <Tabs /> */}
+        <Tabs items={items} onClick={""} />
         <div className="parent">
           {posts.map((element: ICard, index) => (
             <div key={index.toString()} className={`div${index}`}>
