@@ -7,29 +7,33 @@ import reportWebVitals from "./reportWebVitals";
 import { SingUp } from "./Pages/SingUp/SiugUp";
 import { SingIn } from "./Pages/SingIn/SingIn";
 import { ResetPassword } from "./Pages/ResetPassword/ResetPassword";
+import { Provider } from "react-redux";
+import { store } from "./Redux/store";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/singin" element={<SingIn />} />
-        <Route path="/singup" element={<SingUp />} />
-        <Route path="/fogotPassword" element={<ResetPassword />} />
+  <Provider store={store}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/singin" element={<SingIn />} />
+          <Route path="/singup" element={<SingUp />} />
+          <Route path="/fogotPassword" element={<ResetPassword />} />
 
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: "1rem" }}>
-              <p>404 Not Found</p>
-            </main>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>404 Not Found</p>
+              </main>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
