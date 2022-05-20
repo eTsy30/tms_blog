@@ -9,15 +9,9 @@ type CardProps = {
   image: string;
   type: "large" | "medium" | "small";
   className?: string;
+  id: number;
 };
-export const Card = ({
-  date,
-  title,
-  content,
-  image,
-  type,
-  className,
-}: CardProps) => {
+export const Card = ({ date, title, content, image, type, id }: CardProps) => {
   return (
     <div className={`${type}--Card Card`}>
       <div className={`${type}--Content`}>

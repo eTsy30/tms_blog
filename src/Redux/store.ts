@@ -1,14 +1,26 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
 import tabReducer from './tabs/TabActionReducer'
+import postReducer from './posts/PostsActionReducer'
 
-
-export const store = configureStore({
-
-    reducer: tabReducer,
-    // reducer:post,
-    // reducer:like,
+const rootReduser = combineReducers({
+    tabReducer, postReducer
 })
+export const store = configureStore({
+    reducer: rootReduser,
+})
+
+
+
+
+//{ tab: tabReducer, }
+//{
+//     tab: tabReducer,
+//     // postReducer: postReducer
+// },
+
+// reducer:like,
+
 export type RootState = ReturnType<typeof store.getState>
 
 export type AppDispatch = typeof store.dispatch

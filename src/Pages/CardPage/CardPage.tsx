@@ -6,11 +6,11 @@ import "./CardPage.css";
 
 import { Tabs } from "../../components/Tabs";
 import { AllContent } from "../../components/AllContent/AllContent";
-import { cardsServer } from "../../ServerTemp/server";
+import { postsData } from "../../ServerTemp/server";
 
 export const CardPage = (props: any) => {
   const items = [
-    { title: "All", content: <AllContent cards={cardsServer} /> }, //
+    { title: "All", content: <AllContent cards={postsData} /> }, //
     { title: "My favorites", content: " My favorites content" },
     { title: "Popular", content: " Popular content" },
   ];

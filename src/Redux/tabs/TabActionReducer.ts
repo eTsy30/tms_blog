@@ -1,7 +1,7 @@
 import { AnyAction, createSlice } from "@reduxjs/toolkit";
 import { AnyAsyncThunk } from "@reduxjs/toolkit/dist/matchers";
 const tabReducer = createSlice({
-    name: 'tabReducer',
+    name: 'tab',
     initialState: {
         indexTab: 0,
 

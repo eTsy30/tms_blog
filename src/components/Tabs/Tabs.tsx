@@ -5,7 +5,7 @@ import { switchTabs } from "../../Redux/tabs/TabActionReducer";
 
 export const Tabs = ({ items }: any) => {
   const dispatch = useDispatch();
-  const countItems = useSelector((store: any) => store.indexTab);
+  const countItems = useSelector((store: any) => store.tabReducer.indexTab);
   console.log(countItems);
 
   const openTab = (e: any) => {
