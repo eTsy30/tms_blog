@@ -7,11 +7,12 @@ import "./CardPage.css";
 import { Tabs } from "../../components/Tabs";
 import { AllContent } from "../../components/AllContent/AllContent";
 import { postsData } from "../../ServerTemp/server";
+import { FavoritContent } from "../../components/FavoritContent/FavoritContent";
 
 export const CardPage = (props: any) => {
   const items = [
     { title: "All", content: <AllContent cards={postsData} /> }, //
-    { title: "My favorites", content: " My favorites content" },
+    { title: "My favorites", content: <FavoritContent /> },
     { title: "Popular", content: " Popular content" },
   ];
   return (

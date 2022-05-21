@@ -6,9 +6,9 @@ interface ICard {
   lesson_num: number;
   title: string;
   author: number;
-
-  // label: string;
-  // content: string;
+  like: boolean;
+  dislike: boolean;
+  favorit: boolean;
 }
 
 export const postsData: ICard[] = [
@@ -21,6 +21,9 @@ export const postsData: ICard[] = [
     lesson_num: 123,
     title: "фывфывфыв",
     author: 7,
+    like: false,
+    dislike: false,
+    favorit: false,
   },
   {
     id: 2,
@@ -31,6 +34,9 @@ export const postsData: ICard[] = [
     lesson_num: 48,
     title: "Title",
     author: 7,
+    like: false,
+    dislike: false,
+    favorit: false,
   },
   {
     id: 3,
@@ -40,6 +46,9 @@ export const postsData: ICard[] = [
     lesson_num: 23,
     title: "B-52!",
     author: 97,
+    like: false,
+    dislike: false,
+    favorit: false,
   },
   {
     id: 4,
@@ -50,6 +59,9 @@ export const postsData: ICard[] = [
     lesson_num: 22,
     title: "b-52",
     author: 97,
+    like: false,
+    dislike: false,
+    favorit: false,
   },
   {
     id: 5,
@@ -60,6 +72,9 @@ export const postsData: ICard[] = [
     lesson_num: 59,
     title: "b-52",
     author: 97,
+    like: false,
+    dislike: false,
+    favorit: false,
   },
   {
     id: 6,
@@ -70,6 +85,9 @@ export const postsData: ICard[] = [
     lesson_num: 44,
     title: "b-52",
     author: 99,
+    like: false,
+    dislike: false,
+    favorit: false,
   },
   {
     id: 7,
@@ -80,6 +98,9 @@ export const postsData: ICard[] = [
     lesson_num: 441,
     title: "b-52!!",
     author: 99,
+    like: false,
+    dislike: false,
+    favorit: false,
   },
   {
     id: 8,
@@ -90,6 +111,9 @@ export const postsData: ICard[] = [
     lesson_num: 100,
     title: "b-52!!",
     author: 122,
+    like: false,
+    dislike: false,
+    favorit: false,
   },
   {
     id: 9,
@@ -99,6 +123,9 @@ export const postsData: ICard[] = [
     lesson_num: 49,
     title: "BLABLABLA",
     author: 123,
+    like: false,
+    dislike: false,
+    favorit: false,
   },
   {
     id: 10,
@@ -108,6 +135,9 @@ export const postsData: ICard[] = [
     lesson_num: 49,
     title: "Cat Niira",
     author: 123,
+    like: false,
+    dislike: false,
+    favorit: false,
   },
 ];
 
