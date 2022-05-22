@@ -12,7 +12,7 @@ import { FavoritContent } from "../../components/FavoritContent/FavoritContent";
 export const CardPage = (props: any) => {
   const items = [
     { title: "All", content: <AllContent cards={postsData} /> }, //
-    { title: "My favorites", content: <FavoritContent /> },
+    { title: "My favorites", content: <FavoritContent cards={postsData} /> },
     { title: "Popular", content: " Popular content" },
   ];
   return (

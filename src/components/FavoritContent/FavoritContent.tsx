@@ -1,24 +1,32 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { favoritPost } from "../../Redux/posts/PostsActionReducer";
 import { Card } from "../Cards";
 import "./favoritPosts.css";
-export const FavoritContent = () => {
-  const posts = useSelector((state: any) => state.postReducer.content);
-
+import { fetchPosts } from "../../Redux/posts/PostsActionReducer";
+import { postsData } from "../../ServerTemp/server";
+export const FavoritContent = (props: any) => {
+  const postsFilter = useSelector((state: any) => state.postReducer.content);
   const Loader = ({ loading, children }: any) => {
     return loading ? <h1>Loading...</h1> : children;
   };
-
-  const favoritPosts = posts.filter((el: any) => el.favorit === true);
+  const dispatch = useDispatch();
+  // const favoritPosts = posts.filter((el: any) => el.favorit === true);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     dispatch(fetchPosts(postsData));
+  //   }, 5000);
+  // }, []);
   return (
     <div className="favoritPosts">
-      <Loader loading={!posts}>
-        <Renderfavorit posts={posts} />
+      <Loader loading={!postsFilter}>
+        <Renderfavorit posts={postsFilter} />
       </Loader>
     </div>
   );
 };
 const Renderfavorit = ({ posts }: any) => {
+  console.log("***************************");
   return posts
     .filter((el: any) => el.favorit === true)
     .map((element: any, index: number) => (

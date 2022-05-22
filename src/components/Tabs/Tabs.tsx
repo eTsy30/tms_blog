@@ -2,10 +2,12 @@ import "./Tabs.css";
 import { TabContent } from "./TabContent/TabContent";
 import { useDispatch, useSelector } from "react-redux";
 import { switchTabs } from "../../Redux/tabs/TabActionReducer";
+import { log } from "console";
 
 export const Tabs = ({ items }: any) => {
   const dispatch = useDispatch();
   const countItems = useSelector((store: any) => store.tabReducer.indexTab);
+
   const openTab = (e: any) => {
     dispatch(switchTabs(+e.target.dataset.index));
   };
