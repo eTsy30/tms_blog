@@ -1,3 +1,4 @@
+
 import "./App.css";
 
 import { CardPage } from "./Pages/CardPage/CardPage";
@@ -8,7 +9,6 @@ function App() {
   return (
     <div className="App">
       <CardPage />
-      {/* <AllContent cards={postsData} /> */}
     </div>
   );
 }

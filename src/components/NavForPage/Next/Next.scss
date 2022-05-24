@@ -1,0 +1,44 @@
+.Next--block--text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #313037;
+  margin: 0px;
+}
+.Next--block--link {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  height: 1.6em; /* Fallback for non-webkit, line-height * 2 */
+  -webkit-line-clamp: 1; /* if you change this, make sure to change the fallback line-height and height */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8e97;
+}
+.Next--wrapper {
+  display: flex;
+  width: 293px;
+  height: 56px;
+
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+}
+.Next--block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.Next--arrow {
+  margin-left: 24px;
+}

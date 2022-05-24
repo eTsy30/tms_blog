@@ -1,0 +1,91 @@
+.ContentPage {
+  &--wrapper {
+    border-bottom: 1px solid #dadada;
+  }
+  &--Home {
+    margin-top: 72px;
+    &--a {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #313037;
+      text-decoration: none;
+    }
+    &--span {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #8d8e97;
+    }
+  }
+  &--Title {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 80px;
+    display: flex;
+    align-items: center;
+    color: #313037;
+    margin-bottom: 48px;
+  }
+  &--Image {
+    display: flex;
+    justify-content: center;
+  }
+  &--Image--img {
+    width: 992px;
+    height: 518px;
+    margin-bottom: 48px;
+  }
+  &--Content {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #313037;
+  }
+  &--Button--leftSide--like {
+    margin-right: 6px;
+    width: 88px;
+    height: 56px;
+    background: #e8e8e8;
+    border: none;
+  }
+  &--Button--leftSide--dislike {
+    width: 88px;
+    height: 56px;
+    background: #e8e8e8;
+    border: none;
+  }
+  &--Button {
+    display: flex;
+    margin-top: 48px;
+    padding-bottom: 72px;
+    justify-content: space-between;
+
+    &--rightSide--ButtomWithIcon {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 237px;
+      height: 56px;
+      background: #e8e8e8;
+      border: none;
+    }
+  }
+}
+.ContentPage--wrapper--navigation {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 72px;
+  padding-top: 72px;
+  border-bottom: 1px solid #dadada;
+  border-top: 1px solid #dadada;
+}
