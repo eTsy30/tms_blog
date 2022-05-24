@@ -23,7 +23,7 @@ export const ResetPassword = ({
         <p className="ResetPassword-Main-Label">Reset Password</p>
 
         <div className={`ResetPassword-Input-Wrapper ${className}`}>
-          <Input placeholder="Your email" type="email" title="Email" />
+          {/* <Input placeholder="Your email" type="email" title="Email" /> */}
           <Link to="/" className="SingIn-link-Back">
             <Button text="Go to home" className="ResetPassword-Button button" />
           </Link>

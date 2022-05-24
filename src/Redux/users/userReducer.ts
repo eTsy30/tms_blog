@@ -2,12 +2,14 @@ import { AnyAction, createSlice } from "@reduxjs/toolkit";
 import { AnyAsyncThunk } from "@reduxjs/toolkit/dist/matchers";
 
 const initialState = {
-    name: null
+    user: null,
+    isLoading: 'idle',
+    error: null
 }
 type SingUpPayload = {
     name: string,
     email: string,
-    password: string
+    password: any
 }
 const userReducer = createSlice({
     name: 'user',
@@ -16,10 +18,24 @@ const userReducer = createSlice({
 
     reducers: {
         singUp(state, action: any) {
-            state.name = action.payload
+            if (state.isLoading === 'idle') {
+                state.isLoading = 'pending'
+            }
+
+        },
+        singUpSuccess(state, action: any) {
+            if (state.isLoading === 'pending') {
+                state.isLoading = 'idle'
+                state.user = action.payload
+            }
+
+        },
+        singUpFailure(state, action: any) {
+            state.isLoading = 'idle'
+            state.user = action.payload
 
         }
     }
 })
 export default userReducer.reducer
-export const { singUp } = userReducer.actions
+export const { singUp, singUpFailure, singUpSuccess } = userReducer.actions

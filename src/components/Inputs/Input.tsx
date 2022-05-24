@@ -3,12 +3,13 @@ import validator from "validator/index";
 import "./Input.css";
 
 type InputProps = {
-  handleSubmit?: () => void;
   placeholder: string;
   className?: string;
   disabled?: boolean;
   title: string;
   type: "text" | "email" | "password";
+  value?: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void | any;
 };
 export const Input = ({
   placeholder,
@@ -16,11 +17,13 @@ export const Input = ({
   disabled,
   title,
   type,
+  onChange,
+  value,
 }: InputProps) => {
-  const [inputValue, setInputValue] = useState("");
   const [eror, setEror] = useState("");
+
   const handleChange = (event: any) => {
-    setInputValue(event.target.value);
+    onChange(event);
 
     if (type === "email") {
       if (!validator.isEmail(event.target.value)) {
@@ -46,12 +49,9 @@ export const Input = ({
       }
     }
   };
-  const handleSubmit = (event: any) => {
-    alert("Отправленное имя: " + inputValue);
-    event.preventDefault();
-  };
+
   return (
-    <div className="input" onSubmit={handleSubmit}>
+    <div className="input">
       <label className="input--label">
         <span>{title}</span>
         <input
@@ -59,7 +59,7 @@ export const Input = ({
           disabled={disabled}
           className={`input--default ${eror && "errorInput"} ${className}`}
           placeholder={placeholder}
-          value={inputValue}
+          value={value}
           onChange={handleChange}
         />
         {eror && <span className="error">{eror}</span>}
