@@ -1,0 +1,59 @@
+@import "../../style/variables";
+.favoritPosts {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  //   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 32px;
+  grid-row-gap: 40px;
+
+  width: 100%;
+}
+// .Blog-Main-Label {
+//   font-family: "Inter";
+//   font-style: normal;
+//   font-weight: 700;
+//   font-size: 56px;
+//   line-height: 80px;
+//   display: flex;
+//   align-items: center;
+//   color: #313037;
+
+// }
+
+.divo0 {
+  grid-area: 1 / 1 / 3 / 2;
+}
+.divo1 {
+  grid-area: 1 / 2 / 3 / 3;
+}
+.divo2 {
+  grid-area: 3 / 1 / 5 / 2;
+}
+.divo3 {
+  grid-area: 3 / 2 / 5 / 3;
+}
+.divo4 {
+  grid-area: 5 / 1 / 7 / 2;
+}
+.divo5 {
+  grid-area: 5 / 2 / 7 / 3;
+}
+.divo6 {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.divo7 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.divo8 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+.divo9 {
+  grid-area: 4 / 3 / 5 / 4;
+}
+.divo10 {
+  grid-area: 5 / 3 / 6 / 4;
+}
+.divo11 {
+  grid-area: 6 / 3 / 7 / 4;
+}

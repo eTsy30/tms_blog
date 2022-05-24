@@ -2,40 +2,48 @@ import React, { useState } from "react";
 import { ReactComponent as Like } from "../image/like.svg";
 import { ReactComponent as SvgBwi } from "../image/buttonWithIcon.svg";
 import "./LikeBar.css";
+import { useDispatch, useSelector } from "react-redux";
+import { log } from "console";
+import { postsData } from "../../ServerTemp/server";
+import {
+  likePost,
+  favoritPost,
+  dislikePost,
+} from "../../Redux/posts/PostsActionReducer";
 
-export const LikeBar = () => {
-  const [like, setLike] = useState(0);
-  const [disLike, setDisLike] = useState(0);
-  const [likeActiv, setLikeActiv] = useState(false);
-  const [disLikeActiv, setDisLikeActiv] = useState(false);
+type LikeBarProps = {
+  id: number;
+  like: boolean;
+  dislike: boolean;
+  favorit: boolean;
+};
 
+export const LikeBar = ({ id, like, dislike, favorit }: LikeBarProps) => {
+  const dispatch = useDispatch();
+  ////////////////////
   const addToFavorite = () => {
-    if (likeActiv) {
-      setLikeActiv(false);
-      setLike(like - 1);
+    if (like) {
+      dispatch(likePost(id));
     } else {
-      setLikeActiv(true);
-      setLike(like + 1);
-      if (disLikeActiv) {
-        setDisLikeActiv(false);
-        setLike(like + 1);
-        setDisLike(disLike - 1);
+      dispatch(likePost(id));
+      if (dislike) {
+        dispatch(dislikePost(id));
       }
     }
   };
+
   const removeFromFavorite = () => {
-    if (disLikeActiv) {
-      setDisLikeActiv(false);
-      setDisLike(disLike - 1);
+    if (dislike) {
+      dispatch(dislikePost(id));
     } else {
-      setDisLikeActiv(true);
-      setDisLike(disLike + 1);
-      if (likeActiv) {
-        setLikeActiv(false);
-        setDisLike(disLike + 1);
-        setLike(like - 1);
+      dispatch(dislikePost(id));
+      if (like) {
+        dispatch(likePost(id));
       }
     }
+  };
+  const favorite = () => {
+    dispatch(favoritPost(id));
   };
 
   return (
@@ -43,18 +51,20 @@ export const LikeBar = () => {
       <div className="likeBar--div--left">
         <Like
           onClick={addToFavorite}
-          className={`likeBar-Like ${likeActiv && "LikeBar_color"}`}
+          className={`likeBar-Like ${like && "DisLikeBar_color"}`}
         />
         <span className="likeBar-count">{like}</span>
+
         <Like
-          className={`${disLikeActiv && "DisLikeBar_color"}`}
+          className={` ${dislike && "LikeBar_color"}`}
           onClick={removeFromFavorite}
         />
-        <span className="likeBar-count">{disLike}</span>
+        <span className="likeBar-count">{like}</span>
       </div>
 
       <div className="likeBar--div--right">
-        <SvgBwi />
+        <SvgBwi className={` ${favorit && "LikeBar1"}`} onClick={favorite} />
+        {favorit}
         <span className="likeBar-count"></span>
         <a>...</a>
       </div>
