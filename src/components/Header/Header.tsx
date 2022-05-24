@@ -5,9 +5,8 @@ import { ReactComponent as SearchButton } from "../image/SearchButton.svg";
 import { ReactComponent as CancelButton } from "../image/Icon-Cancel1.svg";
 import { MenuBurger } from "./MenuBurger/MenuBurger";
 const items = [
-  { value: "Home", href: "#" },
-  { value: "addCard", href: "#" },
-  { value: "addCard", href: "#" },
+  { value: "Home", href: "/" },
+  { value: "Add Card", href: "#" },
 ];
 export const Header = () => {
   const [inputActive, useinputActive] = useState(false);

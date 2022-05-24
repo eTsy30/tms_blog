@@ -1,8 +1,8 @@
 @import "../../style/variables";
 .large--Card {
   justify-content: space-between;
-  width: 736px;
-  height: 452;
+  width: 100%;
+  height: 100%;
 
   padding-bottom: 15px;
 }
@@ -18,9 +18,10 @@
   justify-content: space-between;
 }
 .large--Img {
-  width: 35%;
-  height: 60%;
-  margin: 0 0 142px 32px;
+  width: 100%;
+}
+.Card--wrapper--image {
+  width: 100%;
 }
 .time {
   text-align: left;
@@ -39,6 +40,13 @@
   text-align: left;
   margin-top: 8px;
   font-style: normal;
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+
+  -webkit-line-clamp: 3; /* if you change this, make sure to change the fallback line-height and height */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .large--Name:hover {
   cursor: pointer;
@@ -55,7 +63,8 @@
 }
 
 .medium--Card {
-  width: 352px;
+  // width: 352px;
+  width: 100%;
   padding-bottom: 0px;
 }
 
@@ -79,6 +88,13 @@
   margin-bottom: 24px;
   text-align: left;
   margin-top: 8px;
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2; /* if you change this, make sure to change the fallback line-height and height */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .medium--Name:hover {
   cursor: pointer;
@@ -86,7 +102,7 @@
 }
 
 .small--Card {
-  width: 352px;
+  width: 100%;
   padding-bottom: 15px;
 }
 
@@ -95,9 +111,7 @@
   flex-direction: row;
 }
 .small--Img {
-  width: 27%;
-  height: 85%;
-  margin: 0 0 21px 34px;
+  width: 100%;
 }
 .small--Name {
   font-style: normal;
@@ -106,6 +120,13 @@
   line-height: 28px;
   color: $color-secondary;
   text-align: left;
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2; /* if you change this, make sure to change the fallback line-height and height */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .small--Name:hover {
   cursor: pointer;
