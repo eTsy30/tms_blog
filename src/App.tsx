@@ -1,3 +1,4 @@
+
 import "./App.css";
 import { Header } from "../src/components/Header";
 import { GeneralPage } from "./components/GeneralPage/GeneralPage";
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <CardPage cards={cardsServer} />
+
     </div>
   );
 }
