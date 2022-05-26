@@ -1,4 +1,4 @@
-import { AnyAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AnyAsyncThunk } from "@reduxjs/toolkit/dist/matchers";
 
 type Post = {
@@ -15,21 +15,43 @@ type Post = {
 
 }
 interface IPostsState {
-    content: Array<Post> | null
+    content: Array<Post> | null,
+    isLoading: boolean
 }
 const initialState: IPostsState = {
     content: null,
+    isLoading: false
 
 }
+export const getPost: any = createAsyncThunk(
+    'post/getPhoto',
+    async () => {
+        const response = await fetch('https://studapi.teachmeskills.by/blog/posts/')
+        const responseFormat = await response.json()
+        console.log(responseFormat);
+
+        return responseFormat.results
+    }
+
+)
 
 const postReducer = createSlice({
     name: 'postReducer',
     initialState,
-    reducers: {
-        fetchPosts: (state, action: PayloadAction<Array<Post>>) => {
-
-            state.content = action.payload
+    extraReducers: {
+        [getPost.pending]: (state: any) => {
+            state.isLoading = true
         },
+        [getPost.fulfilled]: (state, action) => {
+            state.content = action.payload
+            state.isLoading = false
+        },
+        [getPost.rejected]: (state) => {
+            state.isLoading = false
+        }
+    },
+    reducers: {
+
         likePost: (state, action: PayloadAction<number>) => {
 
             if (state.content) {
@@ -47,6 +69,8 @@ const postReducer = createSlice({
             }
         },
     },
+
 })
 export default postReducer.reducer
-export const { fetchPosts, likePost, dislikePost, favoritPost } = postReducer.actions
+export const { likePost, dislikePost, favoritPost } = postReducer.actions
+

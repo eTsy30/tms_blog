@@ -9,6 +9,8 @@ import { SingIn } from "./Pages/SingIn/SingIn";
 import { ResetPassword } from "./Pages/ResetPassword/ResetPassword";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
+import { ContentPage } from "./Pages/OnePostContent/ContentPage";
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -21,7 +23,7 @@ root.render(
           <Route path="/singin" element={<SingIn />} />
           <Route path="/singup" element={<SingUp />} />
           <Route path="/fogotPassword" element={<ResetPassword />} />
-
+          <Route path="/blogs/:id" element={<ContentPage />} />
           <Route
             path="*"
             element={
