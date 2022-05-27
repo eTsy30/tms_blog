@@ -26,14 +26,13 @@ const initialState: IPostsState = {
 export const getPost: any = createAsyncThunk(
     'post/getPhoto',
     async () => {
-        const response = await fetch('https://studapi.teachmeskills.by/blog/posts/')
+        const response = await fetch('https://studapi.teachmeskills.by/blog/posts/?limit=20')
         const responseFormat = await response.json()
-        console.log(responseFormat);
-
         return responseFormat.results
     }
 
 )
+
 
 const postReducer = createSlice({
     name: 'postReducer',
@@ -48,7 +47,8 @@ const postReducer = createSlice({
         },
         [getPost.rejected]: (state) => {
             state.isLoading = false
-        }
+        },
+
     },
     reducers: {
 
