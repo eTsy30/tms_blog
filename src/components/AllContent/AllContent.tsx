@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import { Card } from "../Cards";
 import "../../Pages/CardPage/CardPage.css";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPosts } from "../../Redux/posts/PostsActionReducer";
+import { getPost } from "../../Redux/posts/PostsActionReducer";
 
 import { postsData } from "../../ServerTemp/server";
 import { Loader } from "../Loader/Loader";
-import { log } from "console";
 
 interface ICard {
   id: number;
@@ -17,8 +16,8 @@ interface ICard {
   title: string;
   author: number;
   like?: boolean;
-  dislike: boolean;
-  favorit: boolean;
+  dislike?: boolean;
+  favorit?: boolean;
 }
 
 export const AllContent = (props: any) => {
@@ -28,10 +27,10 @@ export const AllContent = (props: any) => {
   useEffect(() => {
     setTimeout(() => {
       if (posts === null) {
-        dispatch(fetchPosts(postsData));
+        dispatch(getPost());
       }
     }, 3000);
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="parent">

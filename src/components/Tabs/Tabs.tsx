@@ -16,6 +16,7 @@ export const Tabs = ({ items }: any) => {
       <div className="Tabs__wrapper">
         {items.map((el: any, index: number) => (
           <button
+            key={index}
             className={`Tab__block  ${
               index === countItems ? "Tab__block__active" : ""
             } `}
