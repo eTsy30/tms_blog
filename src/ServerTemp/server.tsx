@@ -19,7 +19,8 @@ export const postsData: ICard[] = [
     text: "Text1",
     date: "2021-10-06",
     lesson_num: 123,
-    title: "фывфывфыв",
+    title:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore porro labore est recusandae rem pariatur tempore debitis tenetur veniam voluptates, eligendi et ipsum vel quaerat molestias at quis nesciunt. Temporibus!",
     author: 7,
     like: false,
     dislike: false,

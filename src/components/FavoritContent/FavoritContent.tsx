@@ -11,12 +11,6 @@ export const FavoritContent = (props: any) => {
     return loading ? <h1>Loading...</h1> : children;
   };
   const dispatch = useDispatch();
-  // const favoritPosts = posts.filter((el: any) => el.favorit === true);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     dispatch(fetchPosts(postsData));
-  //   }, 5000);
-  // }, []);
   return (
     <div className="favoritPosts">
       <Loader loading={!postsFilter}>
@@ -26,7 +20,6 @@ export const FavoritContent = (props: any) => {
   );
 };
 const Renderfavorit = ({ posts }: any) => {
-  console.log("***************************");
   return posts
     .filter((el: any) => el.favorit === true)
     .map((element: any, index: number) => (

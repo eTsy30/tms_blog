@@ -8,12 +8,13 @@ import { Tabs } from "../../components/Tabs";
 import { AllContent } from "../../components/AllContent/AllContent";
 import { postsData } from "../../ServerTemp/server";
 import { FavoritContent } from "../../components/FavoritContent/FavoritContent";
+import { DoubleMainPage } from "../DoubleMainPage";
 
 export const CardPage = (props: any) => {
   const items = [
     { title: "All", content: <AllContent cards={postsData} /> }, //
     { title: "My favorites", content: <FavoritContent cards={postsData} /> },
-    { title: "Popular", content: " Popular content" },
+    { title: "Popular", content: <DoubleMainPage /> },
   ];
   return (
     <GeneralPage label="Blog">

@@ -1,0 +1,77 @@
+/**** Colors *****/
+/**** Fonts *****/
+/**** Indents *****/
+.CardSearch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid #dadada;
+  margin-top: 30px;
+}
+
+.CardSearch--Card {
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.CardSearch--Content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: 30px;
+}
+
+.CardSearch--Img {
+  width: 96px;
+  height: 96px;
+}
+
+.CardSearch--Name {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #313037;
+  text-align: left;
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* if you change this, make sure to change the fallback line-height and height */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.CardSearch--Name:hover {
+  cursor: pointer;
+  color: #2231aa;
+}
+
+.CardSearch--Own--Wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.CardSearch--time {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8e97;
+}
+/*# sourceMappingURL=CardSearch.css.map */
