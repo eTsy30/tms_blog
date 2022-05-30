@@ -1,10 +1,6 @@
-import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { favoritPost } from "../../Redux/posts/PostsActionReducer";
 import { Card } from "../Cards";
 import "./favoritPosts.css";
-import { fetchPosts } from "../../Redux/posts/PostsActionReducer";
-import { postsData } from "../../ServerTemp/server";
 export const FavoritContent = (props: any) => {
   const postsFilter = useSelector((state: any) => state.postReducer.content);
   const Loader = ({ loading, children }: any) => {

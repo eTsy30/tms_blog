@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
 import { GeneralPage } from "../../components/GeneralPage/GeneralPage";
 import "./SearchPage.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPosts } from "../../Redux/posts/PostsActionReducer";
-import { postsData } from "../../ServerTemp/server";
+
 import { CardSearch } from "../../components/CardSearch/CardSearch";
+import { getPost } from "../../Redux/posts/PostsActionReducer";
+import { useEffect } from "react";
 
 interface ICard {
   id?: number;
@@ -25,7 +25,7 @@ export const SearchPage = () => {
   useEffect(() => {
     setTimeout(() => {
       if (posts === null) {
-        dispatch(fetchPosts(postsData)); // пока файлы гружу с файла
+        dispatch(getPost()); // пока файлы гружу с файла
       }
     }, 3000);
   }, []);

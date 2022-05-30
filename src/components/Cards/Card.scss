@@ -28,6 +28,7 @@ $width: 100%;
 }
 .Card--wrapper--image {
   width: 100%;
+  float: right;
 }
 .time {
   text-align: left;
@@ -115,6 +116,7 @@ $width: 100%;
 .small--Content {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .small--Img {
   width: 96px;

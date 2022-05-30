@@ -3,8 +3,7 @@ import { ReactComponent as Like } from "../image/like.svg";
 import { ReactComponent as SvgBwi } from "../image/buttonWithIcon.svg";
 import "./LikeBar.css";
 import { useDispatch, useSelector } from "react-redux";
-import { log } from "console";
-import { postsData } from "../../ServerTemp/server";
+
 import {
   likePost,
   favoritPost,

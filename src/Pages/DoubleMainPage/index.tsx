@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import { Card } from "../../components/Cards";
 import "./DoubleMainPage.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPosts } from "../../Redux/posts/PostsActionReducer";
 
-import { postsData } from "../../ServerTemp/server";
 import { Loader } from "../../components/Loader/Loader";
+import { getPost } from "../../Redux/posts/PostsActionReducer";
 
 interface ICard {
   id?: number;
@@ -28,7 +27,7 @@ export const DoubleMainPage = (props: ICard) => {
   useEffect(() => {
     setTimeout(() => {
       if (posts === null) {
-        dispatch(fetchPosts(postsData));
+        dispatch(getPost());
       }
     }, 3000);
   }, []);

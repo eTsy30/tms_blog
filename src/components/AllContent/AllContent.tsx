@@ -4,7 +4,6 @@ import "../../Pages/CardPage/CardPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost } from "../../Redux/posts/PostsActionReducer";
 
-import { postsData } from "../../ServerTemp/server";
 import { Loader } from "../Loader/Loader";
 
 interface ICard {
@@ -46,7 +45,7 @@ const RenderPosts = ({ posts }: any) => {
     <div key={index.toString()} className={`div${index}`}>
       {index === 0 && <Card info={element} type="large" />}
       {index >= 1 && index < 5 && <Card info={element} type="medium" />}
-      {index >= 5 && index <= 11 && <Card info={element} type="small" />}
+      {index >= 5 && index <= 12 && <Card info={element} type="small" />}
     </div>
   ));
 };

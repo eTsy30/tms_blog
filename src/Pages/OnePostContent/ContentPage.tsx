@@ -8,10 +8,12 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getOnePost } from "../../Redux/singlePost/singePost";
+import { Loader } from "../../components/Loader/Loader";
 
 export const ContentPage = () => {
   const { id } = useParams();
   const post = useSelector((state: any) => state.singlepostReducer.post);
+  console.log(post);
 
   const dispatch = useDispatch();
 

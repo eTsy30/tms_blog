@@ -6,14 +6,14 @@ import "./CardPage.css";
 
 import { Tabs } from "../../components/Tabs";
 import { AllContent } from "../../components/AllContent/AllContent";
-import { postsData } from "../../ServerTemp/server";
+
 import { FavoritContent } from "../../components/FavoritContent/FavoritContent";
 import { DoubleMainPage } from "../DoubleMainPage";
 
 export const CardPage = (props: any) => {
   const items = [
-    { title: "All", content: <AllContent cards={postsData} /> }, //
-    { title: "My favorites", content: <FavoritContent cards={postsData} /> },
+    { title: "All", content: <AllContent /> }, //
+    { title: "My favorites", content: <FavoritContent /> },
     { title: "Popular", content: <DoubleMainPage /> },
   ];
   return (

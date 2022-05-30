@@ -1,5 +1,3 @@
-import { info, log } from "console";
-import React from "react";
 import { LikeBar } from "../Likebar/LikeBar";
 import "./CardSearch.css";
 

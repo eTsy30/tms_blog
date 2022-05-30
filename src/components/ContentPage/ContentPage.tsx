@@ -1,10 +1,10 @@
 import React from "react";
-import { GeneralPage } from "../../../GeneralPage/GeneralPage";
-import { Button } from "../../../Button";
+import { GeneralPage } from "../GeneralPage/GeneralPage";
+import { Button } from "../Button";
 import { ReactComponent as IconLikeIcon } from "../../../image/like.svg";
 import { ReactComponent as IconDislikeIcon } from "../../../image/like.svg";
-import { Prev } from "../../../NavForPage/Prev/Prev";
-import { Next } from "../../../NavForPage/Next/Next";
+import { Prev } from "../NavForPage/Prev/Prev";
+import { Next } from "../NavForPage/Next/Next";
 import "./ContentPage.scss";
 type ContentPageProp = {
   cardNumber: string;

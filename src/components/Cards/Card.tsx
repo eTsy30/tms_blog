@@ -16,7 +16,6 @@ export const Card = ({ type, info }: CardProps) => {
         <div>
           <h4 className="time">{info.date}</h4>
           <Link to={`/blogs/${info.id}`}>
-            {" "}
             <h1 className={`${type}--Name`}>{info.title}</h1>
           </Link>
           {type === "large" && <p className={`${type}--Text`}>{info.text}</p>}
