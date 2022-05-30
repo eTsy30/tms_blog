@@ -9,6 +9,9 @@ type InputProps = {
   disabled?: boolean;
   title: string;
   type: "text" | "email" | "password";
+  value?: string;
+  error?: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void | any;
 };
 export const Input = ({
   placeholder,
@@ -16,53 +19,26 @@ export const Input = ({
   disabled,
   title,
   type,
+  value,
+  onChange,
+  error,
 }: InputProps) => {
-  const [inputValue, setInputValue] = useState("");
-  const [eror, setEror] = useState("");
-  const handleChange = (event: any) => {
-    setInputValue(event.target.value);
-
-    if (type === "email") {
-      if (!validator.isEmail(event.target.value)) {
-        setEror("Eror");
-      } else {
-        setEror("");
-      }
-    }
-
-    if (type === "password") {
-      if (
-        validator.isStrongPassword(event.target.value, {
-          minLength: 8,
-          minLowercase: 1,
-          minUppercase: 1,
-          minNumbers: 1,
-          minSymbols: 1,
-        })
-      ) {
-        setEror("Is Strong Password");
-      } else {
-        setEror("Is Not Strong Password");
-      }
-    }
-  };
-  const handleSubmit = (event: any) => {
-    alert("Отправленное имя: " + inputValue);
-    event.preventDefault();
-  };
   return (
-    <div className="input" onSubmit={handleSubmit}>
+    <div
+      className="input"
+      // onSubmit={handleSubmit}
+    >
       <label className="input--label">
         <span>{title}</span>
         <input
           type={type}
           disabled={disabled}
-          className={`input--default ${eror && "errorInput"} ${className}`}
+          className={`input--default ${error && "errorInput"} ${className}`}
           placeholder={placeholder}
-          value={inputValue}
-          onChange={handleChange}
+          value={value}
+          onChange={onChange}
         />
-        {eror && <span className="error">{eror}</span>}
+        {error && <span className="error">{error}</span>}
       </label>
     </div>
   );

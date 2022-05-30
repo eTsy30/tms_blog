@@ -24,8 +24,8 @@ export const SingIn = ({
 
         <div className={`SingIn-Input-Wrapper ${className}`}>
           {UpChildren}
-          <Input placeholder="Your email" type="email" title="Email" />
-          <Input placeholder="Password" type="password" title="Password" />
+          {/* <Input placeholder="Your email" type="email" title="Email"  onChange={}/>
+          <Input placeholder="Password" type="password" title="Password" /> */}
           {DownChildren}
 
           <Link to="/fogotPassword" className="SingIn-Input-link_fogot">

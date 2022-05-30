@@ -26,8 +26,8 @@ export const MenuBurger = ({
           </div>
 
           <ul>
-            {items.map((items: any) => (
-              <li>
+            {items.map((items: any, index: number) => (
+              <li key={index}>
                 <Link className="menuBurger--textStyle" to={items.href}>
                   {items.value}
                 </Link>

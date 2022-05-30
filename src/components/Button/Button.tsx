@@ -9,7 +9,7 @@ import { ReactComponent as IconMoon } from "../image/Icon-Moon.svg";
 
 type Buttonprops = {
   text?: string;
-  onClick?: () => void;
+  onClick?: (event: any) => void | any;
   className: string;
   disabled?: boolean;
   icon?: string | undefined;

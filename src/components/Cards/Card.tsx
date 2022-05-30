@@ -1,5 +1,6 @@
 import { info, log } from "console";
 import React from "react";
+import { Link } from "react-router-dom";
 import { LikeBar } from "../Likebar/LikeBar";
 import "./Card.css";
 
@@ -14,10 +15,11 @@ export const Card = ({ type, info }: CardProps) => {
       <div className={`${type}--Content`}>
         <div>
           <h4 className="time">{info.date}</h4>
-          <h1 className={`${type}--Name`}>{info.title}</h1>
-          {type === "large" && (
-            <p className={`${type}--Text`}>{info.content}</p>
-          )}
+          <Link to={`/blogs/${info.id}`}>
+            {" "}
+            <h1 className={`${type}--Name`}>{info.title}</h1>
+          </Link>
+          {type === "large" && <p className={`${type}--Text`}>{info.text}</p>}
         </div>
         <div className="Card--wrapper--image">
           <img src={info.image} alt="no" className={`${type}--Img`} />
