@@ -11,7 +11,7 @@ type InputProps = {
   type: "text" | "email" | "password";
   value?: string;
   error?: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void | any;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void | any;
 };
 export const Input = ({
   placeholder,

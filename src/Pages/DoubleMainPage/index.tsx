@@ -29,7 +29,7 @@ export const DoubleMainPage = (props: ICard) => {
       if (posts === null) {
         dispatch(getPost());
       }
-    }, 3000);
+    });
   }, []);
 
   return (

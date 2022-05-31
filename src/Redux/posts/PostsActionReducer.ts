@@ -24,7 +24,7 @@ const initialState: IPostsState = {
 
 }
 export const getPost: any = createAsyncThunk(
-    'post/getPhoto',
+    'post',
     async () => {
         const response = await fetch('https://studapi.teachmeskills.by/blog/posts/?limit=70')
         const responseFormat = await response.json()

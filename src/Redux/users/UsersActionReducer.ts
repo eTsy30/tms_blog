@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AnyAsyncThunk } from "@reduxjs/toolkit/dist/matchers";
 
 type AuthState = {
-    user: User | null
+    user: SignUpSuccessPayload | null
     isLoading: string
     error: string | null
 }
@@ -12,7 +12,13 @@ type User = {
 }
 
 export type SignUpPayload = {
-    name: string
+    username: string
+    email: string
+    password: string
+}
+
+export type SignUpSuccessPayload = {
+    username: string
     email: string
     password: string
 }
@@ -27,24 +33,20 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        signUp: state => {
-            console.log('signUp');
-
+        signUp: (state, action: PayloadAction<SignUpPayload>) => {
             if (state.isLoading === 'idle') {
                 state.isLoading = 'pending'
             }
         },
-        signUpSuccess: (state, action: PayloadAction<SignUpPayload>) => {
-            console.log('signUpSuccess');
-
+        signUpSuccess: (state, action: PayloadAction<SignUpSuccessPayload>) => {
             if (state.isLoading === 'pending') {
                 state.isLoading = 'idle'
                 state.user = action.payload
+                console.log(state.user);
+
             }
         },
         signUpFailure: (state, action: PayloadAction<string>) => {
-            console.log('signUpFailure');
-
             state.isLoading = 'idle'
             state.error = action.payload
         },

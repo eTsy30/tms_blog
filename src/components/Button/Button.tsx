@@ -32,7 +32,7 @@ export const Button = ({
     <button
       type="button"
       disabled={disabled}
-      //   className={clsx(className, "button")}
+      // className={clsx(className, "button")}
       className={clsx(className)}
       onClick={onClick}
     >

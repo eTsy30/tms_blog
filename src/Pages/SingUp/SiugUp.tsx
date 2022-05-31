@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { Input } from "../../components/Inputs";
 import { GeneralPage } from "../../components/GeneralPage/GeneralPage";
 import { Button } from "../../components/Button";
@@ -22,16 +22,15 @@ export const SingUp = (className: PropsSingUp) => {
   const dispatch = useDispatch();
   const onNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
-    console.log(name);
   };
 
   const onEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
-    if (!validator.isEmail(event.target.value)) {
-      setEror("Eror");
-    } else {
-      setEror("");
-    }
+    // if (!validator.isEmail(event.target.value)) {
+    //   setEror("Eror");
+    // } else {
+    //   setEror("");
+    // }
   };
 
   const onPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,16 +41,24 @@ export const SingUp = (className: PropsSingUp) => {
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setConfirmedPassword(event.target.value);
+    if (confirmedPassword !== password) {
+    }
   };
 
+  let navigate = useNavigate();
   const submitForm = (event: React.MouseEvent<HTMLButtonElement>): void => {
     event.preventDefault();
     const formData = {
-      name,
-      email,
-      password,
+      username: name,
+      email: email,
+      password: password,
     };
-    dispatch(signUp());
+    navigate("/verify");
+
+    dispatch(signUp(formData));
+  };
+  const buttonEneblerd = () => {
+    return confirmedPassword !== password;
   };
 
   return (
@@ -65,12 +72,12 @@ export const SingUp = (className: PropsSingUp) => {
 
         <div className={`SingUp-Input-Wrapper ${className}`}>
           <Input
-            placeholder="Confirm password"
+            placeholder="Your name"
             type="text"
-            title="Confirm password"
-            className="SingUp-Imput-Password"
-            onChange={onConfirmedPasswordChange}
-            value={confirmedPassword}
+            title="Name"
+            className="SingUp-Imput-Name"
+            onChange={onNameChange}
+            value={name}
           />
           <Input
             placeholder="Your email"
@@ -87,13 +94,14 @@ export const SingUp = (className: PropsSingUp) => {
             onChange={onPasswordChange}
             value={password}
           />
+
           <Input
-            placeholder="Your name"
+            placeholder="Confirm password"
             type="text"
-            title="Name"
-            className="SingUp-Imput-Name"
-            onChange={onNameChange}
-            value={name}
+            title="Confirm password"
+            className="SingUp-Imput-Password"
+            onChange={onConfirmedPasswordChange}
+            value={confirmedPassword}
           />
           <a href="#" className="SingUp-Input-link_fogot">
             Forgot password?
@@ -101,8 +109,9 @@ export const SingUp = (className: PropsSingUp) => {
 
           <Button
             text="Sign In"
-            className="SingUp-Button-SingIn button"
+            className="SingUp-Button-SingIn button primary"
             onClick={submitForm}
+            disabled={buttonEneblerd()}
           />
           <span className="SingIn-Down-Span">
             Don’t have an account? <a href="#">Sign Up</a>{" "}

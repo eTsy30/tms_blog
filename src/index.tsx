@@ -10,6 +10,7 @@ import { ResetPassword } from "./Pages/ResetPassword/ResetPassword";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 import { ContentPage } from "./Pages/OnePostContent/ContentPage";
+import { Verify } from "./Pages/Verify/Verify";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -24,6 +25,7 @@ root.render(
           <Route path="/singup" element={<SingUp />} />
           <Route path="/fogotPassword" element={<ResetPassword />} />
           <Route path="/blogs/:id" element={<ContentPage />} />
+          <Route path="/verify" element={<Verify />} />
           <Route
             path="*"
             element={
