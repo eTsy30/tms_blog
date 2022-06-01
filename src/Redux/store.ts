@@ -6,7 +6,8 @@ import authSlice from '../Redux/users/UsersActionReducer'
 import singlepostReducer from '../Redux/singlePost/singePost'
 import createSagaMiddleware from "redux-saga";
 import signUpSaga from "./saga/signUpSagas";
-// import tokenReduser from './getToken/getTokenReduser'
+import tokenReduser from './getToken/getTokenReduser'
+import userInfo from './userInfo/userInfoReduser'
 const sagaMiddleware = createSagaMiddleware()
 
 const rootReduser = combineReducers({
@@ -18,7 +19,8 @@ export const store = configureStore({
         postReducer: postReducer,
         authSlice: authSlice,
         singlepostReducer: singlepostReducer,
-        // tokenReduser: tokenReduser
+        tokenReduser: tokenReduser,
+        userInfo: userInfo,
 
     },
     middleware: getDefaultMiddleware => { return getDefaultMiddleware().concat(sagaMiddleware) }
