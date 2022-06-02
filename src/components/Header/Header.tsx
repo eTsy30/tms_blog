@@ -12,7 +12,6 @@ const items = [
 ];
 export const Header = () => {
   const user = useSelector((state: any) => state.userInfo.user.username);
-  console.log(user);
 
   const [inputActive, useinputActive] = useState(false);
   const ActiveSearch = () => {

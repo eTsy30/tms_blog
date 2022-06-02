@@ -2,6 +2,7 @@ import React from "react";
 import "./MenuBurger.css";
 import { Button } from "../../Button";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 type MenuBurgerProps = {
   items: any;
   active: any;
@@ -14,17 +15,24 @@ export const MenuBurger = ({
   setActive,
   userName,
 }: MenuBurgerProps) => {
+  const user = useSelector((state: any) => state.userInfo.user.username);
+
   return (
     <div className={active ? "menuBurger active" : "menuBurger"}>
       <div className="menuBurger--blur">
         <div className="menuBurger--content">
-          <div className="menuBurger--User">
-            <div className="menuBurger--Logo">
-              <span className="menuBurger--Logo--Text textStyle">AG</span>
-            </div>
-            <span className="menuBurger--NameUser ">{userName}</span>
-          </div>
-
+          <>
+            {user ? (
+              <div className="menuBurger--User">
+                <div className="menuBurger--Logo">
+                  <span className="menuBurger--Logo--Text textStyle">AG</span>
+                </div>
+                <span className="menuBurger--NameUser ">{user}</span>
+              </div>
+            ) : (
+              <></>
+            )}
+          </>
           <ul>
             {items.map((items: any, index: number) => (
               <li key={index}>

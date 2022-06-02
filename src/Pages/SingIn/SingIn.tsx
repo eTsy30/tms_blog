@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Input } from "../../components/Inputs";
 import { Button } from "../../components/Button/Button";
@@ -19,6 +19,7 @@ export const SingIn = ({
 }: PropSingIn | any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [dis, setDis] = useState(false);
 
   let navigate = useNavigate();
 
@@ -36,17 +37,18 @@ export const SingIn = ({
 
   const submitSingIn = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    const dataForJwt = {
-      email: email,
-      password: password,
-    };
-
-    dispatch(getJwt(dataForJwt));
-    dispatch(getUserInfo(jwt));
-
-    // navigate("/");
+    const dataForJwt = { email: email, password: password };
+    dispatch(await getJwt(dataForJwt));
+    setDis(true);
   };
-
+  //===========================
+  useEffect(() => {
+    dispatch(getUserInfo(jwt));
+  }, [jwt]);
+  {
+    !jwt ? dispatch(getUserInfo(jwt)) : navigate("/");
+  }
+  //=========================
   return (
     <GeneralPage>
       <div className={` SingIn-centre `}>
@@ -80,8 +82,9 @@ export const SingIn = ({
 
           <Button
             text="Sign In"
-            className="SingIn-Button-SingIn button"
+            className="SingIn-Button-SingIn button primary"
             onClick={submitSingIn}
+            disabled={dis}
           />
           <span className="SingIn-Down-Span">
             Don’t have an account? <Link to="/singup">Sign Up</Link>

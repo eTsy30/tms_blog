@@ -17,6 +17,7 @@ export const getUserInfo: any = createAsyncThunk(
             }
         );
         const responseFormat = await response.json();
+        console.log('getUserInfo', responseFormat);
 
 
         return responseFormat;
