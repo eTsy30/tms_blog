@@ -16,10 +16,8 @@ export const GeneralPage = ({
   return (
     <>
       <Header />
-      <div className="generalPage-centre generalPage">
-        {children}
-        <Footer />
-      </div>
+      <div className="generalPage-centre">{children}</div>
+      <Footer />
     </>
   );
 };

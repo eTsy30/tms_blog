@@ -1,0 +1,56 @@
+.AddPostPage {
+  width: 1120px;
+  margin: 0 auto;
+  border-bottom: 1px solid #dadada;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-bottom: 76px;
+}
+
+.AddPostPage--Input__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.AddPostPage--Input__Publish {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.AddPostPage--Input__Description {
+  margin-bottom: 40px;
+}
+
+.AddPostPage--Input__text {
+  height: 245px;
+  margin-bottom: 40px;
+}
+
+.AddPostPage--Button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.AddPostPage--TwoButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+}
+
+.AddPostPage--Button--Delete {
+  color: red;
+}
+/*# sourceMappingURL=AddPostPage.css.map */

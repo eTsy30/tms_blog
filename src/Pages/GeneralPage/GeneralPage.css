@@ -1,22 +1,7 @@
 .generalPage-centre {
-  height: 90%;
   width: 60%;
-  margin: 30px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.generalPage {
-  height: 100vh;
+  margin: 84px auto 0;
   background: #e5e5e5;
-  margin-top: 85px;
+  min-height: 85vh;
 }
 /*# sourceMappingURL=GeneralPage.css.map */

@@ -26,10 +26,8 @@
 }
 .SingUp-centre {
   width: 100%;
-
   justify-content: center;
   align-items: center;
-
   grid-area: 1 / 2 / 2 / 3;
 }
 .SingUp-right {
