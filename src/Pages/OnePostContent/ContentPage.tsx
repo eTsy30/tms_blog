@@ -1,15 +1,16 @@
 import { useEffect } from "react";
-import { GeneralPage } from "../../components/GeneralPage/GeneralPage";
 import { Button } from "../../components/Button";
 import { Prev } from "../../components/NavForPage/Prev/Prev";
 import { Next } from "../../components/NavForPage/Next/Next";
 import "./ContentPage.scss";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
 import { getOnePost } from "../../Redux/singlePost/singePost";
 import { Loader } from "../../components/Loader/Loader";
-
+import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
+import { ReactComponent as Like } from "../../components/image/like.svg";
+import { ReactComponent as SvgBwi } from "../../components/image/buttonWithIcon.svg";
+import { ReactComponent as Dislike } from "../../components/image/dislike.svg";
 export const ContentPage = () => {
   const { id } = useParams();
   const post = useSelector((state: any) => state.singlepostReducer.post);
@@ -41,18 +42,18 @@ export const ContentPage = () => {
             <div className="ContentPage--Button--leftSide">
               <Button
                 className="ContentPage--Button--leftSide--like like"
-                icon="Like"
+                icon={<Like />}
               ></Button>
               <Button
                 className="ContentPage--Button--leftSide--dislike  dislike"
-                icon="Dislike"
+                icon={<Dislike />}
               ></Button>
             </div>
             <div className="ContentPage--Button--rightSide">
               <Button
                 text="Add to favorites"
                 className="buttonWithIcon ContentPage--Button--rightSide--ButtomWithIcon"
-                icon="SvgBwi"
+                icon={<SvgBwi />}
               ></Button>
             </div>
           </div>

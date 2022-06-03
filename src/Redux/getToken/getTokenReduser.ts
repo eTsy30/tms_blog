@@ -23,7 +23,7 @@ export const getJwt: any = createAsyncThunk(
         const data = await response.json()
         console.log('tokenReduser', data.access);
 
-
+        localStorage.setItem('authTOken', JSON.stringify(data))
         return data.access
     }
 

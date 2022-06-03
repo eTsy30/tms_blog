@@ -2,13 +2,20 @@
 /**** Fonts *****/
 /**** Indents *****/
 .parent {
+  margin-top: 64px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (33%)[3];
-      grid-template-columns: repeat(3, 33%);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: max-content;
+      grid-template-columns: -webkit-max-content;
+      grid-template-columns: max-content;
+  -ms-grid-rows: max-content;
+      grid-template-rows: -webkit-max-content;
+      grid-template-rows: max-content;
   grid-column-gap: 32px;
-  grid-row-gap: 40px;
-  width: 100%;
+  grid-row-gap: 34px;
 }
 
 .Blog-Main-Label {

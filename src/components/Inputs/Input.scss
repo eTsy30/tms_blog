@@ -9,13 +9,11 @@
 }
 
 .input--label {
-  display: grid;
-  justify-content: start;
   text-align: start;
 }
 .input--default {
   height: 56px;
-  width: 544px;
+  width: 100%;
   border-radius: 2px;
   color: $color-background-primary;
   border: none;

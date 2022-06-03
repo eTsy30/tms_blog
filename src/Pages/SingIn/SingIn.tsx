@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 
 import { Input } from "../../components/Inputs";
 import { Button } from "../../components/Button/Button";
-import { GeneralPage } from "../../components/GeneralPage/GeneralPage";
+
 import "./SingIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getJwt } from "../../Redux/getToken/getTokenReduser";
 import { getUserInfo } from "../../Redux/userInfo/userInfoReduser";
+import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
 type PropSingIn = {
   className: string;
 };
@@ -44,7 +45,7 @@ export const SingIn = ({
   //===========================
   useEffect(() => {
     dispatch(getUserInfo(jwt));
-  }, [jwt]);
+  }, []);
   {
     !jwt ? dispatch(getUserInfo(jwt)) : navigate("/");
   }
@@ -58,8 +59,6 @@ export const SingIn = ({
         <p className="SingIn-Main-Label">Sing In</p>
 
         <div className={`SingIn-Input-Wrapper ${className}`}>
-          {UpChildren}
-
           <Input
             placeholder="Your email"
             type="email"
@@ -74,7 +73,6 @@ export const SingIn = ({
             onChange={passworldlChange}
             value={password}
           />
-          {DownChildren}
 
           <Link to="/fogotPassword" className="SingIn-Input-link_fogot">
             Forgot password?

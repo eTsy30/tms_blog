@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as Like } from "../image/like.svg";
+import { ReactComponent as DisLike } from "../image/dislike.svg";
 import { ReactComponent as SvgBwi } from "../image/buttonWithIcon.svg";
 import "./LikeBar.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -50,11 +51,11 @@ export const LikeBar = ({ id, like, dislike, favorit }: LikeBarProps) => {
       <div className="likeBar--div--left">
         <Like
           onClick={addToFavorite}
-          className={`likeBar-Like ${like && "DisLikeBar_color"}`}
+          className={` ${like && "DisLikeBar_color"}`}
         />
         <span className="likeBar-count">{like}</span>
 
-        <Like
+        <DisLike
           className={` ${dislike && "LikeBar_color"}`}
           onClick={removeFromFavorite}
         />

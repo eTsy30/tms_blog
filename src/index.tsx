@@ -6,11 +6,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SingUp } from "./Pages/SingUp/SiugUp";
 import { SingIn } from "./Pages/SingIn/SingIn";
-import { ResetPassword } from "./Pages/ResetPassword/ResetPassword";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
 import { ContentPage } from "./Pages/OnePostContent/ContentPage";
 import { Verify } from "./Pages/Verify/Verify";
+import { ResetPassword } from "Pages/ResetPasswordPage/ResetPassword";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

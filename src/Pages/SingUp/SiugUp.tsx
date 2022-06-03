@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../components/Inputs";
-import { GeneralPage } from "../../components/GeneralPage/GeneralPage";
+
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,7 @@ import "./SingUp.css";
 import { signUp } from "../../Redux/users/UsersActionReducer";
 import validator from "validator";
 import { log } from "console";
+import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
 type PropsSingUp = {
   className?: string;
 };

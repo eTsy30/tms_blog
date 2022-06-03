@@ -2,9 +2,10 @@ import React from "react";
 
 import { Input } from "../../components/Inputs";
 import { Button } from "../../components/Button/Button";
-import { GeneralPage } from "../../components/GeneralPage/GeneralPage";
+
 import "./ResetPassword.css";
 import { Link } from "react-router-dom";
+import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
 type PropResetPassword = {
   className: string;
 };

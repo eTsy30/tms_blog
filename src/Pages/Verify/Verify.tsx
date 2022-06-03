@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 
 import { Input } from "../../components/Inputs";
 import { Button } from "../../components/Button/Button";
-import { GeneralPage } from "../../components/GeneralPage/GeneralPage";
+
 import "./Verify.scss";
 import { Link } from "react-router-dom";
 // import { getToken } from "../../Redux/getToken/getTokenReduser";
 import { useDispatch } from "react-redux";
 import { Modal } from "../../components/Modal/Modal";
 import isBoolean from "validator/lib/isBoolean";
+import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
 
 export const Verify = () => {
   const [uid, setUid] = useState("");
