@@ -44,9 +44,6 @@ const singlepostReducer = createSlice({
         [getOnePost.fulfilled]: (state, action) => {
             state.post = action.payload;
             state.isLoading = false;
-
-
-
         },
         [getOnePost.rejected]: (state) => {
 

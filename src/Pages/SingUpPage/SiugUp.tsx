@@ -42,8 +42,6 @@ export const SingUp = (className: PropsSingUp) => {
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setConfirmedPassword(event.target.value);
-    if (confirmedPassword !== password) {
-    }
   };
 
   let navigate = useNavigate();

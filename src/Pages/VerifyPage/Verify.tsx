@@ -5,7 +5,7 @@ import { Button } from "../../components/Button/Button";
 
 import "./Verify.scss";
 import { Link } from "react-router-dom";
-// import { getToken } from "../../Redux/getToken/getTokenReduser";
+
 import { useDispatch } from "react-redux";
 import { Modal } from "../../components/Modal/Modal";
 import isBoolean from "validator/lib/isBoolean";
@@ -31,6 +31,8 @@ export const Verify = () => {
       uid: uid,
       token: token,
     };
+    localStorage.setItem("uid", uid);
+    localStorage.setItem("token", token);
     tokenREqest(tokenParam);
     setDis(true);
   };
@@ -102,6 +104,8 @@ export const Verify = () => {
         setActive={setModaiActive}
         text={text}
         status={responseStatus}
+        naviganeSucsess="/singin"
+        naviganeNOTSucsess="/singup"
       ></Modal>
     </>
   );

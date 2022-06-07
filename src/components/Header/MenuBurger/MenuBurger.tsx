@@ -58,6 +58,12 @@ export const MenuBurger = ({
               <Link to="/singin">
                 <Button className="button-Login" text="Sing In" />
               </Link>
+              <Link to="/fogotPassword">
+                <Button className="button-Login" text="pasReset" />
+              </Link>
+              <Link to="/newPassword">
+                <Button className="button-Login" text="New Password" />
+              </Link>
             </div>
           </div>
         </div>
