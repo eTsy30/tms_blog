@@ -39,13 +39,13 @@ const singlepostReducer = createSlice({
     initialState,
     extraReducers: {
         [getOnePost.pending]: (state: any) => {
-
-
             state.isLoading = true;
         },
         [getOnePost.fulfilled]: (state, action) => {
             state.post = action.payload;
             state.isLoading = false;
+
+
 
         },
         [getOnePost.rejected]: (state) => {
@@ -53,7 +53,7 @@ const singlepostReducer = createSlice({
             state.isLoading = false;
         }
     },
-    reducers: {}
+    reducers: {},
 })
 export default singlepostReducer.reducer
 export const { } = singlepostReducer.actions

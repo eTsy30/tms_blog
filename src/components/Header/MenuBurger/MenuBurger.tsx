@@ -15,19 +15,19 @@ export const MenuBurger = ({
   setActive,
   userName,
 }: MenuBurgerProps) => {
-  const user = useSelector((state: any) => state.userInfo.user.username);
+  const user = useSelector((state: any) => state.userInfo.user);
 
   return (
     <div className={active ? "menuBurger active" : "menuBurger"}>
       <div className="menuBurger--blur">
         <div className="menuBurger--content">
           <>
-            {user ? (
+            {user?.username ? (
               <div className="menuBurger--User">
                 <div className="menuBurger--Logo">
                   <span className="menuBurger--Logo--Text textStyle">AG</span>
                 </div>
-                <span className="menuBurger--NameUser ">{user}</span>
+                <span className="menuBurger--NameUser ">{user.username}</span>
               </div>
             ) : (
               <></>

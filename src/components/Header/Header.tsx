@@ -11,7 +11,7 @@ const items = [
   { value: "Add Card", href: "#" },
 ];
 export const Header = () => {
-  const user = useSelector((state: any) => state.userInfo.user.username);
+  const user = useSelector((state: any) => state.userInfo.user);
 
   const [inputActive, useinputActive] = useState(false);
   const ActiveSearch = () => {
@@ -39,17 +39,17 @@ export const Header = () => {
       >
         <SearchButton onClick={ActiveSearch} />
       </div>
-      {user ? (
+      {user?.username ? (
         <div className="header-User" onClick={() => usemenuActive(false)}>
           <div className="header-Logo" onClick={() => usemenuActive(false)}>
             <span className="header-Logo-Text textStyle">AG</span>
           </div>
-          <span className="header-NameUser textStyle">{user}</span>
+          <span className="header-NameUser textStyle">{user.username}</span>
         </div>
       ) : (
         <div className="header-User" onClick={() => usemenuActive(false)}>
           <UserIcon />
-          <span className="header-NameUser textStyle">{user}</span>
+          <span className="header-NameUser textStyle">{}</span>
         </div>
       )}
       <MenuBurger

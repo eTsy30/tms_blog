@@ -44,11 +44,9 @@ export const SingIn = ({
   };
   //===========================
   useEffect(() => {
-    dispatch(getUserInfo(jwt));
-  }, []);
-  {
     !jwt ? dispatch(getUserInfo(jwt)) : navigate("/");
-  }
+  }, [jwt]);
+
   //=========================
   return (
     <GeneralPage>

@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { customFetch } from "components/Utils/CustomFetch";
 
 const initialState = {
     user: '',
@@ -6,21 +7,14 @@ const initialState = {
 };
 export const getUserInfo: any = createAsyncThunk(
     "getUserInfo",
-    async (access) => {
-        const response = await fetch(
-            "https://studapi.teachmeskills.by/auth/users/me/",
-            {
-                method: "GET",
-                headers: {
-                    Authorization: `Bearer ${access}`,
-                },
-            }
-        );
-        const responseFormat = await response.json();
-        console.log('getUserInfo', responseFormat);
 
 
-        return responseFormat;
+    async () => {
+        const data = await customFetch('https://studapi.teachmeskills.by/auth/users/me/');
+
+
+        console.log('getUserInfo==', data);
+        return data;
     }
 );
 

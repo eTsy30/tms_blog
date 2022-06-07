@@ -11,20 +11,30 @@ const initialState: ITokenState = {
 export const getJwt: any = createAsyncThunk(
     'getToken',
     async (dataForJwt) => {
-        const response = await fetch('https://studapi.teachmeskills.by/auth/jwt/create/',
-            {
-                method: 'POST',
-                body: JSON.stringify(dataForJwt),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            })
-        const data = await response.json()
-        console.log('tokenReduser', data.access);
+        try {
+            const response = await fetch('https://studapi.teachmeskills.by/auth/jwt/create/',
+                {
+                    method: 'POST',
+                    body: JSON.stringify(dataForJwt),
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                })
+            const data = await response.json()
 
-        localStorage.setItem('authTOken', JSON.stringify(data))
-        return data.access
+            console.log('tokenReduser', data);
+            if (response.ok) {
+                localStorage.setItem("access", JSON.stringify(data.access));
+                localStorage.setItem("refresh", JSON.stringify(data.refresh));
+            }
+
+            return data
+        } catch (error
+        ) {
+            return console.log(error);
+
+        }
     }
 
 

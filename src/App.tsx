@@ -5,12 +5,14 @@ import "./App.css";
 import { ContentPage } from "Pages/OnePostContent/ContentPage";
 import { AddPostPage } from "Pages/AddPostPage/AddPostPage";
 import { SingIn } from "Pages/SingIn/SingIn";
+import { customFetch } from "components/Utils/CustomFetch";
+import { useEffect } from "react";
 
 function App() {
   return (
     <div className="App">
-      {/* <CardPage /> */}
-      <AddPostPage />
+      <CardPage />
+      {/* <AddPostPage /> */}
       {/* <SingIn /> */}
     </div>
   );
