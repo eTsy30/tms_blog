@@ -21,16 +21,6 @@ interface ICard {
 
 export const DoubleMainPage = (props: ICard) => {
   const posts = useSelector((state: any) => state.postReducer.content);
-  console.table("polutsau s useSelector", posts);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (posts === null) {
-        dispatch(getPost());
-      }
-    });
-  }, []);
 
   return (
     <div className="DoubleMainPage--parent">

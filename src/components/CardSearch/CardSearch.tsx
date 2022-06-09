@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { LikeBar } from "../Likebar/LikeBar";
 import "./CardSearch.css";
 
@@ -15,7 +17,9 @@ export const CardSearch = ({ info }: CardProps) => {
         <div className={`CardSearch--Content`}>
           <div>
             <h4 className="CardSearch--time">{info.date}</h4>
-            <h1 className={`CardSearch--Name`}>{info.title}</h1>
+            <Link to={`/blogs/${info.id}`}>
+              <h1 className={`CardSearch--Name`}>{info.title}</h1>
+            </Link>
           </div>
         </div>
       </div>

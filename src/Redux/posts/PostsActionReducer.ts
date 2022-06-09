@@ -1,4 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { log } from 'console';
+import { AsyncThunkPayloadCreator, createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AnyAsyncThunk } from "@reduxjs/toolkit/dist/matchers";
 
 type Post = {
@@ -16,19 +17,29 @@ type Post = {
 }
 interface IPostsState {
     content: Array<Post> | null,
+    count: null,
     isLoading: boolean
 }
 const initialState: IPostsState = {
     content: null,
+    count: null,
     isLoading: false
 
 }
 export const getPost: any = createAsyncThunk(
     'post',
-    async () => {
-        const response = await fetch('https://studapi.teachmeskills.by/blog/posts/?limit=70')
+
+    async (ilmitoff: any) => {
+
+
+        const response = await fetch(`https://studapi.teachmeskills.by/blog/posts/?limit=${ilmitoff?.offset}&offset=${ilmitoff?.limit}`,
+
+        )
+
         const responseFormat = await response.json()
-        return responseFormat.results
+
+
+        return [responseFormat.results, responseFormat.count]
     }
 
 )
@@ -42,8 +53,14 @@ const postReducer = createSlice({
             state.isLoading = true
         },
         [getPost.fulfilled]: (state, action) => {
-            state.content = action.payload
+
+            state.count = action.payload[1]
+            state.content = action.payload[0]
             state.isLoading = false
+            console.log(state.content);
+
+
+
         },
         [getPost.rejected]: (state) => {
             state.isLoading = false

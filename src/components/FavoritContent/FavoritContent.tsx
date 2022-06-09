@@ -6,7 +6,6 @@ export const FavoritContent = (props: any) => {
   const Loader = ({ loading, children }: any) => {
     return loading ? <h1>Loading...</h1> : children;
   };
-  const dispatch = useDispatch();
   return (
     <div className="favoritPosts">
       <Loader loading={!postsFilter}>

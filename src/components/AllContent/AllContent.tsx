@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "components/Cards";
 import "../../Pages/CardPage/CardPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost } from "../../Redux/posts/PostsActionReducer";
 
 import { Loader } from "../Loader/Loader";
+import { Pagination } from "Pagination/Pagination";
+import { getUserInfo } from "Redux/userInfo/userInfoReduser";
 
 interface ICard {
   id: number;
@@ -20,21 +22,33 @@ interface ICard {
 }
 
 export const AllContent = (props: any) => {
-  const posts = useSelector((state: any) => state.postReducer.content);
   const dispatch = useDispatch();
+  const [itemOffset, setOffset] = useState(1);
+  const [limit, setlimit] = useState(1);
+  const posts = useSelector((state: any) => state.postReducer.content);
+  const handlePageClick = (event: { selected: number }) => {
+    const newOffset = event.selected * 12;
+    const limit = event.selected + 3;
+    setOffset(newOffset);
+    setlimit(limit);
+  };
 
+  const ilmitoff = {
+    limit: limit,
+    offset: itemOffset,
+  };
   useEffect(() => {
-    if (posts === null) {
-      dispatch(getPost());
-    }
-  }, [dispatch]);
-
+    dispatch(getPost(ilmitoff));
+  }, [itemOffset]);
   return (
-    <div className="parent">
-      <Loader loading={!posts}>
-        <RenderPosts posts={posts} />
-      </Loader>
-    </div>
+    <>
+      <div className="parent">
+        <Loader loading={!posts}>
+          <RenderPosts posts={posts} />
+        </Loader>
+      </div>
+      <Pagination handlePageClick={handlePageClick} />
+    </>
   );
 };
 

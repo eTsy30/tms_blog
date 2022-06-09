@@ -18,14 +18,13 @@ const refreshToken = async (refresh: string) => {
         }
     )
     const data = await response.json()
-    console.log('зашли в refresh');
+
 
     if (!response.ok) {
         return Promise.reject(data as IError)
     }
 
     localStorage.setItem('access', JSON.stringify(data.access))
-    console.log('data.access====', JSON.stringify(data.access));
 
     return data.access
 }
@@ -35,7 +34,6 @@ export const customFetch = async (url: string, config: any = {}) => {
     let access = localStorage.getItem('access')
 
     let token = access ? JSON.parse(access) : null
-    console.log('токен из локал стора==', token);
 
     try {
         if (token) {
@@ -45,8 +43,7 @@ export const customFetch = async (url: string, config: any = {}) => {
             const isAccessExpired = expirationMillisTime
                 ? expirationMillisTime - Date.now() < 0
                 : false
-            console.log('time===', isAccessExpired);
-            console.log(new Date(expirationMillisTime));
+
 
 
             if (isAccessExpired) {

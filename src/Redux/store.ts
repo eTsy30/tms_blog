@@ -8,6 +8,7 @@ import createSagaMiddleware from "redux-saga";
 import signUpSaga from "./saga/signUpSagas";
 import tokenReduser from './getToken/getTokenReduser'
 import userInfo from './userInfo/userInfoReduser'
+import searchReducer from './searchPosts/SearchPosts'
 const sagaMiddleware = createSagaMiddleware()
 
 const rootReduser = combineReducers({
@@ -21,6 +22,7 @@ export const store = configureStore({
         singlepostReducer: singlepostReducer,
         tokenReduser: tokenReduser,
         userInfo: userInfo,
+        searchReducer: searchReducer,
 
     },
     middleware: getDefaultMiddleware => { return getDefaultMiddleware().concat(sagaMiddleware) }

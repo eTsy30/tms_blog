@@ -12,6 +12,7 @@ import { ContentPage } from "./Pages/OnePostContent/ContentPage";
 import { Verify } from "./Pages/VerifyPage/Verify";
 import { ResetPassword } from "Pages/ResetPasswordPage/ResetPassword";
 import NewPasswordPage from "Pages/NewPasswordPage/NewPasswordPage";
+import { SearchPage } from "Pages/SearchPage/SearchPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -28,6 +29,7 @@ root.render(
           <Route path="/blogs/:id" element={<ContentPage />} />
           <Route path="/verify" element={<Verify />} />
           <Route path="/newPassword" element={<NewPasswordPage />} />
+          <Route path="/searchPage" element={<SearchPage />} />
           <Route
             path="*"
             element={

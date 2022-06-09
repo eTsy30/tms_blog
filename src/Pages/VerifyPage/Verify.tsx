@@ -18,6 +18,7 @@ export const Verify = () => {
   const [text, setText] = useState("");
   const [responseStatus, setResponseStatus] = useState(false);
   const [dis, setDis] = useState(false);
+
   const onUid = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUid(event.target.value);
   };

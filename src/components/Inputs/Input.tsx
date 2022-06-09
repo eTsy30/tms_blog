@@ -24,10 +24,7 @@ export const Input = ({
   error,
 }: InputProps) => {
   return (
-    <div
-      className="input"
-      // onSubmit={handleSubmit}
-    >
+    <div className="input">
       <label className="input--label">
         {title}
         <input

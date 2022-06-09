@@ -12,8 +12,12 @@ import { DoubleMainPage } from "../DoubleMainPage";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserInfo } from "Redux/userInfo/userInfoReduser";
 import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
+import { Pagination } from "Pagination/Pagination";
+import { getPost } from "Redux/posts/PostsActionReducer";
 
 export const CardPage = (props: any) => {
+  //   const [limit, setlim] = useState(1);
+
   const dispatch = useDispatch();
   const jwt = useSelector((state: any) => state.tokenReduser.value);
   const items = [
@@ -32,7 +36,6 @@ export const CardPage = (props: any) => {
       <div>
         <Tabs items={items} />
       </div>
-      <div></div>
     </GeneralPage>
   );
 };
