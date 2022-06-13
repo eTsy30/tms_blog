@@ -19,9 +19,8 @@ import {
 export const ContentPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const postsLike = useSelector(
-    (state: any) => state.postReducer.content
-  )?.find((el: any) => el.id === Number(id));
+  const posts = useSelector((state: any) => state.postReducer.content)
+  const postLike = posts?.find((el: any) => el.id === Number(id))
 
   //==========================================
   const addToLike = () => {
