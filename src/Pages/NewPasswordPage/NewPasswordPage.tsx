@@ -11,7 +11,7 @@ const NewPasswordPage = () => {
   const [modalActive, setModaiActive] = useState(false);
   const [text, setText] = useState("");
   const [responseStatus, setResponseStatus] = useState(false);
-  const [dis, setDis] = useState(false);
+  const [disabled, setDisisabled] = useState(false);
 
   const passwordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
@@ -20,7 +20,7 @@ const NewPasswordPage = () => {
   const confirmPasswordChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setDis(true);
+    setDisisabled(true);
     setConfirmPassword(event.target.value);
   };
   const uidLocal = localStorage.getItem("uid");
@@ -42,7 +42,7 @@ const NewPasswordPage = () => {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
-          accept: "application/json",
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
       }
@@ -59,9 +59,9 @@ const NewPasswordPage = () => {
 
   useEffect(() => {
     if (password !== "" && confirmPassword !== "") {
-      setDis(false);
+      setDisisabled(false);
     } else {
-      setDis(true);
+      setDisisabled(true);
     }
   }, [password, confirmPassword]);
   return (
@@ -92,7 +92,7 @@ const NewPasswordPage = () => {
               text="Go to home"
               className="ResetPassword-Button button"
               onClick={changePassword}
-              disabled={dis}
+              disabled={disabled}
             />
           </div>
         </div>
@@ -103,7 +103,7 @@ const NewPasswordPage = () => {
         text={text}
         status={responseStatus}
         naviganeSucsess="/"
-        naviganeNOTSucsess="/newPassword"
+        naviganeNOTSucsess="/new-password"
       ></Modal>
     </>
   );

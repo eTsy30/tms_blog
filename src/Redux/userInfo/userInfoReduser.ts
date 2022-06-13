@@ -11,6 +11,7 @@ export const getUserInfo: any = createAsyncThunk(
 
     async () => {
         const data = await customFetch('https://studapi.teachmeskills.by/auth/users/me/');
+        console.log({ data });
 
         return data;
     }

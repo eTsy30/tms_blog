@@ -13,6 +13,7 @@ import { Verify } from "./Pages/VerifyPage/Verify";
 import { ResetPassword } from "Pages/ResetPasswordPage/ResetPassword";
 import NewPasswordPage from "Pages/NewPasswordPage/NewPasswordPage";
 import { SearchPage } from "Pages/SearchPage/SearchPage";
+import { AddPostPage } from "Pages/AddPostPage/AddPostPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -28,8 +29,10 @@ root.render(
           <Route path="/fogotPassword" element={<ResetPassword />} />
           <Route path="/blogs/:id" element={<ContentPage />} />
           <Route path="/verify" element={<Verify />} />
-          <Route path="/newPassword" element={<NewPasswordPage />} />
-          <Route path="/searchPage" element={<SearchPage />} />
+          <Route path="/new-password" element={<NewPasswordPage />} />
+          <Route path="/search-page" element={<SearchPage />} />
+          <Route path="/addPostPage" element={<AddPostPage />} />
+
           <Route
             path="*"
             element={

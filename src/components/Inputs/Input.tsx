@@ -8,9 +8,10 @@ type InputProps = {
   className?: string;
   disabled?: boolean;
   title: string;
-  type: "text" | "email" | "password";
-  value?: string;
+  type: "text" | "email" | "password" | "image" | "file";
+  value?: string | number;
   error?: string;
+  name?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void | any;
 };
 export const Input = ({
@@ -22,6 +23,7 @@ export const Input = ({
   value,
   onChange,
   error,
+  name,
 }: InputProps) => {
   return (
     <div className="input">
@@ -34,6 +36,7 @@ export const Input = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          name={name}
         />
         {error && <span className="error">{error}</span>}
       </label>

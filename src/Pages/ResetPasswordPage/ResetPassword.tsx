@@ -61,7 +61,7 @@ export const ResetPassword = ({ className }: PropResetPassword | any) => {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
-          accept: "application/json",
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
       }

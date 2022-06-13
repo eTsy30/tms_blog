@@ -16,8 +16,6 @@ import { Pagination } from "Pagination/Pagination";
 import { getPost } from "Redux/posts/PostsActionReducer";
 
 export const CardPage = (props: any) => {
-  //   const [limit, setlim] = useState(1);
-
   const dispatch = useDispatch();
   const jwt = useSelector((state: any) => state.tokenReduser.value);
   const items = [

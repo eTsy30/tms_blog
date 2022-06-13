@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { text } from "stream/consumers";
 import "./TextArea.scss";
 
 type NameFormProps = {
@@ -6,15 +7,13 @@ type NameFormProps = {
   className?: string;
   disabled?: boolean;
   title: string;
+  name?: string;
+  value?: string;
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void | any;
 };
 export const TextArea = (props: NameFormProps) => {
-  const [textAreaValue, setTextAreaValue] = useState("");
-
-  const handleChange = (event: any) => {
-    setTextAreaValue(event.target.value);
-  };
   const handleSubmit = (event: any) => {
-    console.log(textAreaValue);
+    console.log(4);
   };
   return (
     <div className={`textArea ${props.className}`} onSubmit={handleSubmit}>
@@ -22,8 +21,9 @@ export const TextArea = (props: NameFormProps) => {
       <textarea
         placeholder={props.placeholder}
         className="textArea--textArea"
-        value={textAreaValue}
-        onChange={handleChange}
+        value={props.value}
+        onChange={props.onChange}
+        name={props.name}
       ></textarea>
     </div>
   );

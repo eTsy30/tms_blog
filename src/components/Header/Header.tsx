@@ -11,7 +11,7 @@ import { searchPost } from "Redux/searchPosts/SearchPosts";
 
 const items = [
   { value: "Home", href: "/" },
-  { value: "Add Card", href: "#" },
+  { value: "Add Card", href: "/addPostPage" },
 ];
 
 export const Header = () => {
@@ -25,7 +25,7 @@ export const Header = () => {
   let navigate = useNavigate();
 
   const ActiveSearch = () => {
-    navigate("/searchPage");
+    navigate("/search-page");
     setinputActive(!inputActive);
   };
   const searchValue = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -32,7 +32,7 @@ export const getPost: any = createAsyncThunk(
     async (ilmitoff: any) => {
 
 
-        const response = await fetch(`https://studapi.teachmeskills.by/blog/posts/?limit=${ilmitoff?.offset}&offset=${ilmitoff?.limit}`,
+        const response = await fetch(`https://studapi.teachmeskills.by/blog/posts/?limit=${ilmitoff?.limit}&offset=${ilmitoff?.offset}`,
 
         )
 

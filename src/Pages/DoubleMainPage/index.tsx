@@ -34,8 +34,8 @@ export const DoubleMainPage = (props: ICard) => {
 const RenderPosts = ({ posts }: any) => {
   return posts.map((element: ICard, index: number) => (
     <div key={index.toString()} className={`divd${index}`}>
-      {index >= 0 && index < 5 && <Card info={element} type="medium" />}
-      {index >= 5 && <Card info={element} type="small" />}
+      {index >= 0 && index < 6 && <Card info={element} type="medium" />}
+      {index >= 6 && <Card info={element} type="small" />}
     </div>
   ));
 };

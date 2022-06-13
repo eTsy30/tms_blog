@@ -7,6 +7,7 @@ import { getPost } from "../../Redux/posts/PostsActionReducer";
 import { Loader } from "../Loader/Loader";
 import { Pagination } from "Pagination/Pagination";
 import { getUserInfo } from "Redux/userInfo/userInfoReduser";
+import { DoubleMainPage } from "Pages/DoubleMainPage";
 
 interface ICard {
   id: number;
@@ -24,11 +25,11 @@ interface ICard {
 export const AllContent = (props: any) => {
   const dispatch = useDispatch();
   const [itemOffset, setOffset] = useState(1);
-  const [limit, setlimit] = useState(1);
+  const [limit, setlimit] = useState(11);
   const posts = useSelector((state: any) => state.postReducer.content);
   const handlePageClick = (event: { selected: number }) => {
     const newOffset = event.selected * 12;
-    const limit = event.selected + 3;
+    const limit = 11;
     setOffset(newOffset);
     setlimit(limit);
   };
@@ -40,11 +41,14 @@ export const AllContent = (props: any) => {
   useEffect(() => {
     dispatch(getPost(ilmitoff));
   }, [itemOffset]);
+  if (limit === 11) {
+    setlimit(12);
+  }
   return (
     <>
       <div className="parent">
         <Loader loading={!posts}>
-          <RenderPosts posts={posts} />
+          {limit > 12 ? <RenderPosts posts={posts} /> : <DoubleMainPage />}
         </Loader>
       </div>
       <Pagination handlePageClick={handlePageClick} />

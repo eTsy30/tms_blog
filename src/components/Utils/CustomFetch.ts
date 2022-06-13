@@ -18,13 +18,14 @@ const refreshToken = async (refresh: string) => {
         }
     )
     const data = await response.json()
-
+    console.log('зашли в refresh', data);
 
     if (!response.ok) {
         return Promise.reject(data as IError)
     }
 
     localStorage.setItem('access', JSON.stringify(data.access))
+    console.log('data.access====', JSON.stringify(data.access));
 
     return data.access
 }
@@ -34,16 +35,19 @@ export const customFetch = async (url: string, config: any = {}) => {
     let access = localStorage.getItem('access')
 
     let token = access ? JSON.parse(access) : null
+    // console.log('токен из локал стора==', token);
 
     try {
         if (token) {
             const accessToken = jwtDecode<JwtPayload>(token)
+            console.log('est== token', token);
 
             const expirationMillisTime = accessToken?.exp ? accessToken.exp * 1000 : 0
             const isAccessExpired = expirationMillisTime
                 ? expirationMillisTime - Date.now() < 0
                 : false
-
+            console.log('time===', isAccessExpired);
+            console.log(new Date(expirationMillisTime));
 
 
             if (isAccessExpired) {
