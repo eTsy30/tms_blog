@@ -6,7 +6,7 @@ export const changePassword: any = createAsyncThunk(
             method: 'POST',
             body: JSON.stringify(email),
             headers: {
-                'accept': 'application/json',
+                'Accept': 'application/json',
                 "Content-Type": "application/json"
             }
         })
