@@ -19,6 +19,7 @@ export const AddPostPage = ({ className }: PropSAddPostPage) => {
   const onTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
   };
+
   const onImgChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setImj(event.target.value);
   };
@@ -30,13 +31,11 @@ export const AddPostPage = ({ className }: PropSAddPostPage) => {
     setLesson_num(event.target.value);
   };
 
-  const toServer = async () => {
+  const toServer = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const acess = localStorage.getItem("access");
-    console.log(acess);
 
     if (formRef.current) {
       const dataForm = new FormData(formRef.current);
-      console.log(dataForm.getAll);
 
       const headers = {
         Accept: "application/json",
@@ -50,11 +49,8 @@ export const AddPostPage = ({ className }: PropSAddPostPage) => {
           headers,
         }
       );
-      console.log("body", await response.json());
 
       let result = await response.json();
-
-      console.log(result.message);
       navigate("/");
     }
   };
