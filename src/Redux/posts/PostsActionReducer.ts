@@ -28,8 +28,6 @@ export const getPost: any = createAsyncThunk(
     async () => {
         const response = await fetch('https://studapi.teachmeskills.by/blog/posts/?limit=70')
         const responseFormat = await response.json()
-        console.log(responseFormat);
-
         return responseFormat.results
     }
 
@@ -58,6 +56,8 @@ const postReducer = createSlice({
 
             if (state.content) {
                 state.content = state.content.map(post => post.id === action.payload ? { ...post, like: !post.like } : post)
+
+
             }
         },
         dislikePost: (state, action: PayloadAction<number>) => {

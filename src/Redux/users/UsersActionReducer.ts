@@ -42,7 +42,7 @@ export const authSlice = createSlice({
             if (state.isLoading === 'pending') {
                 state.isLoading = 'idle'
                 state.user = action.payload
-                console.log(state.user);
+
 
             }
         },

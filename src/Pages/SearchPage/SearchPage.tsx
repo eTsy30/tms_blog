@@ -1,10 +1,10 @@
-import { GeneralPage } from "../../components/GeneralPage/GeneralPage";
 import "./SearchPage.scss";
 import { useDispatch, useSelector } from "react-redux";
 
 import { CardSearch } from "../../components/CardSearch/CardSearch";
 import { getPost } from "../../Redux/posts/PostsActionReducer";
 import { useEffect } from "react";
+import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
 
 interface ICard {
   id?: number;

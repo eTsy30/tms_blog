@@ -1,6 +1,7 @@
+import { Footer } from "components/Footer";
+import { Header } from "components/Header";
 import React from "react";
-import { Header } from "../Header";
-import { Footer } from "../Footer";
+
 import "./GeneralPage.css";
 
 type PropSingIn = {
@@ -13,12 +14,10 @@ export const GeneralPage = ({
   children,
 }: PropSingIn | any) => {
   return (
-    <div className="generalPage">
+    <>
       <Header />
-      <div className="generalPage-centre">
-        {children}
-        <Footer />
-      </div>
-    </div>
+      <div className="generalPage-centre">{children}</div>
+      <Footer />
+    </>
   );
 };

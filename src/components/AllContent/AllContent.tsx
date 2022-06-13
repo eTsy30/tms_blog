@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Card } from "../Cards";
+import { Card } from "components/Cards";
 import "../../Pages/CardPage/CardPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost } from "../../Redux/posts/PostsActionReducer";
@@ -24,11 +24,9 @@ export const AllContent = (props: any) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setTimeout(() => {
-      if (posts === null) {
-        dispatch(getPost());
-      }
-    }, 3000);
+    if (posts === null) {
+      dispatch(getPost());
+    }
   }, [dispatch]);
 
   return (

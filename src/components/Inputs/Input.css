@@ -8,20 +8,16 @@
   line-height: 20px;
   height: 102px;
   color: #313037;
+  width: 100%;
 }
 
 .input--label {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
   text-align: start;
 }
 
 .input--default {
   height: 56px;
-  width: 544px;
+  width: 100%;
   border-radius: 2px;
   color: #8d8e97;
   border: none;

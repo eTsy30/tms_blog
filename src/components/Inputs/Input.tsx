@@ -29,7 +29,7 @@ export const Input = ({
       // onSubmit={handleSubmit}
     >
       <label className="input--label">
-        <span>{title}</span>
+        {title}
         <input
           type={type}
           disabled={disabled}

@@ -2,7 +2,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../Button";
 import "./Modal.scss";
-export const Modal = ({ active, setActive, children, text, status }: any) => {
+export const Modal = ({
+  active,
+  setActive,
+  children,
+  text,
+  status,
+  naviganeSucsess,
+  naviganeNOTSucsess,
+}: any) => {
   let navigate = useNavigate();
   return (
     <div
@@ -16,7 +24,9 @@ export const Modal = ({ active, setActive, children, text, status }: any) => {
           className="SingIn-Button-SingIn button primary"
           text="ok"
           onClick={() => {
-            status ? navigate("/singin") : navigate("/singup");
+            status
+              ? navigate(naviganeSucsess)
+              : naviganeSucsess(naviganeNOTSucsess);
           }}
         ></Button>
       </div>

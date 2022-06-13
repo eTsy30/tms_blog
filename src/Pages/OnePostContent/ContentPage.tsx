@@ -1,58 +1,107 @@
 import { useEffect } from "react";
-import { GeneralPage } from "../../components/GeneralPage/GeneralPage";
 import { Button } from "../../components/Button";
 import { Prev } from "../../components/NavForPage/Prev/Prev";
 import { Next } from "../../components/NavForPage/Next/Next";
 import "./ContentPage.scss";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
 import { getOnePost } from "../../Redux/singlePost/singePost";
 import { Loader } from "../../components/Loader/Loader";
-
+import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
+import { ReactComponent as Like } from "../../components/image/like.svg";
+import { ReactComponent as SvgBwi } from "../../components/image/buttonWithIcon.svg";
+import { ReactComponent as Dislike } from "../../components/image/dislike.svg";
+import {
+  dislikePost,
+  favoritPost,
+  likePost,
+} from "Redux/posts/PostsActionReducer";
 export const ContentPage = () => {
   const { id } = useParams();
-  const post = useSelector((state: any) => state.singlepostReducer.post);
-  console.log(post);
-
   const dispatch = useDispatch();
+  const posts = useSelector((state: any) => state.postReducer.content)
+  const postLike = posts?.find((el: any) => el.id === Number(id))
 
+  //==========================================
+  const addToLike = () => {
+    if (postsLike.like) {
+      dispatch(likePost(postsLike.id));
+    } else {
+      dispatch(likePost(postsLike.id));
+      if (postsLike.dislike) {
+        dispatch(dislikePost(postsLike.id));
+      }
+    }
+  };
+
+  const addToDisLike = () => {
+    if (postsLike.dislike) {
+      dispatch(dislikePost(postsLike.id));
+    } else {
+      dispatch(dislikePost(postsLike.id));
+      if (postsLike.like) {
+        dispatch(likePost(postsLike.id));
+      }
+    }
+  };
+  const favorite = () => {
+    dispatch(favoritPost(postsLike.id));
+  };
+
+  //=================================
   useEffect(() => {
     dispatch(getOnePost(id));
   }, [id]);
+
   return (
     <GeneralPage>
-      {post && (
+      {postsLike && (
         <div className="ContentPage--wrapper">
           <div className="ContentPage--Home">
             <Link to="/" className="SingIn-link-Back">
               Home
-              <span className="ContentPage--Home--span"> | {id}</span>
+              <span className="ContentPage--Home--span"> | {postsLike.id}</span>
             </Link>
           </div>
           <div className="ContentPage--Title">
-            <h2>{post.title}</h2>
+            <h2>
+              {postsLike.title} {postsLike.like}
+            </h2>
           </div>
           <div className="ContentPage--Image">
-            <img className="ContentPage--Image--img" src={post.image}></img>
+            <img
+              className="ContentPage--Image--img"
+              src={postsLike.image}
+            ></img>
           </div>
-          <div className="ContentPage--Content">{post.text}</div>
+          <div className="ContentPage--Content">{postsLike.text}</div>
           <div className="ContentPage--Button">
             <div className="ContentPage--Button--leftSide">
               <Button
-                className="ContentPage--Button--leftSide--like like"
-                icon="Like"
+                text={postsLike.like}
+                icon={<Like />}
+                onClick={addToLike}
+                className={`ContentPage--Button--leftSide--like like ${
+                  postsLike.like && "Like--Button_color"
+                }`}
               ></Button>
               <Button
-                className="ContentPage--Button--leftSide--dislike  dislike"
-                icon="Dislike"
+                text={postsLike.dislike}
+                icon={<Dislike />}
+                onClick={addToDisLike}
+                className={`ContentPage--Button--leftSide--dislike  dislike ${
+                  postsLike.dislike && "DisLike--Button_color"
+                }`}
               ></Button>
             </div>
             <div className="ContentPage--Button--rightSide">
               <Button
                 text="Add to favorites"
-                className="buttonWithIcon ContentPage--Button--rightSide--ButtomWithIcon"
-                icon="SvgBwi"
+                className={`buttonWithIcon ContentPage--Button--rightSide--ButtomWithIcon ${
+                  postsLike.favorit && "DisLike--Button_color"
+                }`}
+                icon={<SvgBwi />}
+                onClick={favorite}
               ></Button>
             </div>
           </div>

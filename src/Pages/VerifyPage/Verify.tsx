@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Input } from "../../components/Inputs";
 import { Button } from "../../components/Button/Button";
-import { GeneralPage } from "../../components/GeneralPage/GeneralPage";
+
 import "./Verify.scss";
 import { Link } from "react-router-dom";
-// import { getToken } from "../../Redux/getToken/getTokenReduser";
+
 import { useDispatch } from "react-redux";
 import { Modal } from "../../components/Modal/Modal";
+import isBoolean from "validator/lib/isBoolean";
+import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
 
 export const Verify = () => {
   const [uid, setUid] = useState("");
@@ -15,6 +17,7 @@ export const Verify = () => {
   const [modalActive, setModaiActive] = useState(false);
   const [text, setText] = useState("");
   const [responseStatus, setResponseStatus] = useState(false);
+  const [dis, setDis] = useState(false);
   const onUid = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUid(event.target.value);
   };
@@ -28,13 +31,12 @@ export const Verify = () => {
       uid: uid,
       token: token,
     };
-    console.log("submitFormToken");
-
+    localStorage.setItem("uid", uid);
+    localStorage.setItem("token", token);
     tokenREqest(tokenParam);
+    setDis(true);
   };
-  const buttonEneblerd = () => {
-    return !uid !== !token;
-  };
+
   const tokenREqest = async (tokenParam: any) => {
     const response = await fetch(
       "https://studapi.teachmeskills.by/auth/users/activation/",
@@ -47,17 +49,21 @@ export const Verify = () => {
         },
       }
     );
-
-    // const data = await response.json();
-    console.log(response.status);
-
     response.ok
       ? setText("Поздравляю Вы успешно прошли аутификацию")
-      : setText("Ошибка HTTP: " + response.status);
+      : setText("Ошибка HTTP: " + response.statusText);
     setResponseStatus(response.ok);
     setModaiActive(true);
     return response.ok;
   };
+
+  useEffect(() => {
+    if (uid !== "" && token !== "") {
+      setDis(false);
+    } else {
+      setDis(true);
+    }
+  }, [uid, token]);
 
   return (
     <>
@@ -88,7 +94,7 @@ export const Verify = () => {
               text="Sign In"
               className="SingIn-Button-SingIn button primary"
               onClick={submitFormToken}
-              disabled={buttonEneblerd()}
+              disabled={dis}
             />
           </div>
         </div>
@@ -98,6 +104,8 @@ export const Verify = () => {
         setActive={setModaiActive}
         text={text}
         status={responseStatus}
+        naviganeSucsess="/singin"
+        naviganeNOTSucsess="/singup"
       ></Modal>
     </>
   );

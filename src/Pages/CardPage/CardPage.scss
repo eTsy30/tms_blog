@@ -1,12 +1,12 @@
 @import "../../style/variables";
 .parent {
+  margin-top: 64px;
   display: grid;
-  grid-template-columns: repeat(3, 33%);
-
+  justify-content: center;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
   grid-column-gap: 32px;
-  grid-row-gap: 40px;
-
-  width: 100%;
+  grid-row-gap: 34px;
 }
 .Blog-Main-Label {
   font-family: "Inter";

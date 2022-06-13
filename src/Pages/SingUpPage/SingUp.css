@@ -1,44 +1,52 @@
-.Global-Wraper-SingIn {
+/* .SingUp-MainBlok {
+  height: 684px;
+} */
+.Global-Wraper-SingUp {
   min-height: 1080px;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
-.SingIn-Wrapper {
-  display: grid;
-  grid-template-columns: 400px 1fr 400px;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+.SingUp-Wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #dadada;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
-.SingIn-left {
+.SingUp-left {
   grid-area: 1 / 1 / 2 / 2;
 }
-.SingIn-centre {
+.SingUp-centre {
   width: 100%;
-
   justify-content: center;
   align-items: center;
-
   grid-area: 1 / 2 / 2 / 3;
 }
-.SingIn-right {
+.SingUp-right {
   grid-area: 1 / 3 / 2 / 4;
 }
 .SingUp-MainBlok {
   height: 684px;
 }
-.SingIn-link-Back {
+.SingUp-link-Back {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   display: flex;
-  margin-top: 72px;
+
   color: #313037;
 }
-.SingIn-Main-Label {
+.SingUp-Main-Label {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
@@ -49,7 +57,7 @@
   align-items: center;
   color: #313037;
 }
-.SingIn-Input-Wrapper {
+.SingUp-Input-Wrapper {
   display: grid;
   justify-content: center;
   align-content: space-evenly;
@@ -65,7 +73,7 @@
   height: 472px;
 }
 
-.SingIn-Button-SingIn {
+.SingUp-Button-SingIn {
   margin: 0 auto;
   width: 544px;
   height: 56px;
@@ -80,7 +88,7 @@
   line-height: 24px;
   color: #ffffff;
 }
-.SingIn-Input-link_fogot {
+.SingUp-Input-link_fogot {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -90,7 +98,7 @@
   display: flex;
   margin: 15px 0px;
 }
-.SingIn-Down-Span {
+.SingUp-Down-Span {
   margin: 10px;
   font-family: "Inter";
   font-style: normal;
@@ -102,13 +110,13 @@
   flex-grow: 0;
   margin: 24px 0px;
 }
-.SingIn-Footer-Wrapper {
+.SingUp-Footer-Wrapper {
   display: flex;
   justify-content: space-around;
   flex-shrink: 0;
   margin: 33px;
 }
-.SingIn-Footer-Left {
+.SingUp-Footer-Left {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -116,7 +124,7 @@
   line-height: 24px;
   color: #8d8e97;
 }
-.SingIn-Footer-right {
+.SingUp-Footer-right {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;

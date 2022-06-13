@@ -1,0 +1,38 @@
+.AddPostPage {
+  width: 1120px;
+  margin: 0 auto;
+  border-bottom: 1px solid #dadada;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-bottom: 76px;
+
+  &--Input__title {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  &--Input__Publish {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  &--Input__Description {
+    margin-bottom: 40px;
+  }
+  &--Input__text {
+    height: 245px;
+    margin-bottom: 40px;
+  }
+  &--Button {
+    display: flex;
+    justify-content: space-between;
+  }
+  &--TwoButton {
+    display: flex;
+    gap: 24px;
+  }
+  &--Button--Delete {
+    color: red;
+  }
+}
