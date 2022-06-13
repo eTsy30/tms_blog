@@ -24,7 +24,7 @@ root.render(
           <Route path="/" element={<App />} />
           <Route path="/singin" element={<SingIn />} />
           <Route path="/singup" element={<SingUp />} />
-          <Route path="/fogotPassword" element={<ResetPassword />} />
+          <Route path="/fogot-password" element={<ResetPassword />} />
           <Route path="/blogs/:id" element={<ContentPage />} />
           <Route path="/verify" element={<Verify />} />
           <Route path="/newPassword" element={<NewPasswordPage />} />
