@@ -88,17 +88,9 @@
   width: 118px;
   height: 80px;
   border: none;
-  background: $color-white;
+  background: none
 }
-.menuBurger--image--Moon:disabled > .buttonImg path {
-  fill: $color-background-primary;
-}
-.menuBurger--image--Sun:disabled > .buttonImg path {
-  fill: $color-background-primary;
-}
-.menuBurger--image:disabled {
-  background: $color-white;
-}
+
 .button-Login {
   font-family: Inter;
   font-size: 16px;
@@ -123,4 +115,20 @@ ul {
   text-align: center;
   margin: 0px;
   padding: 0px;
+}
+.dark--IconTheme path{
+  fill:#dedfe8;
+  
+}
+.light--IconTheme path{
+
+  fill: none; 
+}
+.dark--IconThemeMon path{
+ 
+  fill: none; 
+}
+.light--IconThemeMon path{
+  fill: rgb(0, 0, 0);
+  
 }

@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 
 import tabReducer from './tabs/TabActionReducer'
 import postReducer from './posts/PostsActionReducer'
@@ -8,11 +8,13 @@ import createSagaMiddleware from "redux-saga";
 import signUpSaga from "./saga/signUpSagas";
 import tokenReduser from './getToken/getTokenReduser'
 import userInfo from './userInfo/userInfoReduser'
+import searchReducer from './searchPosts/SearchPosts'
+import themeSlice from "./Theme/ThemeReduser";
+import likeReducer from './Like/Like'
+import AuthReducer from './Auth/Auth'
 const sagaMiddleware = createSagaMiddleware()
 
-const rootReduser = combineReducers({
-    tabReducer, postReducer, authSlice, singlepostReducer,
-})
+
 export const store = configureStore({
     reducer: {
         tabReducer: tabReducer,
@@ -21,6 +23,12 @@ export const store = configureStore({
         singlepostReducer: singlepostReducer,
         tokenReduser: tokenReduser,
         userInfo: userInfo,
+        searchReducer: searchReducer,
+        theme: themeSlice,
+        likeReducer: likeReducer,
+        AuthReducer: AuthReducer
+
+
 
     },
     middleware: getDefaultMiddleware => { return getDefaultMiddleware().concat(sagaMiddleware) }

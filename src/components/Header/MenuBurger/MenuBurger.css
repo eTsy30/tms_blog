@@ -127,19 +127,7 @@
   width: 118px;
   height: 80px;
   border: none;
-  background: #ffffff;
-}
-
-.menuBurger--image--Moon:disabled > .buttonImg path {
-  fill: #8d8e97;
-}
-
-.menuBurger--image--Sun:disabled > .buttonImg path {
-  fill: #8d8e97;
-}
-
-.menuBurger--image:disabled {
-  background: #ffffff;
+  background: none;
 }
 
 .button-Login {
@@ -174,5 +162,21 @@ ul {
   text-align: center;
   margin: 0px;
   padding: 0px;
+}
+
+.dark--IconTheme path {
+  fill: #dedfe8;
+}
+
+.light--IconTheme path {
+  fill: none;
+}
+
+.dark--IconThemeMon path {
+  fill: none;
+}
+
+.light--IconThemeMon path {
+  fill: black;
 }
 /*# sourceMappingURL=MenuBurger.css.map */

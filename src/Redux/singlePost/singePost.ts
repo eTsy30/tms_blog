@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AnyAsyncThunk } from "@reduxjs/toolkit/dist/matchers";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
 
 type Post = {
     id: number,
@@ -27,9 +27,14 @@ const initialState: IPostsState = {
 export const getOnePost: any = createAsyncThunk(
     'post/getOnePost',
     async (id) => {
-        const response = await fetch(`https://studapi.teachmeskills.by/blog/posts/${id}`)
-        const responseFormat = await response.json()
-        return responseFormat
+        try {
+            const response = await fetch(`https://studapi.teachmeskills.by/blog/posts/${id}`)
+            const responseFormat = await response.json()
+            return responseFormat
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
 )
@@ -50,8 +55,8 @@ const singlepostReducer = createSlice({
             state.isLoading = false;
         }
     },
-    reducers: {},
+    reducers: {}
 })
 export default singlepostReducer.reducer
-export const { } = singlepostReducer.actions
+
 

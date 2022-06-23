@@ -10,6 +10,8 @@ import {
   favoritPost,
   dislikePost,
 } from "../../Redux/posts/PostsActionReducer";
+import { useTheme } from "Redux/Theme/useTheme";
+import { dislikeP, favoritP, likeP } from "Redux/Like/Like";
 
 type LikeBarProps = {
   id: number;
@@ -20,50 +22,70 @@ type LikeBarProps = {
 
 export const LikeBar = ({ id, like, dislike, favorit }: LikeBarProps) => {
   const dispatch = useDispatch();
-  ////////////////////
-  const addToFavorite = () => {
-    if (like) {
-      dispatch(likePost(id));
+  const theme = useTheme();
+  const likeStore = useSelector(
+    (state: any) => state.likeReducer.content
+  )?.find((el: any) => el.id === id);
+
+  const getlike = () => {
+    // likeStore[`${id}`] = {
+    //   like: true,
+    //   dislike: false,
+    // };
+
+    if (likeStore?.like) {
+      dispatch(likeP(id));
     } else {
-      dispatch(likePost(id));
-      if (dislike) {
-        dispatch(dislikePost(id));
+      dispatch(likeP(id));
+      if (likeStore?.dislike) {
+        dispatch(dislikeP(id));
       }
     }
   };
 
-  const removeFromFavorite = () => {
-    if (dislike) {
-      dispatch(dislikePost(id));
+  const getDisLike = () => {
+    if (likeStore?.dislike) {
+      dispatch(dislikeP(id));
     } else {
-      dispatch(dislikePost(id));
-      if (like) {
-        dispatch(likePost(id));
+      dispatch(dislikeP(id));
+      if (likeStore?.like) {
+        dispatch(likeP(id));
       }
     }
   };
-  const favorite = () => {
-    dispatch(favoritPost(id));
+  const getFavorite = () => {
+    dispatch(favoritP(id));
   };
 
+  const chooseTheme = () => {
+    return theme.theme === "light" ? "lightLike" : "darkLike";
+  };
   return (
     <div className="likeBar">
       <div className="likeBar--div--left">
         <Like
-          onClick={addToFavorite}
-          className={` ${like && "DisLikeBar_color"}`}
+          onClick={getlike}
+          className={`${chooseTheme()}  ${
+            likeStore?.like && "DisLikeBar_color"
+          }`}
         />
         <span className="likeBar-count">{like}</span>
 
         <DisLike
-          className={` ${dislike && "LikeBar_color"}`}
-          onClick={removeFromFavorite}
+          onClick={getDisLike}
+          className={`${chooseTheme()}  ${
+            likeStore?.dislike && "LikeBar_color"
+          }`}
         />
         <span className="likeBar-count">{like}</span>
       </div>
 
       <div className="likeBar--div--right">
-        <SvgBwi className={` ${favorit && "LikeBar1"}`} onClick={favorite} />
+        <SvgBwi
+          className={`${chooseTheme()}   ${likeStore?.favorit && "LikeBar1"}`}
+          onClick={getFavorite}
+        />
+
         {favorit}
         <span className="likeBar-count"></span>
         <a>...</a>

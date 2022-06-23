@@ -21,16 +21,7 @@ interface ICard {
 
 export const DoubleMainPage = (props: ICard) => {
   const posts = useSelector((state: any) => state.postReducer.content);
-  console.table("polutsau s useSelector", posts);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (posts === null) {
-        dispatch(getPost());
-      }
-    });
-  }, []);
+  const likeStore = useSelector((state: any) => state.likeReducer.content);
 
   return (
     <div className="DoubleMainPage--parent">
@@ -44,8 +35,8 @@ export const DoubleMainPage = (props: ICard) => {
 const RenderPosts = ({ posts }: any) => {
   return posts.map((element: ICard, index: number) => (
     <div key={index.toString()} className={`divd${index}`}>
-      {index >= 0 && index < 5 && <Card info={element} type="medium" />}
-      {index >= 5 && <Card info={element} type="small" />}
+      {index >= 0 && index < 6 && <Card info={element} type="medium" />}
+      {index >= 6 && <Card info={element} type="small" />}
     </div>
   ));
 };

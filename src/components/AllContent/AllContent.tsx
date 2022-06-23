@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "components/Cards";
 import "../../Pages/CardPage/CardPage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getPost } from "../../Redux/posts/PostsActionReducer";
 
 import { Loader } from "../Loader/Loader";
+import { Pagination } from "Pagination/Pagination";
+
+import { DoubleMainPage } from "Pages/DoubleMainPage";
+import { getlike } from "Redux/Like/Like";
 
 interface ICard {
   id: number;
@@ -20,21 +24,45 @@ interface ICard {
 }
 
 export const AllContent = (props: any) => {
-  const posts = useSelector((state: any) => state.postReducer.content);
   const dispatch = useDispatch();
+  const [itemOffset, setOffset] = useState(1);
+  const [limit, setlimit] = useState(11);
+  const posts = useSelector((state: any) => state.postReducer.content);
+  const likeStore = useSelector((state: any) => state.likeReducer.content);
+
+  const handlePageClick = (event: { selected: number }) => {
+    const newOffset = event.selected * 12;
+    const limit = 11;
+    setOffset(newOffset);
+    setlimit(limit);
+  };
+
+  const ilmitoff = {
+    limit: limit,
+    offset: itemOffset,
+  };
+  useEffect(() => {
+    if (likeStore === null) {
+      dispatch(getlike());
+    }
+  }, [likeStore]);
 
   useEffect(() => {
-    if (posts === null) {
-      dispatch(getPost());
-    }
-  }, [dispatch]);
+    dispatch(getPost(ilmitoff));
+  }, [itemOffset]);
 
+  if (limit === 11) {
+    setlimit(12);
+  }
   return (
-    <div className="parent">
-      <Loader loading={!posts}>
-        <RenderPosts posts={posts} />
-      </Loader>
-    </div>
+    <>
+      <div className="parent">
+        <Loader loading={!posts}>
+          {limit > 12 ? <RenderPosts posts={posts} /> : <DoubleMainPage />}
+        </Loader>
+      </div>
+      <Pagination handlePageClick={handlePageClick} />
+    </>
   );
 };
 

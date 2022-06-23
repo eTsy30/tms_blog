@@ -38,11 +38,11 @@
 }
 
 .LikeBar_color path {
-  fill: crimson;
+  fill: crimson !important;
 }
 
 .DisLikeBar_color path {
-  fill: #0400ff;
+  fill: #0400ff !important;
 }
 
 .likeBar-count {
@@ -50,6 +50,14 @@
 }
 
 .LikeBar1 path {
-  fill: #1bdc14;
+  fill: #1bdc14 !important;
+}
+
+.lightLike path {
+  fill: #313037;
+}
+
+.darkLike path {
+  fill: #e7e5ed;
 }
 /*# sourceMappingURL=LikeBar.css.map */

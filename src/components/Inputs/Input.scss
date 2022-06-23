@@ -1,11 +1,12 @@
 @import "../../style/variables";
+@import '../../style/theme';
 .input {
   font-family: InterSemiBold, sans-serif;
   font-size: $font-size-subline-1;
   font-weight: 600;
   line-height: 20px;
   height: 102px;
-  color: $color-secondary;
+
   width: 100%;
 }
 

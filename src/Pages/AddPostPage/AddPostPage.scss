@@ -1,3 +1,4 @@
+@import "../../style/variables";
 .AddPostPage {
   width: 1120px;
   margin: 0 auto;
@@ -35,4 +36,29 @@
   &--Button--Delete {
     color: red;
   }
+}
+
+.imgClass {
+  border: 1px solid #ccc;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  background-color: white;
+  font-family: InterSemiBold, sans-serif;
+  font-size: 16px;
+}
+
+::-webkit-file-upload-button {
+  font-family: InterSemiBold, sans-serif;
+  font-size: $font-size-headline-3-desktop;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 16px 32px;
+  background: $color-primary;
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  margin: 0px;
 }

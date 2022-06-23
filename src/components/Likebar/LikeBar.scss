@@ -22,15 +22,22 @@
   transform-origin: center center;
 }
 .LikeBar_color path {
-  fill: crimson;
+  fill: crimson !important;
 }
 .DisLikeBar_color path {
-  fill: rgb(4, 0, 255);
+  fill: rgb(4, 0, 255) !important;
 }
 
 .likeBar-count {
   margin: 0px 10px;
 }
 .LikeBar1 path {
-  fill: rgb(27, 220, 20);
+  fill: rgb(27, 220, 20)  !important;
 }
+ .lightLike path{
+  fill: #313037;
+
+ }
+  .darkLike path{
+    fill: #e7e5ed;
+  }

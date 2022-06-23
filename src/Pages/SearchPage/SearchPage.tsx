@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { CardSearch } from "../../components/CardSearch/CardSearch";
 import { getPost } from "../../Redux/posts/PostsActionReducer";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
 
 interface ICard {
@@ -19,24 +19,26 @@ interface ICard {
   favorit?: boolean;
 }
 export const SearchPage = () => {
-  const posts = useSelector((state: any) => state.postReducer.content);
-  const dispatch = useDispatch();
+  const posts = useSelector((state: any) => state.searchReducer.content);
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (posts === null) {
-        dispatch(getPost()); // пока файлы гружу с файла
-      }
-    }, 3000);
-  }, []);
   return (
     <GeneralPage label="SearchPage">
-      <p className="SearchPage-Label">Search results ‘Astronauts’</p>
-      {posts?.map((element: ICard, index: number) => (
-        <div key={index.toString()} className={`div${index}`}>
-          {index >= 0 && <CardSearch info={element} />}
-        </div>
-      ))}
+      <p className="SearchPage-Label">Search results </p>
+      {posts?.length === 0 ? (
+        <h1>Net postov</h1>
+      ) : posts === null ? (
+        posts?.map((element: ICard, index: number) => (
+          <div key={element.id} className={`div${index}`}>
+            {index >= 0 && <CardSearch info={element} />}
+          </div>
+        ))
+      ) : (
+        posts?.map((element: ICard, index: number) => (
+          <div key={element.id} className={`div${index}`}>
+            {index >= 0 && <CardSearch info={element} />}
+          </div>
+        ))
+      )}
     </GeneralPage>
   );
 };

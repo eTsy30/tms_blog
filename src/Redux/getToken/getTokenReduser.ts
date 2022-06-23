@@ -2,10 +2,12 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 interface ITokenState {
     value: any,
+    auth: boolean
     isLoading: boolean
 }
 const initialState: ITokenState = {
     value: null,
+    auth: false,
     isLoading: false
 }
 export const getJwt: any = createAsyncThunk(
@@ -23,7 +25,7 @@ export const getJwt: any = createAsyncThunk(
                 })
             const data = await response.json()
 
-            console.log('tokenReduser', data);
+
             if (response.ok) {
                 localStorage.setItem("access", JSON.stringify(data.access));
                 localStorage.setItem("refresh", JSON.stringify(data.refresh));
@@ -50,6 +52,7 @@ const tokenReduser = createSlice({
         [getJwt.fulfilled]: (state, action) => {
             state.value = action.payload;
             state.isLoading = false;
+            state.auth = true
 
 
 
@@ -61,4 +64,4 @@ const tokenReduser = createSlice({
     reducers: {}
 })
 export default tokenReduser.reducer
-export const { } = tokenReduser.actions
+

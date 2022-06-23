@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { Modal } from "../../components/Modal/Modal";
 import isBoolean from "validator/lib/isBoolean";
 import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
+import { PageUPHeader } from "components/PageUPHeader/PageUPHeader";
 
 export const Verify = () => {
   const [uid, setUid] = useState("");
@@ -18,6 +19,7 @@ export const Verify = () => {
   const [text, setText] = useState("");
   const [responseStatus, setResponseStatus] = useState(false);
   const [dis, setDis] = useState(false);
+
   const onUid = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUid(event.target.value);
   };
@@ -69,10 +71,7 @@ export const Verify = () => {
     <>
       <GeneralPage>
         <div className={` SingIn-centre `}>
-          <Link to="/" className="SingIn-link-Back">
-            Back to home
-          </Link>
-          <p className="SingIn-Main-Label">Verify</p>
+          <PageUPHeader label="Back to home" text="Verify" />
 
           <div className={`SingIn-Input-Wrapper `}>
             <Input

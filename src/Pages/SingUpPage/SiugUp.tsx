@@ -10,6 +10,7 @@ import { signUp } from "../../Redux/users/UsersActionReducer";
 import validator from "validator";
 import { log } from "console";
 import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
+import { PageUPHeader } from "components/PageUPHeader/PageUPHeader";
 type PropsSingUp = {
   className?: string;
 };
@@ -63,11 +64,7 @@ export const SingUp = (className: PropsSingUp) => {
   return (
     <GeneralPage>
       <div className={` SingUp-centre `}>
-        <Link to="/" className="SingIn-link-Back">
-          Back to home
-        </Link>
-
-        <p className="SingUp-Main-Label">Sing Up</p>
+        <PageUPHeader label="Back to home" text=" Sing Up" />
 
         <div className={`SingUp-Input-Wrapper ${className}`}>
           <Input

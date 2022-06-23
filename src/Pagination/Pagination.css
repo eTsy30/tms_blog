@@ -1,0 +1,35 @@
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pagination li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pagination li a {
+  text-align: center;
+  width: 45px;
+  line-height: 42px;
+  height: 45px;
+  border: 1px solid #5360cd;
+  border-radius: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: inline-block;
+  color: #5360cd;
+}
+
+.pagination li a:hover {
+  background-color: #5360cd;
+  color: #fff;
+}
+
+.selected a {
+  background-color: #5360cd;
+  color: white !important;
+}
+/*# sourceMappingURL=Pagination.css.map */

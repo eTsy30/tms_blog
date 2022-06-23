@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTheme } from "Redux/Theme/useTheme";
 import validator from "validator/index";
 import "./Input.css";
 
@@ -8,9 +9,10 @@ type InputProps = {
   className?: string;
   disabled?: boolean;
   title: string;
-  type: "text" | "email" | "password";
-  value?: string;
+  type: "text" | "email" | "password" | "image" | "file";
+  value?: string | number;
   error?: string;
+  name?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void | any;
 };
 export const Input = ({
@@ -22,12 +24,11 @@ export const Input = ({
   value,
   onChange,
   error,
+  name,
 }: InputProps) => {
+  const theme = useTheme();
   return (
-    <div
-      className="input"
-      // onSubmit={handleSubmit}
-    >
+    <div className={`input ${theme.theme}`}>
       <label className="input--label">
         {title}
         <input
@@ -37,6 +38,7 @@ export const Input = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          name={name}
         />
         {error && <span className="error">{error}</span>}
       </label>

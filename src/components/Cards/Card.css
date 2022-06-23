@@ -81,7 +81,6 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 44px;
-  color: #313037;
   margin-bottom: 24px;
   text-align: left;
   margin-top: 8px;
@@ -145,7 +144,6 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
-  color: #313037;
   margin: 0;
   margin-bottom: 24px;
   text-align: left;
@@ -184,6 +182,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .small--Img {
@@ -199,7 +200,6 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
-  color: #313037;
   text-align: left;
   display: -webkit-box;
   -webkit-line-clamp: 2;

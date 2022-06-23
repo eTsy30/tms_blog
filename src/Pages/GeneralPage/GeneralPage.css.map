@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,mBAAmB,CAAC;EAClB,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,WAAW;EACnB,UAAU,EAAE,OAAO;EACnB,UAAU,EAAE,IAAI;CACjB",
+    "mappings": "ACAA,AAAA,KAAK,CAAA;EACD,UAAU,EAAE,OAAO;EACpB,KAAK,EAAE,OAAO;CACf;;AAED,AAAA,MAAM,CAAA;EACJ,UAAU,EAAE,OAAO;EACnB,KAAK,EAAE,OAAO;CACf;;ADPF,AAAA,mBAAmB,CAAC;EAClB,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,WAAW;EAEnB,UAAU,EAAE,IAAI;CACjB",
     "sources": [
-        "GeneralPage.scss"
+        "GeneralPage.scss",
+        "../../style/_theme.scss"
     ],
     "names": [],
     "file": "GeneralPage.css"
