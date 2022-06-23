@@ -31,6 +31,7 @@ root.render(
           <Route path="/" element={<App />} />
           <Route path="/singin" element={<SingIn />} />
           <Route path="/singup" element={<SingUp />} />
+
           <Route
             path="/fogotPassword"
             element={
@@ -47,6 +48,7 @@ root.render(
               </RequireAuth>
             }
           />
+
           <Route path="/verify" element={<Verify />} />
           <Route
             path="/new-password"

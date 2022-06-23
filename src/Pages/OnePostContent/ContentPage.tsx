@@ -25,6 +25,7 @@ export const ContentPage = () => {
   const postIdPrev = postId - 1;
   const postIdNext = postId + 1;
   const dispatch = useDispatch();
+
   const theme = useTheme();
 
   const likeStore = useSelector((state: any) => state.likeReducer.content);
@@ -42,6 +43,7 @@ export const ContentPage = () => {
   };
   const postOne = getInfoOnePost(postId);
   console.log(postOne);
+
 
   const addToLike = () => {
     if (postOne.like) {

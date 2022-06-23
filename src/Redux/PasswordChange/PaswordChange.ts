@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 export const changePassword: any = createAsyncThunk(
     'changePassword',
     async (email) => {
+
         try {
             const response = await fetch("https://studapi.teachmeskills.by/auth/users/reset_password_confirm/", {
                 method: 'POST',
@@ -16,5 +17,6 @@ export const changePassword: any = createAsyncThunk(
         } catch (error) {
             return console.log(error);
         }
+
     }
 )
