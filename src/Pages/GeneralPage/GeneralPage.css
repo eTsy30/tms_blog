@@ -1,7 +1,16 @@
+.dark {
+  background: #313037;
+  color: #e5e5e5;
+}
+
+.light {
+  background: #e5e5e5;
+  color: #313037;
+}
+
 .generalPage-centre {
   width: 60%;
   margin: 84px auto 0;
-  background: #e5e5e5;
   min-height: 85vh;
 }
 /*# sourceMappingURL=GeneralPage.css.map */

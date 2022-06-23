@@ -21,6 +21,7 @@ interface ICard {
 
 export const DoubleMainPage = (props: ICard) => {
   const posts = useSelector((state: any) => state.postReducer.content);
+  const likeStore = useSelector((state: any) => state.likeReducer.content);
 
   return (
     <div className="DoubleMainPage--parent">

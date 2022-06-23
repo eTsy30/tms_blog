@@ -1,6 +1,7 @@
 import { Button } from "components/Button";
 import { Input } from "components/Inputs";
 import { Modal } from "components/Modal/Modal";
+import { PageUPHeader } from "components/PageUPHeader/PageUPHeader";
 import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -25,8 +26,6 @@ const NewPasswordPage = () => {
   };
   const uidLocal = localStorage.getItem("uid");
   const tokenLocal = localStorage.getItem("token");
-  console.log("uidLocal", uidLocal);
-  console.log("tokenLocal", tokenLocal);
 
   const changePassword = async () => {
     const formData = {
@@ -34,7 +33,6 @@ const NewPasswordPage = () => {
       token: tokenLocal,
       new_password: confirmPassword,
     };
-    console.log("formData_new_Pas", formData);
 
     const response = await fetch(
       "https://studapi.teachmeskills.by/auth/users/reset_password_confirm/",
@@ -47,8 +45,6 @@ const NewPasswordPage = () => {
         },
       }
     );
-    console.log(response);
-    console.log(response.ok);
 
     response.ok
       ? setText("Выш пароль изменён")
@@ -68,10 +64,7 @@ const NewPasswordPage = () => {
     <>
       <GeneralPage>
         <div className={` ResetPassword-centre `}>
-          <Link to="/" className="ResetPassword-link-Back">
-            Back to home
-          </Link>
-          <p className="ResetPassword-Main-Label">New Password</p>
+          <PageUPHeader label="New Password" text="Back to home" />
 
           <div className={`ResetPassword-Input-Wrapper `}>
             <Input

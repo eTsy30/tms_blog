@@ -6,6 +6,7 @@ import { Button } from "../../components/Button/Button";
 import "./ResetPassword.css";
 import { Link, useNavigate } from "react-router-dom";
 import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
+import { PageUPHeader } from "components/PageUPHeader/PageUPHeader";
 type PropResetPassword = {
   className: string;
 };
@@ -44,7 +45,7 @@ export const ResetPassword = ({ className }: PropResetPassword | any) => {
         },
       }
     );
-    console.log(response.json());
+
     setButton(false);
   };
   const changePassword = async () => {
@@ -53,7 +54,6 @@ export const ResetPassword = ({ className }: PropResetPassword | any) => {
       token: token,
       new_password: pas,
     };
-    console.log(formData);
 
     const response = await fetch(
       "https://studapi.teachmeskills.by/auth/users/reset_password_confirm/",
@@ -67,17 +67,12 @@ export const ResetPassword = ({ className }: PropResetPassword | any) => {
       }
     );
     response.ok ? navigate("/") : alert(response.text());
-    console.log(response.json());
   };
 
   return (
     <GeneralPage>
+      <PageUPHeader text=" Reset Password" label="Back to home" />
       <div className={` ResetPassword-centre `}>
-        <Link to="/" className="ResetPassword-link-Back">
-          Back to home
-        </Link>
-        <p className="ResetPassword-Main-Label">Reset Password</p>
-
         <div className={`ResetPassword-Input-Wrapper ${className}`}>
           {button ? (
             <Input

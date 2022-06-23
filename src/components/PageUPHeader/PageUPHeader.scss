@@ -1,9 +1,4 @@
-.PageUPHeader {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  grid-area: 1 / 2 / 2 / 3;
-}
+@import "../../style/variables";
 .PageUPHeader-link-Back {
   font-family: "Inter";
   font-style: normal;
@@ -12,7 +7,7 @@
   line-height: 24px;
   display: flex;
 
-  color: #313037;
+
 }
 .PageUPHeader-Main-Label {
   font-family: "Inter";
@@ -23,5 +18,5 @@
   display: flex;
   margin-top: 32px;
   align-items: center;
-  color: #313037;
+
 }

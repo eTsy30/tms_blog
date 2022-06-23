@@ -1,13 +1,22 @@
 /**** Colors *****/
 /**** Fonts *****/
 /**** Indents *****/
+.dark {
+  background: #313037;
+  color: #e5e5e5;
+}
+
+.light {
+  background: #e5e5e5;
+  color: #313037;
+}
+
 .input {
   font-family: InterSemiBold, sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
   height: 102px;
-  color: #313037;
   width: 100%;
 }
 

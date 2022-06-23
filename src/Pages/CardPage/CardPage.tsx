@@ -14,6 +14,7 @@ import { getUserInfo } from "Redux/userInfo/userInfoReduser";
 import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
 import { Pagination } from "Pagination/Pagination";
 import { getPost } from "Redux/posts/PostsActionReducer";
+import { PageUPHeader } from "components/PageUPHeader/PageUPHeader";
 
 export const CardPage = (props: any) => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ export const CardPage = (props: any) => {
 
   return (
     <GeneralPage label="Blog">
-      <p className="Blog-Main-Label">Blog</p>
+      <PageUPHeader label="Back to home" text="Blog" />
       <div>
         <Tabs items={items} />
       </div>

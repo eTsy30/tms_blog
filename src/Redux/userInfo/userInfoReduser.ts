@@ -9,11 +9,14 @@ export const getUserInfo: any = createAsyncThunk(
     "getUserInfo",
 
 
-    async () => {
-        const data = await customFetch('https://studapi.teachmeskills.by/auth/users/me/');
-        console.log({ data });
+    async (item) => {
 
-        return data;
+
+        if (item === null) { return null } else {
+            const data = await customFetch('https://studapi.teachmeskills.by/auth/users/me/');
+            return data;
+        }
+
     }
 );
 
@@ -29,12 +32,13 @@ const userInfo = createSlice({
             state.user = action.payload;
             state.isLoading = false;
 
+
         },
         [getUserInfo.rejected]: (state) => {
             state.isLoading = false;
         },
     },
 });
-export const { } = userInfo.actions
+
 
 export default userInfo.reducer

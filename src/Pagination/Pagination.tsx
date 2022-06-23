@@ -7,7 +7,6 @@ import { getPost } from "Redux/posts/PostsActionReducer";
 import "./Pagination.scss";
 export const Pagination = ({ handlePageClick }: any) => {
   const pageCounttoStore = useSelector((state: any) => state.postReducer.count);
-  console.log({ pageCounttoStore });
 
   return (
     <>

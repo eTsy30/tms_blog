@@ -1,10 +1,15 @@
-import { log } from 'console';
+
+
 import jwtDecode, { JwtPayload } from "jwt-decode";
+import { IsAuth } from 'Redux/Auth/Auth';
+//   import { store } from 'Redux/store'
 interface IError {
     detail: string
 }
 
+
 const refreshToken = async (refresh: string) => {
+
     const headers = {
         Accept: 'application/json',
         'Content-Type': 'application/json;charset=utf-8',
@@ -18,36 +23,40 @@ const refreshToken = async (refresh: string) => {
         }
     )
     const data = await response.json()
-    console.log('зашли в refresh', data);
+
 
     if (!response.ok) {
         return Promise.reject(data as IError)
     }
 
     localStorage.setItem('access', JSON.stringify(data.access))
-    console.log('data.access====', JSON.stringify(data.access));
 
+    localStorage.setItem('auth', 'true')
     return data.access
 }
 
 
 export const customFetch = async (url: string, config: any = {}) => {
+    const { store } = await import('Redux/store')
+
+    // const dispatch = useDispatch()
     let access = localStorage.getItem('access')
 
     let token = access ? JSON.parse(access) : null
-    // console.log('токен из локал стора==', token);
+
 
     try {
         if (token) {
             const accessToken = jwtDecode<JwtPayload>(token)
-            console.log('est== token', token);
+
 
             const expirationMillisTime = accessToken?.exp ? accessToken.exp * 1000 : 0
             const isAccessExpired = expirationMillisTime
                 ? expirationMillisTime - Date.now() < 0
                 : false
-            console.log('time===', isAccessExpired);
-            console.log(new Date(expirationMillisTime));
+
+            store.dispatch(IsAuth(isAccessExpired))
+
 
 
             if (isAccessExpired) {
@@ -68,7 +77,9 @@ export const customFetch = async (url: string, config: any = {}) => {
             }
 
             const response = await fetch(url, config)
-
+            // if (response.status === 401) { dispatch(IsAuth(false)) } else {
+            //     dispatch(IsAuth(true))
+            // }
             return await response.json()
         }
     } catch (error) {

@@ -6,7 +6,6 @@ import "./ContentPage.scss";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getOnePost } from "../../Redux/singlePost/singePost";
-import { Loader } from "../../components/Loader/Loader";
 import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
 import { ReactComponent as Like } from "../../components/image/like.svg";
 import { ReactComponent as SvgBwi } from "../../components/image/buttonWithIcon.svg";
@@ -16,82 +15,106 @@ import {
   favoritPost,
   likePost,
 } from "Redux/posts/PostsActionReducer";
+import { useTheme } from "Redux/Theme/useTheme";
+import { dislikeP, favoritP, likeP } from "Redux/Like/Like";
+
 export const ContentPage = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
-  const postsLike = useSelector(
-    (state: any) => state.postReducer.content
-  )?.find((el: any) => el.id === Number(id));
+  let postId = Number(id);
 
-  //==========================================
+  const postIdPrev = postId - 1;
+  const postIdNext = postId + 1;
+  const dispatch = useDispatch();
+  const theme = useTheme();
+
+  const likeStore = useSelector((state: any) => state.likeReducer.content);
+
+  const postPrev = useSelector((state: any) => state.likeReducer.content)?.find(
+    (el: any) => el.id === Number(postIdPrev)
+  );
+
+  const postsNew = useSelector((state: any) => state.likeReducer.content)?.find(
+    (el: any) => el.id === Number(postIdNext)
+  );
+
+  const getInfoOnePost = (id: number) => {
+    return likeStore?.find((post: { id: number }) => post.id === id);
+  };
+  const postOne = getInfoOnePost(postId);
+  console.log(postOne);
+
   const addToLike = () => {
-    if (postsLike.like) {
-      dispatch(likePost(postsLike.id));
+    if (postOne.like) {
+      dispatch(likeP(postOne.id));
     } else {
-      dispatch(likePost(postsLike.id));
-      if (postsLike.dislike) {
-        dispatch(dislikePost(postsLike.id));
+      dispatch(likeP(postOne.id));
+      if (postOne.dislike) {
+        dispatch(dislikeP(postOne.id));
       }
     }
   };
 
   const addToDisLike = () => {
-    if (postsLike.dislike) {
-      dispatch(dislikePost(postsLike.id));
+    if (postOne.dislike) {
+      dispatch(dislikeP(postOne.id));
     } else {
-      dispatch(dislikePost(postsLike.id));
-      if (postsLike.like) {
-        dispatch(likePost(postsLike.id));
+      dispatch(dislikeP(postOne.id));
+      if (postOne.like) {
+        dispatch(likeP(postOne.id));
       }
     }
   };
   const favorite = () => {
-    dispatch(favoritPost(postsLike.id));
+    dispatch(favoritP(postOne.id));
   };
 
-  //=================================
   useEffect(() => {
     dispatch(getOnePost(id));
-  }, [id]);
+  }, [dispatch, id, postId]);
 
   return (
     <GeneralPage>
-      {postsLike && (
+      {}
+      {postOne && (
         <div className="ContentPage--wrapper">
           <div className="ContentPage--Home">
-            <Link to="/" className="SingIn-link-Back">
-              Home
-              <span className="ContentPage--Home--span"> | {postsLike.id}</span>
+            <Link to="/" className={`SingIn-link-Back  ${theme.theme}`}>
+              <span className={` ${theme.theme}`}>Home</span>
+              <span className={`ContentPage--Home--span `}>| {postOne.id}</span>
             </Link>
           </div>
-          <div className="ContentPage--Title">
+
+          <div className={`ContentPage--Title ${theme.theme}`}>
             <h2>
-              {postsLike.title} {postsLike.like}
+              {postOne.title} {postOne.like}
             </h2>
           </div>
           <div className="ContentPage--Image">
             <img
               className="ContentPage--Image--img"
-              src={postsLike.image}
+              alt="no"
+              src={postOne.image}
             ></img>
           </div>
-          <div className="ContentPage--Content">{postsLike.text}</div>
+          <div className={`ContentPage--Content ${theme.theme}`}>
+            {postOne.text}
+          </div>
           <div className="ContentPage--Button">
-            <div className="ContentPage--Button--leftSide">
+            <div className={`ContentPage--Button--leftSide ${theme.theme}`}>
               <Button
-                text={postsLike.like}
+                text={postOne.like}
                 icon={<Like />}
                 onClick={addToLike}
                 className={`ContentPage--Button--leftSide--like like ${
-                  postsLike.like && "Like--Button_color"
+                  postOne.like && "Like--Button_color"
                 }`}
               ></Button>
               <Button
-                text={postsLike.dislike}
+                text={postOne.dislike}
                 icon={<Dislike />}
                 onClick={addToDisLike}
                 className={`ContentPage--Button--leftSide--dislike  dislike ${
-                  postsLike.dislike && "DisLike--Button_color"
+                  postOne.dislike && "DisLike--Button_color"
                 }`}
               ></Button>
             </div>
@@ -99,7 +122,7 @@ export const ContentPage = () => {
               <Button
                 text="Add to favorites"
                 className={`buttonWithIcon ContentPage--Button--rightSide--ButtomWithIcon ${
-                  postsLike.favorit && "DisLike--Button_color"
+                  postOne.favorit && "Favorit--Button_color"
                 }`}
                 icon={<SvgBwi />}
                 onClick={favorite}
@@ -107,14 +130,16 @@ export const ContentPage = () => {
             </div>
           </div>
           <div className="ContentPage--wrapper--navigation">
-            <Prev
-              textLink="When Webpack comes across this syntax, it automatically starts code-splitting your app. If you’re using Create React App, this is already configured for you and you can start using it immediately. It’s also supported out of the box in Next.js.
-       "
-            ></Prev>
-            <Next
-              textLink="When Webpack comes across this syntax, it automatically starts code-splitting your app. If you’re using Create React App, this is already configured for you and you can start using it immediately. It’s also supported out of the box in Next.js.
-       "
-            ></Next>
+            <Link
+              to={postPrev?.title ? `/blogs/${postId - 1}` : `/blogs/${postId}`}
+            >
+              <Prev textLink={postPrev?.title}></Prev>
+            </Link>
+            <Link
+              to={postsNew?.title ? `/blogs/${postId + 1}` : `/blogs/${postId}`}
+            >
+              <Next textLink={postsNew?.title}></Next>
+            </Link>
           </div>
         </div>
       )}

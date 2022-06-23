@@ -1,6 +1,5 @@
-import { log } from 'console';
-import { AsyncThunkPayloadCreator, createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AnyAsyncThunk } from "@reduxjs/toolkit/dist/matchers";
+
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type Post = {
     id: number,
@@ -30,16 +29,20 @@ export const getPost: any = createAsyncThunk(
     'post',
 
     async (ilmitoff: any) => {
+        try {
+            const response = await fetch(`https://studapi.teachmeskills.by/blog/posts/?limit=${ilmitoff?.limit}&offset=${ilmitoff?.offset}`,
+
+            )
+
+            const responseFormat = await response.json()
 
 
-        const response = await fetch(`https://studapi.teachmeskills.by/blog/posts/?limit=${ilmitoff?.limit}&offset=${ilmitoff?.offset}`,
+            return [responseFormat.results, responseFormat.count]
+        }
+        catch (error) {
+            return console.log(error);
+        }
 
-        )
-
-        const responseFormat = await response.json()
-
-
-        return [responseFormat.results, responseFormat.count]
     }
 
 )
@@ -57,7 +60,7 @@ const postReducer = createSlice({
             state.count = action.payload[1]
             state.content = action.payload[0]
             state.isLoading = false
-            console.log(state.content);
+
 
 
 

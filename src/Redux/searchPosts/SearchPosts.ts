@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AnyAsyncThunk } from "@reduxjs/toolkit/dist/matchers";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
 
 type Post = {
     id: number,
@@ -26,9 +26,14 @@ const initialState: ISearchState = {
 export const searchPost: any = createAsyncThunk(
     'search',
     async (value) => {
-        const response = await fetch(`https://studapi.teachmeskills.by/blog/posts/?limit=73&offset=0&search=${value}`)
-        const responseFormat = await response.json()
-        return responseFormat.results
+        try {
+            const response = await fetch(`https://studapi.teachmeskills.by/blog/posts/?limit=73&offset=0&search=${value}`)
+            const responseFormat = await response.json()
+            return responseFormat.results
+        } catch (error) {
+            return console.log(error);
+        }
+
     }
 
 )
@@ -53,5 +58,5 @@ const searchReducer = createSlice({
     reducers: {}
 })
 export default searchReducer.reducer
-export const { } = searchReducer.actions
+
 

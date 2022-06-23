@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getJwt } from "../../Redux/getToken/getTokenReduser";
 import { getUserInfo } from "../../Redux/userInfo/userInfoReduser";
 import { GeneralPage } from "Pages/GeneralPage/GeneralPage";
+import { PageUPHeader } from "components/PageUPHeader/PageUPHeader";
 type PropSingIn = {
   className: string;
 };
@@ -51,10 +52,7 @@ export const SingIn = ({
   return (
     <GeneralPage>
       <div className={` SingIn-centre `}>
-        <Link to="/" className="SingIn-link-Back">
-          Back to home
-        </Link>
-        <p className="SingIn-Main-Label">Sing In</p>
+        <PageUPHeader label="Back to home" text="Sing In" />
 
         <div className={`SingIn-Input-Wrapper ${className}`}>
           <Input

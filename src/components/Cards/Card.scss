@@ -44,7 +44,6 @@ $width: 100%;
   font-weight: 700;
   font-size: 32px;
   line-height: 44px;
-  color: $color-secondary;
   margin-bottom: 24px;
   text-align: left;
   margin-top: 8px;
@@ -94,7 +93,6 @@ $width: 100%;
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
-  color: $color-secondary;
   margin: 0;
   margin-bottom: 24px;
   text-align: left;
@@ -123,6 +121,7 @@ $width: 100%;
 .small--Content {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .small--Img {
   width: 96px;
@@ -135,11 +134,8 @@ $width: 100%;
   font-weight: 600;
   font-size: 18px;
   line-height: 28px;
-  color: $color-secondary;
   text-align: left;
-
   display: -webkit-box;
-
   -webkit-line-clamp: 2; /* if you change this, make sure to change the fallback line-height and height */
   -webkit-box-orient: vertical;
   overflow: hidden;

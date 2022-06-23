@@ -24,6 +24,7 @@ export const Button = ({
       onClick={onClick}
     >
       {icon}
+      <span style={{ width: 10 }}></span>
       {text}
     </button>
   );

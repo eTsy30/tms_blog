@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTheme } from "Redux/Theme/useTheme";
 import validator from "validator/index";
 import "./Input.css";
 
@@ -25,8 +26,9 @@ export const Input = ({
   error,
   name,
 }: InputProps) => {
+  const theme = useTheme();
   return (
-    <div className="input">
+    <div className={`input ${theme.theme}`}>
       <label className="input--label">
         {title}
         <input

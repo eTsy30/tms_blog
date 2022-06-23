@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SingUp } from "./Pages/SingUpPage/SiugUp";
-import { SingIn } from "./Pages/SingInPaga/SingIn";
-import { Provider } from "react-redux";
+import { SingIn } from "./Pages/SingInPage/SingIn";
+import { Provider, useSelector } from "react-redux";
 import { store } from "./Redux/store";
 import { ContentPage } from "./Pages/OnePostContent/ContentPage";
 import { Verify } from "./Pages/VerifyPage/Verify";
@@ -15,9 +15,14 @@ import NewPasswordPage from "Pages/NewPasswordPage/NewPasswordPage";
 import { SearchPage } from "Pages/SearchPage/SearchPage";
 import { AddPostPage } from "Pages/AddPostPage/AddPostPage";
 
+function RequireAuth({ children }: any) {
+  const auth = useSelector((state: any) => state.tokenReduser.auth);
+  return auth ? children : <Navigate to={"/singin"} />;
+}
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <Provider store={store}>
     <React.StrictMode>
@@ -26,12 +31,40 @@ root.render(
           <Route path="/" element={<App />} />
           <Route path="/singin" element={<SingIn />} />
           <Route path="/singup" element={<SingUp />} />
-          <Route path="/fogotPassword" element={<ResetPassword />} />
-          <Route path="/blogs/:id" element={<ContentPage />} />
+          <Route
+            path="/fogotPassword"
+            element={
+              <RequireAuth>
+                <ResetPassword />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/blogs/:id"
+            element={
+              <RequireAuth>
+                <ContentPage />
+              </RequireAuth>
+            }
+          />
           <Route path="/verify" element={<Verify />} />
-          <Route path="/new-password" element={<NewPasswordPage />} />
+          <Route
+            path="/new-password"
+            element={
+              <RequireAuth>
+                <NewPasswordPage />
+              </RequireAuth>
+            }
+          />
           <Route path="/search-page" element={<SearchPage />} />
-          <Route path="/addPostPage" element={<AddPostPage />} />
+          <Route
+            path="/addPostPage"
+            element={
+              <RequireAuth>
+                <AddPostPage />
+              </RequireAuth>
+            }
+          />
 
           <Route
             path="*"

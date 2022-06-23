@@ -1,10 +1,10 @@
+@import "../../../style/variables";
 .Prev--block--text {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
-  color: #313037;
+
   margin: 0px;
 }
 .Prev--block--link {
@@ -18,24 +18,22 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 16px; 
+
   line-height: 24px;
-  color: #8d8e97;
+
 }
 .Prev--wrapper {
   display: flex;
   width: 293px;
   height: 56px;
-
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: space-around;
-  justify-content: space-between;
   align-items: center;
 }
 .Prev--block {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
+  flex-direction: column;
 }
 
 .Prev--arrow {

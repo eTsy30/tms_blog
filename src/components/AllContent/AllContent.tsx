@@ -6,8 +6,9 @@ import { getPost } from "../../Redux/posts/PostsActionReducer";
 
 import { Loader } from "../Loader/Loader";
 import { Pagination } from "Pagination/Pagination";
-import { getUserInfo } from "Redux/userInfo/userInfoReduser";
+
 import { DoubleMainPage } from "Pages/DoubleMainPage";
+import { getlike } from "Redux/Like/Like";
 
 interface ICard {
   id: number;
@@ -27,6 +28,8 @@ export const AllContent = (props: any) => {
   const [itemOffset, setOffset] = useState(1);
   const [limit, setlimit] = useState(11);
   const posts = useSelector((state: any) => state.postReducer.content);
+  const likeStore = useSelector((state: any) => state.likeReducer.content);
+
   const handlePageClick = (event: { selected: number }) => {
     const newOffset = event.selected * 12;
     const limit = 11;
@@ -39,8 +42,15 @@ export const AllContent = (props: any) => {
     offset: itemOffset,
   };
   useEffect(() => {
+    if (likeStore === null) {
+      dispatch(getlike());
+    }
+  }, [likeStore]);
+
+  useEffect(() => {
     dispatch(getPost(ilmitoff));
   }, [itemOffset]);
+
   if (limit === 11) {
     setlimit(12);
   }

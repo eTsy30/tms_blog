@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { ReactComponent as MenuBurgerIMJ } from "../image/MenuBurger.svg";
 import { ReactComponent as SearchButton } from "../image/SearchButton.svg";
@@ -6,7 +6,7 @@ import { ReactComponent as CancelButton } from "../image/Icon-Cancel1.svg";
 import { ReactComponent as UserIcon } from "../image/headerIcon.svg";
 import { MenuBurger } from "./MenuBurger/MenuBurger";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { searchPost } from "Redux/searchPosts/SearchPosts";
 
 const items = [
@@ -32,6 +32,7 @@ export const Header = () => {
     setsearch(event.target.value);
     dispatch(searchPost(search));
   };
+  useEffect(() => {}, [user]);
 
   return (
     <div className="header">

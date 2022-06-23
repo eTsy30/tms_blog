@@ -12,9 +12,7 @@ type NameFormProps = {
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void | any;
 };
 export const TextArea = (props: NameFormProps) => {
-  const handleSubmit = (event: any) => {
-    console.log(4);
-  };
+  const handleSubmit = (event: any) => {};
   return (
     <div className={`textArea ${props.className}`} onSubmit={handleSubmit}>
       <label className="textArea--label">{props.title}</label>
