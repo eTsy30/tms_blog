@@ -1,18 +1,32 @@
+/**** Colors *****/
+/**** Fonts *****/
+/**** Indents *****/
 .ourButtonStyle {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding: 16px 32px;
   border: none;
 }
+
 .ourButtonStyle span {
+  background: #2231aa;
   width: 100%;
 }
+
 /*=======================================*/
 .primary:hover {
   background: #5360cd;
   border-radius: 2px;
 }
+
 .primary {
   background: #2231aa;
   font-family: "Inter";
@@ -22,16 +36,19 @@
   line-height: 24px;
   color: #ffffff;
 }
+
 .primary:disabled {
   background: #e8e8e8;
   border-radius: 2px;
   color: #8d8e97;
 }
+
 /*=======================================*/
 .secondary:hover {
   background: #dadada;
   border-radius: 2px;
 }
+
 .secondary {
   font-family: "Inter";
   font-style: normal;
@@ -42,15 +59,18 @@
   border-radius: 2px;
   color: #313037;
 }
+
 .secondary:disabled {
   background: #e8e8e8;
   border-radius: 2px;
   color: #8d8e97;
 }
+
 /*=======================================*/
 .secondary2:hover {
   border: 1px solid #dadada;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .secondary2 {
@@ -61,20 +81,24 @@
   line-height: 24px;
   color: #fd3419;
 }
+
 .secondary2:disabled {
   background: #e8e8e8;
   border: none;
   color: #8d8e97;
 }
+
 /*=======================================*/
 .ButtonWithIcon:hover > .buttonImg path {
   fill: #ffffff;
 }
+
 .ButtonWithIcon:hover {
   background: #5360cd;
   border-radius: 2px;
   color: #ffffff;
 }
+
 .ButtonWithIcon {
   font-family: "Inter";
   font-style: normal;
@@ -86,22 +110,30 @@
   color: #313037;
   width: 241px;
   height: 56px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .ButtonWithIcon:disabled {
   background: #e8e8e8;
   border-radius: 2px;
   color: #8d8e97;
 }
+
 .ButtonWithIcon:disabled > .buttonImg path {
   fill: #8d8e97;
 }
+
 /*=======================================*/
 .like:hover > .buttonImg path {
   fill: #ffffff;
-  transform: rotate(180deg);
-  transform-origin: center center;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
+
 .like:hover {
   background: #fd3419;
   border-radius: 2px;
@@ -111,16 +143,22 @@
   background: #e8e8e8;
   border-radius: 2px;
 }
+
 .like > .buttonImg path {
-  transform: rotate(180deg);
-  transform-origin: center center;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
 
 .like:disabled > .buttonImg path {
   fill: #8d8e97;
-  transform: rotate(180deg);
-  transform-origin: center center;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
+
 .like:disabled {
   background: #e8e8e8;
   border-radius: 2px;
@@ -131,22 +169,29 @@
 .dislike:hover > .buttonImg path {
   fill: #ffffff;
 }
+
 .dislike:hover {
   background: #5360cd;
   border-radius: 2px;
   color: #ffffff;
 }
+
 .dislike {
   background: #e8e8e8;
   border-radius: 2px;
   color: #313037;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .dislike:disabled {
   background: #e8e8e8;
   border-radius: 2px;
   color: #8d8e97;
 }
+
 .dislike:disabled > .buttonImg path {
   fill: #8d8e97;
 }
+/*# sourceMappingURL=Button.css.map */

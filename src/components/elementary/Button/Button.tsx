@@ -2,9 +2,9 @@
 import React from 'react'
 import'./Button.css'
 import clsx from 'clsx'
-import { ReactComponent as SvgBwiIcon } from '../image/buttonWithIcon.svg'
-import { ReactComponent as LikeIcon } from '../image/like.svg'
-import { ReactComponent as DislikeIcon } from '../image/like.svg'
+import { ReactComponent as SvgBwiIcon } from '../../image/buttonWithIcon.svg'
+import { ReactComponent as LikeIcon } from '../../image/like.svg'
+import { ReactComponent as DislikeIcon } from '../../image/like.svg'
 
 
 type Buttonprops ={

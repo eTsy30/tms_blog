@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import validator from 'validator/index'
+  import validator from 'validator/index'
 import './Input.css'
 
 
-    type NameFormProps={
+    type InputProps={
     handleSubmit? :()=>void,
         placeholder:string,
         className? :string
@@ -11,19 +11,20 @@ import './Input.css'
         label :string
         type:'text'| 'email'|'password'
     }
-   export const InputForm = ({placeholder,className,disabled,label,type}:NameFormProps) => {
+   export const InputForm = ({placeholder,className,disabled,label,type}:InputProps) => {
         const [inputValue, setInputValue] = useState('')
         const [eror, setEror] = useState('')
+        
         
         const handleChange = (event:any) => {
           setInputValue(event.target.value)
         console.log(type);
         if(type==='email'){ 
-          if(!validator.isEmail(event.target.value)){
+           if(!validator.isEmail(event.target.value)){
           setEror('Eror')
         }else{
           setEror('')
-        } }
+        }  }
 
         if(type==='password'){
           if (validator.isStrongPassword(event.target.value, {

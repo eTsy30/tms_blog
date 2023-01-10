@@ -25,6 +25,9 @@
 .SingIn-right {
   grid-area: 1 / 3 / 2 / 4;
 }
+.SingUp-MainBlok {
+  height: 684px;
+}
 .SingIn-link-Back {
   font-family: "Inter";
   font-style: normal;
@@ -49,18 +52,19 @@
 .SingIn-Input-Wrapper {
   display: grid;
   justify-content: center;
+  align-content: space-evenly;
   width: 624px;
-  padding: 40px;
   margin: 0 auto;
   border: 1px solid #dadada;
   box-sizing: border-box;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
+
 .InputHeightIn {
   height: 472px;
 }
-.InputHeightUp {
-  height: 684px;
-}
+
 .SingIn-Button-SingIn {
   margin: 0 auto;
   width: 544px;

@@ -1,0 +1,45 @@
+@import "/src/components/style/normalize.css";
+.general_text {
+  font-family: "Inter";
+  font-style: normal;
+}
+.SmalCard_wrapper_In {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+.SmalCard_left {
+  display: grid;
+}
+.SmalCard_wrapper {
+  display: grid;
+
+  border-bottom: 1px solid #dadada;
+}
+.SmalCard_date {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8d8e97;
+  margin: 8px 0px;
+  text-align: start;
+}
+.SmalCard_label {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #313037;
+  text-align: start;
+}
+.SmalCard_logo {
+  justify-self: end;
+  width: 96px;
+  height: 96px;
+}
+
+.heightLike {
+  color: #000;
+  align-self: end;
+}
